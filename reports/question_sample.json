@@ -1,0 +1,176 @@
+[
+  {
+    "id": "kdigo_2024_ckd_p44_recommendation_atom_recommendation_3_8_1_210",
+    "chunk_type": "recommendation_atom",
+    "page_start": 44,
+    "text": "Recommendation 3.8.1: We suggest a nonsteroidal mineralocorticoid receptor antagonist with proven kidney or cardiovascular benefit for adults with T2D, an eGFR > 25 ml/min per 1.73 m2 , normal serum potassium concentration, and albuminuria ( > 30 mg/g [ > 3 mg/mmol]) despite maximum tolerated dose of RAS inhibitor (RASi) (2A) ."
+  },
+  {
+    "id": "kdigo_2024_ckd_p36_practice_point_practice_point_1_2_2_4_119",
+    "chunk_type": "practice_point",
+    "page_start": 36,
+    "text": "Practice Point 1.2.2.4: Interpretation of SCr level requires consideration of dietary intake."
+  },
+  {
+    "id": "nice_ng203_ckd_p16_table_row_table_3",
+    "chunk_type": "table_row",
+    "page_start": 16,
+    "text": "ACR category A1: normal to mildly increased (less than 3 mg/mmol) ACR category A2: moderately increased (3 to 30 mg/mmol) ACR category A3: severely increased (over 30 mg/mmol). Row 3: ACR category A1: normal to mildly increased (less than 3 mg/mmol): 1; ACR category A2: moderately increased (3 to 30 mg/mmol): 1; ACR category A3: severely increased (over 30 mg/mmol): 2"
+  },
+  {
+    "id": "nice_ng203_ckd_p20_section_passage_self_management_ensure_that_systems_are_in_place_to_inform_67",
+    "chunk_type": "section_passage",
+    "page_start": 20,
+    "text": "Self-management: Ensure that systems are in place to: inform adults with CKD (and their family members or carers, as appropriate) of their diagnosis enable adults with CKD (and their family members or carers, as appropriate) to share in decision making about their care support self-management (this includes providing information about blood pressure, smoking cessation, exercise, diet and medicines) and enable adults with CKD to make informed choices. [2014]"
+  },
+  {
+    "id": "kdigo_2024_ckd_p22_figure_caption_table_3_60",
+    "chunk_type": "figure_caption",
+    "page_start": 22,
+    "text": "Table 3| Albuminuria categories in chronic kidney disease"
+  },
+  {
+    "id": "kdigo_2024_ckd_p55_section_passage_1_1_1_detection_of_ckd_this_practice_point_promoting_ckd_de_307",
+    "chunk_type": "section_passage",
+    "page_start": 55,
+    "text": "1.1.1 Detection of CKD: This practice point promoting CKD detection efforts may have implications for health equity, because CKD disproportionately affects people from minoritized populations and those who have lower SES. The increasing availability and evidence supporting several treatments for CKD advocates for early disease detection. Given the asymptomatic progression of CKD, systematic testing of people with risk factors for CKD is the only method that would detect CKD at early stages and allow the initiation of appropriate treatments. CKD detection could reduce the proportion of people with CKD who will experience the morbidity of CKD G4 -G5. Cost-effectiveness analyses, performed in the new era of effective disease-modifying therapies, describe a more positive view of population-wide screening. 27 Figure 3 28 provides an algorithm for the identification of people at risk for CKD testing in those at risk, further testing in those identified as having CKD to confirm stages, and subsequently allowing for treatment initiation. Primary care physicians or other medical specialists who care for people with risk factors for CKD, such as endocrinology, cardiology, or rheumatology, are ideal settings for an intervention that targets people with undetected CKD. Implementing an early detection intervention would be facilitated by integrated healthcare systems and the use of electronic health records. These structures would facilitate the linkage between risk stratification and treatment to have the desired effect of slowing the progression of CKD."
+  },
+  {
+    "id": "nice_ng203_ckd_p56_section_passage_what_is_the_most_clinical_and_cost_effective_frequency_of_re_236",
+    "chunk_type": "section_passage",
+    "page_start": 56,
+    "text": "What is the most clinical and cost-effective frequency of review for children and young people with CKD? [2021]"
+  },
+  {
+    "id": "kdigo_2024_ckd_p136_section_passage_in_the_context_of_good_drug_stewardship_healthcare_provider_827",
+    "chunk_type": "section_passage",
+    "page_start": 136,
+    "text": "In the context of good drug stewardship, healthcare providers should be aware of the issue of ' prescribing cascade. ' A prescribing cascade is a sequence of events that begins when an adverse event is misinterpreted as a new medical condition and a subsequent drug is prescribed to treat this adverse event. 779 Before prescribing new medications to address newly reported symptoms, it is important tofirst assess if the symptoms represent a side effect from an existing medication. An example of a prescribing cascade is as follows: peripheral edema because of calcium channel blocker may be managed by initiation of a new medication (i.e., diuretic), which can lead to additional adverse reactions (e.g., hypokalemia and dizziness)."
+  },
+  {
+    "id": "kdigo_2024_ckd_p103_section_passage_key_information_resource_use_and_costs_health_economic_ana_629",
+    "chunk_type": "section_passage",
+    "page_start": 103,
+    "text": "Key information: Resource use and costs. Health economic analyses are required in people with CKD without diabetes and low levels of albuminuria to establish their level of cost-effectiveness. From a healthcare system perspective, reducing the cost burden of hospitalizations and dialysis is highly desirable, and QoL may be preserved longer from their avoidance. Specifics as to whether people bear the costs of these medications will be country-dependent. Considerations for implementation.. The considerations for implementation in people with CKD and low levels of albuminuria are no different to people with albuminuria (see above for details)."
+  },
+  {
+    "id": "kdigo_2024_ckd_p47_recommendation_atom_recommendation_3_15_2_1_246",
+    "chunk_type": "recommendation_atom",
+    "page_start": 47,
+    "text": "Recommendation 3.15.2.1: We recommend oral low-dose aspirin for prevention of recurrent ischemic cardiovascular disease events (i.e., secondary prevention) in people with CKD and established ischemic cardiovascular disease (1C) ."
+  },
+  {
+    "id": "nice_ng203_ckd_p32_recommendation_atom_1_8_14_128",
+    "chunk_type": "recommendation_atom",
+    "page_start": 32,
+    "text": "1.8.14 Etelcalcetide is recommended as an option in NICE technology appraisal guidance for treating secondary hyperparathyroidism in adults with CKD on haemodialysis if treatment with a calcimimetic is indicated but cinacalcet is not suitable. For full details, see the guidance on etelcalcetide (TA448, 2017)."
+  },
+  {
+    "id": "kdigo_2024_ckd_p106_practice_point_practice_point_3_9_1_649",
+    "chunk_type": "practice_point",
+    "page_start": 106,
+    "text": "Practice Point 3.9.1: The choice of GLP-1 RA should prioritize agents with documented cardiovascular benefits."
+  },
+  {
+    "id": "kdigo_2024_ckd_p106_recommendation_atom_recommendation_3_9_1_648",
+    "chunk_type": "recommendation_atom",
+    "page_start": 106,
+    "text": "Recommendation 3.9.1: In adults with T2D and CKD who have not achieved individualized glycemic targets despite use of metformin and SGLT2 inhibitor treatment, or who are unable to use those medications, we recommend a long-acting GLP-1 RA (1B) ."
+  },
+  {
+    "id": "kdigo_2024_ckd_p137_table_row_table_32_4",
+    "chunk_type": "table_row",
+    "page_start": 137,
+    "text": "Table 32| Medications that should be considered for temporary discontinuation before elective surgeries and potential perioperative adverse events associated with their continued use (Medications / Potential perioperative adverse events). Row 4: Medications: Metformin; Potential perioperative adverse events: Lactic acidosis if AKI occurs"
+  },
+  {
+    "id": "kdigo_2024_ckd_p142_table_row_table_35_1",
+    "chunk_type": "table_row",
+    "page_start": 142,
+    "text": "Table 35| Factors associated with late referral for kidney replacement therapy planning (Patient-related factors / Healthcare system - related factors). Row 1: Patient-related factors: Age Race Comorbid illness Etiology of kidney disease Noncompliance or nonadherence Socioeconomic status; Healthcare system - related factors: Health insurance status Type of referring physician Type of referring center Health system and/or physician rationing Distance to dialysis center"
+  },
+  {
+    "id": "kdigo_2024_ckd_p43_section_passage_special_considerations_pediatric_considerations_the_work_g_189",
+    "chunk_type": "section_passage",
+    "page_start": 43,
+    "text": "Special considerations: Pediatric considerations. The Work Group concurs with the KDIGO 2021 Clinical Practice Guideline for the Management of Blood Pressure in Chronic Kidney Disease, and we highlight the following guidance 21 :"
+  },
+  {
+    "id": "kdigo_2024_ckd_p11_table_row_table_6",
+    "chunk_type": "table_row",
+    "page_start": 11,
+    "text": "Persistent albuminuria categories Description and range Persistent albuminuria categories Description and range Persistent albuminuria categories Description and range. Row 6: G3a; Mildly to moderately decreased; 45-59"
+  },
+  {
+    "id": "kdigo_2024_ckd_p96_recommendation_atom_recommendation_3_3_2_1_573",
+    "chunk_type": "recommendation_atom",
+    "page_start": 96,
+    "text": "Recommendation 3.3.2.1: We suggest that sodium intake be < 2 g of sodium per day (or < 90 mmol of sodium per day, or < 5 g of sodium chloride per day) in people with CKD ( 2C )."
+  },
+  {
+    "id": "kdigo_2024_ckd_p42_practice_point_practice_point_3_3_1_1_177",
+    "chunk_type": "practice_point",
+    "page_start": 42,
+    "text": "Practice Point 3.3.1.1: Avoid high protein intake ( > 1.3 g/kg body weight/d) in adults with CKD at risk of progression."
+  },
+  {
+    "id": "kdigo_2024_ckd_p125_section_passage_identification_and_management_atrialfibrillation_can_be_asy_771",
+    "chunk_type": "section_passage",
+    "page_start": 125,
+    "text": "Identification and management. Atrialfibrillation can be asymptomatic but symptoms are not a prerequisite for risk of complications. As the prevalence of atrialfibrillation is high in people with CKD and there are effective strategies to manage its associated complications, opportunistic pulse-based screening (e.g., when taking BP), followed by a 12-lead electrocardiogram if an irregularly irregular pulse is identified should be considered. Such an approach is low cost and Atrialfibrillation: 50 cohorts Study size = 22,886,642; events = 1,068,701"
+  },
+  {
+    "id": "kdigo_2024_ckd_p140_figure_body_figure_48_20",
+    "chunk_type": "figure_body",
+    "page_start": 140,
+    "text": "Figure 48: Circumstances category Circumstance examples Actions • Cause of CKD is uncertain Further evaluation and Causes • Hereditary kidney disease specialist management • Recurrent extensive nephrolithiasis based on diagnosis • A >3%-5% 5-year risk of requiring KRT measured using a validated risk equation Planning and preparation eGFR/risk of KRT • eGFR <30 ml/min per 1.73 m2 for kidney replacement • A sustained fall in GFR of >20% or >30% in those therapy people initiating hemodynamically active therapies • Consistentfinding of significant albuminuria (ACR ≥300 mg/g [≥30 mg/mmol] or AER ≥300 mg/24 hours, Diagnosis of CKD approximately equivalent to PCR ≥500 mg/g [≥50 mg/mmol] Albuminuria or PER ≥500 mg/24 h) in combination with hematuria and microscopic Further evaluation • ≥2-fold increase in albuminuria in people with significant and management hematuria albuminuria undergoing monitoring • A consistentfinding of ACR >700 mg/g [>70 mg/mmol] • Urinary red cell casts, RBC >20 per high powerfield sustained and not readily explained • CKD and hypertension refractory to treatment ≥4 antihypertensive agents • Persistent abnormalities of serum potassium Others • Acidosis Management of CKD • Anemia complications • Bone disease • Malnutrition"
+  },
+  {
+    "id": "kdigo_2024_ckd_p56_table_row_table_5_5",
+    "chunk_type": "table_row",
+    "page_start": 56,
+    "text": "Table 5| Risk factors for CKD (Domains / Example conditions). Row 5: Domains: Iatrogenic (related to drug treatments and procedures); Example conditions: Drug-induced nephrotoxicity and radiation nephritis"
+  },
+  {
+    "id": "kdigo_2024_ckd_p72_section_passage_key_information_materials_cannot_be_applied_to_settings_wit_415",
+    "chunk_type": "section_passage",
+    "page_start": 72,
+    "text": "Key information: materials cannot be applied to settings with differences in assays, 233 or use of equations developed in one population may not perform well in other populations with very different characteristics. 153,234,235 Values and preferences. There are now several valid equations that can be reasonably used in local settings. The Work Group recognizes that different values and preferences may lead to different decisions in selection among validated GFR estimating equations. Thus, instead of being prescriptive, we list a set of criteria that defines a valid equation, a set of equations considered valid at this time, and a list of metrics to define better versus worse performance as evaluated in the local area. It is of value that GFR thresholds for definition and staging be standardized using valid equations optimized for a specific region helps to ensure this occurs. Where possible, inclusion of representation from key constituents in the population in the development of the equation and ensuring that it remains valid in those populations is also of value."
+  },
+  {
+    "id": "nice_ng203_ckd_p27_recommendation_atom_1_6_19_101",
+    "chunk_type": "recommendation_atom",
+    "page_start": 27,
+    "text": "1.6.19 Stop renin-angiotensin system antagonists in adults if the serum potassium concentration increases to 6.0 mmol/litre or more and other medicines known to promote hyperkalaemia have been discontinued. [2008]"
+  },
+  {
+    "id": "kdigo_2024_ckd_p52_practice_point_practice_point_5_2_3_1_279",
+    "chunk_type": "practice_point",
+    "page_start": 52,
+    "text": "Practice Point 5.2.3.1: Use evidence-informed management strategies to support people to live well with CKD and improve their health-related quality of life."
+  },
+  {
+    "id": "kdigo_2024_ckd_p45_recommendation_atom_recommendation_3_9_1_220",
+    "chunk_type": "recommendation_atom",
+    "page_start": 45,
+    "text": "Recommendation 3.9.1: In adults with T2D and CKD who have not achieved individualized glycemic targets despite use of metformin and SGLT2 inhibitor treatment, or who are unable to use those medications, we recommend a long-acting GLP-1 RA (1B) ."
+  },
+  {
+    "id": "kdigo_2024_ckd_p121_recommendation_atom_recommendation_3_15_2_1_749",
+    "chunk_type": "recommendation_atom",
+    "page_start": 121,
+    "text": "Recommendation 3.15.2.1: We recommend oral lowdose aspirin for prevention of recurrent ischemic cardiovascular disease events (i.e., secondary prevention) in people with CKD and established ischemic cardiovascular disease (1C) ."
+  },
+  {
+    "id": "kdigo_2024_ckd_p39_practice_point_practice_point_1_3_1_2_139",
+    "chunk_type": "practice_point",
+    "page_start": 39,
+    "text": "Practice Point 1.3.1.2: Use more accurate methods when albuminuria is detected using less accurate methods. \u000f Confirm reagent strip positive albuminuria and/or proteinuria by quantitative laboratory measurement and express as a ratio to urine creatinine wherever possible (i.e., quantify the ACR or PCR if initial semiquantitative tests are positive). \u000f Confirm ACR >= 30 mg/g ( >= 3 mg/mmol) on a random untimed urine with a subsequentfirst morning void in the morning midstream urine sample."
+  },
+  {
+    "id": "kdigo_2024_ckd_p134_practice_point_practice_point_4_2_3_814",
+    "chunk_type": "practice_point",
+    "page_start": 134,
+    "text": "Practice Point 4.2.3: Where more accuracy is required for drug-related decision-making (e.g., dosing due to narrow therapeutic or toxic range), drug toxicity, or clinical situations where eGFRcr estimates may be unreliable, use of equations that combine both creatinine and cystatin C, or measured GFR may be indicated."
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "project": "NewbieDuo",
+  "stage": "full_accuracy_evidence_chunking",
+  "total_chunks": 2031,
+  "indexable_chunks": 1562,
+  "excluded_chunks": 469,
+  "chunk_type_counts": {
+    "threshold_fact": 1180,
+    "practice_point": 219,
+    "recommendation_atom": 226,
+    "parent_section": 227,
+    "table_row": 53,
+    "router_summary": 126
+  },
+  "indexable_chunk_type_counts": {
+    "threshold_fact": 898,
+    "practice_point": 198,
+    "recommendation_atom": 222,
+    "parent_section": 108,
+    "table_row": 53,
+    "router_summary": 83
+  },
+  "quality_flag_counts": {
+    "front_matter": 40,
+    "toc_list_entry": 43,
+    "non_guideline_admin": 113,
+    "reference_material": 222,
+    "journal_header_footer": 122,
+    "figure_statistical_artifact": 9
+  },
+  "topic_counts": {
+    "risk_stratification": 774,
+    "egfr": 973,
+    "ckd_definition": 205,
+    "albuminuria_acr": 695,
+    "pediatric": 293,
+    "ras_inhibitors": 125,
+    "medication_safety": 328,
+    "anemia": 86,
+    "referral": 347,
+    "dialysis": 194,
+    "monitoring": 253,
+    "general_ckd": 47,
+    "blood_pressure": 110,
+    "diabetes": 220,
+    "kfre": 58,
+    "mineral_bone": 58,
+    "general": 73,
+    "sglt2": 77,
+    "pregnancy": 28
+  },
+  "out_of_scope_flagged_chunks": 417,
+  "per_document_counts": {
+    "kdigo_2024_ckd": {
+      "threshold_fact": 1113,
+      "practice_point": 219,
+      "recommendation_atom": 46,
+      "parent_section": 198,
+      "table_row": 50,
+      "router_summary": 103
+    },
+    "nice_ng203_ckd": {
+      "threshold_fact": 67,
+      "recommendation_atom": 180,
+      "parent_section": 29,
+      "table_row": 3,
+      "router_summary": 23
+    }
+  },
+  "outputs": {
+    "all_chunks": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\chunks\\all_chunks.jsonl",
+    "retrieval_corpus": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\chunks\\retrieval_corpus.jsonl"
+  }
+}

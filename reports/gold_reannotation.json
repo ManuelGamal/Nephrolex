@@ -1,0 +1,58 @@
+[
+  {
+    "case": "gfr_g3b",
+    "chunk": "kdigo_2024_ckd_p82_figure_body_figure_13_11",
+    "grade": 1,
+    "rule": "gfr_category_row",
+    "date": "2026-08-19"
+  },
+  {
+    "case": "gfr_g3b",
+    "chunk": "nice_ng203_ckd_p51_section_passage_classification_of_ckd_ckd_is_classified_according_to_estima_218",
+    "grade": 1,
+    "rule": "gfr_category_row",
+    "date": "2026-08-19"
+  },
+  {
+    "case": "gfr_g4",
+    "chunk": "kdigo_2024_ckd_p82_figure_body_figure_13_11",
+    "grade": 1,
+    "rule": "gfr_category_row",
+    "date": "2026-08-19"
+  },
+  {
+    "case": "gfr_g4",
+    "chunk": "nice_ng203_ckd_p51_section_passage_classification_of_ckd_ckd_is_classified_according_to_estima_218",
+    "grade": 1,
+    "rule": "gfr_category_row",
+    "date": "2026-08-19"
+  },
+  {
+    "case": "gfr_g5",
+    "chunk": "kdigo_2024_ckd_p82_figure_body_figure_13_11",
+    "grade": 1,
+    "rule": "gfr_category_row",
+    "date": "2026-08-19"
+  },
+  {
+    "case": "gfr_g5",
+    "chunk": "nice_ng203_ckd_p51_section_passage_classification_of_ckd_ckd_is_classified_according_to_estima_218",
+    "grade": 1,
+    "rule": "gfr_category_row",
+    "date": "2026-08-19"
+  },
+  {
+    "case": "staging_paraphrase",
+    "chunk": "kdigo_2024_ckd_p82_figure_body_figure_13_11",
+    "grade": 1,
+    "rule": "gfr_category_row",
+    "date": "2026-08-19"
+  },
+  {
+    "case": "staging_paraphrase",
+    "chunk": "nice_ng203_ckd_p51_section_passage_classification_of_ckd_ckd_is_classified_according_to_estima_218",
+    "grade": 1,
+    "rule": "gfr_category_row",
+    "date": "2026-08-19"
+  }
+]

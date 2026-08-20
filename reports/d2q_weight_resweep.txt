@@ -1,0 +1,4 @@
+w     main nDCG                 heldout nDCG              faq nDCG   faq s@5
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights:  84%|████████▎ | 327/391 [00:00<00:00, 3261.60it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 3339.65it/s]
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 4272.05it/s]
+0.0   0.6872                   0.6138                   0.5297     15/20

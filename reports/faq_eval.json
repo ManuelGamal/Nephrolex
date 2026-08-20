@@ -1,0 +1,47 @@
+{
+  "questions": 20,
+  "success_at": {
+    "1": 14,
+    "3": 18,
+    "5": 20,
+    "10": 20
+  },
+  "success_rate": {
+    "1": 0.7,
+    "3": 0.9,
+    "5": 1.0,
+    "10": 1.0
+  },
+  "ranked": {
+    "cases": 20,
+    "ndcg_at_10": 0.7013,
+    "recall_at_10": 0.8083,
+    "recall_at_20": 0.85,
+    "mrr_at_10": 0.8058,
+    "p_at_5": 0.26,
+    "total_miss": 0
+  },
+  "first_rank": {
+    "faq_01_definition": 1,
+    "faq_02_chronicity": 3,
+    "faq_03_who_to_test": 1,
+    "faq_04_confirm_egfr": 4,
+    "faq_05_staging_g3b": 1,
+    "faq_06_kidney_failure": 1,
+    "faq_07_acr_important": 1,
+    "faq_08_refer": 1,
+    "faq_09_kfre": 2,
+    "faq_10_monitor_freq": 1,
+    "faq_11_acr_rise": 1,
+    "faq_12_progression": 1,
+    "faq_13_bp_low_acr": 1,
+    "faq_14_bp_high_acr": 3,
+    "faq_15_sglt2": 5,
+    "faq_16_statin": 1,
+    "faq_17_nsaid": 1,
+    "faq_18_sick_day": 2,
+    "faq_19_rasi_potassium": 1,
+    "faq_20_rasi_check": 1
+  },
+  "misses": []
+}

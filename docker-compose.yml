@@ -1,0 +1,51 @@
+# One container, run inside the operator's own network.
+#
+#   docker compose run --rm build     # PDFs -> corpus -> indexes, once
+#   docker compose up -d serve        # the CDS Hooks service + web UI
+#
+# Nothing here reaches a cloud at runtime. The service binds to localhost by
+# default; publish it on the network interface a record system can reach only
+# when you are ready for one to call it.
+
+name: newbieduo
+
+x-common: &common
+  build:
+    context: .
+  image: newbieduo:local
+  volumes:
+    # The operator's own licensed guideline PDFs. Read-only: the pipeline reads
+    # them and writes everything it derives into the corpus volume instead.
+    - ./data/raw:/data/raw:ro
+    # Built corpus, indexes and the model cache. A named volume rather than a
+    # bind mount so the guideline-derived text stays inside Docker and cannot be
+    # committed by accident.
+    - corpus:/data
+  environment:
+    # Generation is optional. Without a key the service still answers, quoting
+    # the guideline verbatim -- the extractive answer is the product.
+    - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+    - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+    - NEWBIEDUO_DATA=/data
+
+services:
+  # ── one-shot: turn the PDFs in data/raw into a searchable corpus ──────────
+  build:
+    <<: *common
+    profiles: ["build"]
+    entrypoint: ["python", "scripts/build_corpus.py"]
+    command: []
+
+  # ── the service a record system calls ────────────────────────────────────
+  serve:
+    <<: *common
+    ports:
+      # 127.0.0.1 on purpose. Change to "8000:8000" to expose it on the LAN.
+      - "127.0.0.1:8000:8000"
+    restart: unless-stopped
+    # The image's HEALTHCHECK reports ready only once the trigger answers are
+    # cached, so an orchestrator will not route to it while it is still warming.
+    stop_grace_period: 20s
+
+volumes:
+  corpus:

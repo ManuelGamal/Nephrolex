@@ -1,0 +1,715 @@
+{
+  "target": "generated",
+  "counts": {
+    "correct": 27,
+    "partial": 8,
+    "missing": 5,
+    "skipped": 27,
+    "not_answered": 0
+  },
+  "value_recall": 0.7477,
+  "results": [
+    {
+      "id": "def_nice_direct",
+      "kind": "direct",
+      "category": "definition",
+      "outcome": "correct",
+      "source": "generated",
+      "expected": [
+        "60 ml/min/1.73 m2"
+      ],
+      "found": [
+        "60 ml/min/1.73 m2"
+      ],
+      "absent": []
+    },
+    {
+      "id": "def_paraphrase",
+      "kind": "paraphrase",
+      "category": "definition",
+      "outcome": "correct",
+      "source": "generated",
+      "expected": [
+        "60 ml/min/1.73 m2"
+      ],
+      "found": [
+        "60 ml/min/1.73 m2"
+      ],
+      "absent": []
+    },
+    {
+      "id": "kdigo_definition",
+      "kind": "direct",
+      "category": "definition",
+      "outcome": "partial",
+      "source": "generated",
+      "expected": [
+        "G1",
+        "G5",
+        "A1",
+        "A3",
+        "30 mg/g",
+        "3 mg/mmol"
+      ],
+      "found": [
+        "G1",
+        "G5",
+        "A1",
+        "A3"
+      ],
+      "absent": [
+        "30 mg/g",
+        "3 mg/mmol"
+      ]
+    },
+    {
+      "id": "gfr_g3b",
+      "kind": "direct",
+      "category": "staging",
+      "outcome": "correct",
+      "source": "generated",
+      "expected": [
+        "G3b",
+        "30-44",
+        "30 - 44"
+      ],
+      "found": [
+        "G3b",
+        "30-44",
+        "30 - 44"
+      ],
+      "absent": []
+    },
+    {
+      "id": "gfr_g4",
+      "kind": "direct",
+      "category": "staging",
+      "outcome": "correct",
+      "source": "generated",
+      "expected": [
+        "G4",
+        "15-29",
+        "15 - 29"
+      ],
+      "found": [
+        "G4",
+        "15-29",
+        "15 - 29"
+      ],
+      "absent": []
+    },
+    {
+      "id": "gfr_g5",
+      "kind": "direct",
+      "category": "staging",
+      "outcome": "correct",
+      "source": "generated",
+      "expected": [
+        "G5"
+      ],
+      "found": [
+        "G5"
+      ],
+      "absent": []
+    },
+    {
+      "id": "staging_paraphrase",
+      "kind": "paraphrase",
+      "category": "staging",
+      "outcome": "correct",
+      "source": "generated",
+      "expected": [
+        "G3b",
+        "30-44",
+        "30 - 44"
+      ],
+      "found": [
+        "G3b",
+        "30-44",
+        "30 - 44"
+      ],
+      "absent": []
+    },
+    {
+      "id": "who_to_test",
+      "kind": "direct",
+      "category": "testing",
+      "outcome": "correct",
+      "source": "generated",
+      "expected": [
+        "G5"
+      ],
+      "found": [
+        "G5"
+      ],
+      "absent": []
+    },
+    {
+      "id": "acr_clinically_important",
+      "kind": "direct",
+      "category": "testing",
+      "outcome": "correct",
+      "source": "generated",
+      "expected": [
+        "3 mg/mmol"
+      ],
+      "found": [
+        "3 mg/mmol"
+      ],
+      "absent": []
+    },
+    {
+      "id": "egfr_confirm",
+      "kind": "direct",
+      "category": "testing",
+      "outcome": "partial",
+      "source": "generated",
+      "expected": [
+        "60 ml/min/1.73 m2",
+        "5%"
+      ],
+      "found": [
+        "60 ml/min/1.73 m2"
+      ],
+      "absent": [
+        "5%"
+      ]
+    },
+    {
+      "id": "egfr_caution",
+      "kind": "direct",
+      "category": "testing",
+      "outcome": "correct",
+      "source": "generated",
+      "expected": [
+        "60 ml/min/1.73 m2"
+      ],
+      "found": [
+        "60 ml/min/1.73 m2"
+      ],
+      "absent": []
+    },
+    {
+      "id": "cystatin_when",
+      "kind": "direct",
+      "category": "testing",
+      "outcome": "missing",
+      "source": "generated",
+      "expected": [
+        "127-142"
+      ],
+      "found": [],
+      "absent": [
+        "127-142"
+      ]
+    },
+    {
+      "id": "ultrasound",
+      "kind": "direct",
+      "category": "testing",
+      "outcome": "correct",
+      "source": "extractive",
+      "expected": [
+        "30 ml/min/1.73 m2",
+        "G4",
+        "G5"
+      ],
+      "found": [
+        "30 ml/min/1.73 m2",
+        "G4",
+        "G5"
+      ],
+      "absent": []
+    },
+    {
+      "id": "accel_progression",
+      "kind": "direct",
+      "category": "risk",
+      "outcome": "correct",
+      "source": "extractive",
+      "expected": [
+        "25%",
+        "15 ml/min/1.73 m2"
+      ],
+      "found": [
+        "25%",
+        "15 ml/min/1.73 m2"
+      ],
+      "absent": []
+    },
+    {
+      "id": "kfre_modality",
+      "kind": "direct",
+      "category": "risk",
+      "outcome": "correct",
+      "source": "extractive",
+      "expected": [
+        "40%"
+      ],
+      "found": [
+        "40%"
+      ],
+      "absent": []
+    },
+    {
+      "id": "kfre_10pct",
+      "kind": "direct",
+      "category": "risk",
+      "outcome": "correct",
+      "source": "extractive",
+      "expected": [
+        "10%"
+      ],
+      "found": [
+        "10%"
+      ],
+      "absent": []
+    },
+    {
+      "id": "referral_adults",
+      "kind": "multi_doc",
+      "category": "referral",
+      "outcome": "partial",
+      "source": "extractive",
+      "expected": [
+        "5%",
+        "70 mg/mmol",
+        "30 mg/mmol",
+        "A3",
+        "25%",
+        "15 ml/min/1.73 m2"
+      ],
+      "found": [
+        "5%",
+        "70 mg/mmol",
+        "30 mg/mmol"
+      ],
+      "absent": [
+        "A3",
+        "25%",
+        "15 ml/min/1.73 m2"
+      ]
+    },
+    {
+      "id": "referral_paraphrase",
+      "kind": "paraphrase",
+      "category": "referral",
+      "outcome": "missing",
+      "source": "extractive",
+      "expected": [
+        "5%",
+        "70 mg/mmol",
+        "30 mg/mmol",
+        "A3",
+        "25%",
+        "15 ml/min/1.73 m2"
+      ],
+      "found": [],
+      "absent": [
+        "5%",
+        "70 mg/mmol",
+        "30 mg/mmol",
+        "A3",
+        "25%",
+        "15 ml/min/1.73 m2"
+      ]
+    },
+    {
+      "id": "bp_target_low_acr",
+      "kind": "direct",
+      "category": "blood_pressure",
+      "outcome": "correct",
+      "source": "extractive",
+      "expected": [
+        "70 mg/mmol",
+        "140 mmHg",
+        "120 to 139",
+        "90 mmHg"
+      ],
+      "found": [
+        "70 mg/mmol",
+        "140 mmHg",
+        "120 to 139",
+        "90 mmHg"
+      ],
+      "absent": []
+    },
+    {
+      "id": "bp_target_high_acr",
+      "kind": "direct",
+      "category": "blood_pressure",
+      "outcome": "correct",
+      "source": "extractive",
+      "expected": [
+        "70 mg/mmol",
+        "130 mmHg",
+        "120 to 129",
+        "80 mmHg"
+      ],
+      "found": [
+        "70 mg/mmol",
+        "130 mmHg",
+        "120 to 129",
+        "80 mmHg"
+      ],
+      "absent": []
+    },
+    {
+      "id": "bp_conflict",
+      "kind": "multi_doc",
+      "category": "blood_pressure",
+      "outcome": "partial",
+      "source": "extractive",
+      "expected": [
+        "120 mm Hg",
+        "70 mg/mmol",
+        "140 mmHg",
+        "120 to 139",
+        "90 mmHg",
+        "130 mmHg",
+        "120 to 129",
+        "80 mmHg"
+      ],
+      "found": [
+        "120 mm Hg",
+        "70 mg/mmol",
+        "140 mmHg",
+        "120 to 139",
+        "90 mmHg",
+        "130 mmHg",
+        "80 mmHg"
+      ],
+      "absent": [
+        "120 to 129"
+      ]
+    },
+    {
+      "id": "sglt2_kdigo",
+      "kind": "multi_doc",
+      "category": "treatment",
+      "outcome": "correct",
+      "source": "extractive",
+      "expected": [
+        "20 ml/ min",
+        "20 ml/min"
+      ],
+      "found": [
+        "20 ml/ min",
+        "20 ml/min"
+      ],
+      "absent": []
+    },
+    {
+      "id": "sglt2_continue",
+      "kind": "direct",
+      "category": "treatment",
+      "outcome": "correct",
+      "source": "extractive",
+      "expected": [
+        "20 ml/min"
+      ],
+      "found": [
+        "20 ml/min"
+      ],
+      "absent": []
+    },
+    {
+      "id": "rasi_start",
+      "kind": "multi_doc",
+      "category": "treatment",
+      "outcome": "partial",
+      "source": "extractive",
+      "expected": [
+        "G1",
+        "G4",
+        "A3",
+        "A2",
+        "30 mg/mmol"
+      ],
+      "found": [
+        "G1",
+        "G4",
+        "A3",
+        "A2"
+      ],
+      "absent": [
+        "30 mg/mmol"
+      ]
+    },
+    {
+      "id": "rasi_monitoring",
+      "kind": "multi_doc",
+      "category": "medication_safety",
+      "outcome": "correct",
+      "source": "extractive",
+      "expected": [
+        "2 -4"
+      ],
+      "found": [
+        "2 -4"
+      ],
+      "absent": []
+    },
+    {
+      "id": "rasi_potassium_limit",
+      "kind": "direct",
+      "category": "medication_safety",
+      "outcome": "correct",
+      "source": "extractive",
+      "expected": [
+        "5.0 mmol/l"
+      ],
+      "found": [
+        "5.0 mmol/l"
+      ],
+      "absent": []
+    },
+    {
+      "id": "creatinine_rise",
+      "kind": "direct",
+      "category": "medication_safety",
+      "outcome": "correct",
+      "source": "extractive",
+      "expected": [
+        "25%",
+        "30%"
+      ],
+      "found": [
+        "25%",
+        "30%"
+      ],
+      "absent": []
+    },
+    {
+      "id": "acidosis",
+      "kind": "multi_doc",
+      "category": "treatment",
+      "outcome": "partial",
+      "source": "extractive",
+      "expected": [
+        "30 ml/min/1.73 m2",
+        "G4",
+        "G5",
+        "20 mmol/l",
+        "18 mmol/l"
+      ],
+      "found": [
+        "30 ml/min/1.73 m2",
+        "G4",
+        "G5",
+        "20 mmol/l"
+      ],
+      "absent": [
+        "18 mmol/l"
+      ]
+    },
+    {
+      "id": "statin_cvd",
+      "kind": "multi_doc",
+      "category": "treatment",
+      "outcome": "correct",
+      "source": "extractive",
+      "expected": [
+        "60 ml/min",
+        "G3a",
+        "G5"
+      ],
+      "found": [
+        "60 ml/min",
+        "G3a",
+        "G5"
+      ],
+      "absent": []
+    },
+    {
+      "id": "protein_intake",
+      "kind": "multi_doc",
+      "category": "diet",
+      "outcome": "correct",
+      "source": "extractive",
+      "expected": [
+        "0.8 g/kg",
+        "G3",
+        "G5",
+        "0.6 to 0.8"
+      ],
+      "found": [
+        "0.8 g/kg",
+        "G3",
+        "G5",
+        "0.6 to 0.8"
+      ],
+      "absent": []
+    },
+    {
+      "id": "low_protein_paraphrase",
+      "kind": "paraphrase",
+      "category": "diet",
+      "outcome": "correct",
+      "source": "generated",
+      "expected": [
+        "0.6 to 0.8"
+      ],
+      "found": [
+        "0.6 to 0.8"
+      ],
+      "absent": []
+    },
+    {
+      "id": "ref_kfre_threshold",
+      "kind": "direct",
+      "category": "referral",
+      "outcome": "correct",
+      "source": "generated",
+      "expected": [
+        "3%",
+        "5%"
+      ],
+      "found": [
+        "3%",
+        "5%"
+      ],
+      "absent": []
+    },
+    {
+      "id": "ref_kfre_paraphrase",
+      "kind": "paraphrase",
+      "category": "referral",
+      "outcome": "correct",
+      "source": "generated",
+      "expected": [
+        "3%",
+        "5%"
+      ],
+      "found": [
+        "3%",
+        "5%"
+      ],
+      "absent": []
+    },
+    {
+      "id": "ref_named_topic_paraphrase",
+      "kind": "paraphrase",
+      "category": "referral",
+      "outcome": "partial",
+      "source": "generated",
+      "expected": [
+        "5%",
+        "70 mg/mmol",
+        "30 mg/mmol",
+        "A3",
+        "25%",
+        "15 ml/min/1.73 m2"
+      ],
+      "found": [
+        "5%",
+        "70 mg/mmol",
+        "30 mg/mmol",
+        "25%",
+        "15 ml/min/1.73 m2"
+      ],
+      "absent": [
+        "A3"
+      ]
+    },
+    {
+      "id": "stag_g1_direct",
+      "kind": "direct",
+      "category": "staging",
+      "outcome": "correct",
+      "source": "generated",
+      "expected": [
+        "G1"
+      ],
+      "found": [
+        "G1"
+      ],
+      "absent": []
+    },
+    {
+      "id": "stag_g2_direct",
+      "kind": "direct",
+      "category": "staging",
+      "outcome": "partial",
+      "source": "generated",
+      "expected": [
+        "G2",
+        "60 - 89"
+      ],
+      "found": [
+        "G2"
+      ],
+      "absent": [
+        "60 - 89"
+      ]
+    },
+    {
+      "id": "stag_g2_paraphrase",
+      "kind": "paraphrase",
+      "category": "staging",
+      "outcome": "missing",
+      "source": "extractive",
+      "expected": [
+        "G2",
+        "60 - 89"
+      ],
+      "found": [],
+      "absent": [
+        "G2",
+        "60 - 89"
+      ]
+    },
+    {
+      "id": "stag_g1_paraphrase",
+      "kind": "paraphrase",
+      "category": "staging",
+      "outcome": "missing",
+      "source": "extractive",
+      "expected": [
+        "G1"
+      ],
+      "found": [],
+      "absent": [
+        "G1"
+      ]
+    },
+    {
+      "id": "bp_target_paraphrase",
+      "kind": "paraphrase",
+      "category": "blood_pressure",
+      "outcome": "correct",
+      "source": "generated",
+      "expected": [
+        "120 mm Hg"
+      ],
+      "found": [
+        "120 mm Hg"
+      ],
+      "absent": []
+    },
+    {
+      "id": "definition_paraphrase_2",
+      "kind": "paraphrase",
+      "category": "definition",
+      "outcome": "missing",
+      "source": "extractive",
+      "expected": [
+        "G1",
+        "G5",
+        "A1",
+        "A3",
+        "30 mg/g",
+        "3 mg/mmol"
+      ],
+      "found": [],
+      "absent": [
+        "G1",
+        "G5",
+        "A1",
+        "A3",
+        "30 mg/g",
+        "3 mg/mmol"
+      ]
+    }
+  ]
+}

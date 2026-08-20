@@ -1,0 +1,107 @@
+[
+  {
+    "id": "referral_paraphrase",
+    "kind": "paraphrase",
+    "category": "referral",
+    "query": "At what point do I stop handling this in general practice and hand the patient over?",
+    "ndcg_at_10": 0.0,
+    "gold": [
+      "nice_ng203_ckd_p21_recommendation_atom_1_5_5_73",
+      "kdigo_2024_ckd_p51_practice_point_practice_point_5_1_1_275",
+      "kdigo_2024_ckd_p140_practice_point_practice_point_5_1_1_859"
+    ],
+    "returned": [
+      "kdigo_2024_ckd_p149_practice_point_practice_point_5_3_1_1_2_903",
+      "kdigo_2024_ckd_p52_practice_point_practice_point_5_3_1_1_2_287"
+    ]
+  },
+  {
+    "id": "nephrotoxic_paraphrase",
+    "kind": "paraphrase",
+    "category": "medication_safety",
+    "query": "Patient wants to take ibuprofen for back pain - any concern given their kidneys?",
+    "ndcg_at_10": 0.0,
+    "gold": [
+      "nice_ng203_ckd_p18_recommendation_atom_1_3_10_57",
+      "kdigo_2024_ckd_p49_practice_point_practice_point_4_1_1_256",
+      "kdigo_2024_ckd_p131_practice_point_practice_point_4_1_1_796"
+    ],
+    "returned": [
+      "kdigo_2024_ckd_p137_section_passage_4_3_1_strategies_to_promote_drug_stewardship_people_with_ki_838",
+      "kdigo_2024_ckd_p135_figure_caption_figure_46_826"
+    ]
+  },
+  {
+    "id": "mon_acr_paraphrase",
+    "kind": "paraphrase",
+    "category": "monitoring",
+    "query": "The urine protein result has gone up since last time - how much of a rise actually means something?",
+    "ndcg_at_10": 0.0,
+    "gold": [
+      "kdigo_2024_ckd_p40_practice_point_practice_point_2_1_5_155",
+      "kdigo_2024_ckd_p82_practice_point_practice_point_2_1_5_483"
+    ],
+    "returned": [
+      "kdigo_2024_ckd_p76_section_passage_1_3_1_guidance_for_physicians_and_other_healthcare_providers_440",
+      "kdigo_2024_ckd_p39_table_row_table_16_1"
+    ]
+  },
+  {
+    "id": "stag_g2_paraphrase",
+    "kind": "paraphrase",
+    "category": "staging",
+    "query": "Filtration came back at 72 with protein in the urine - where does that sit on the scale?",
+    "ndcg_at_10": 0.0,
+    "gold": [
+      "kdigo_2024_ckd_p22_table_row_table_2_2"
+    ],
+    "returned": [
+      "kdigo_2024_ckd_p93_section_passage_key_information_unlike_carbohydrates_and_fats_excess_dieta_553",
+      "kdigo_2024_ckd_p76_section_passage_1_3_1_guidance_for_physicians_and_other_healthcare_providers_440"
+    ]
+  },
+  {
+    "id": "stag_g1_paraphrase",
+    "kind": "paraphrase",
+    "category": "staging",
+    "query": "Their filtration number is 95 - is that in the normal band?",
+    "ndcg_at_10": 0.0,
+    "gold": [
+      "kdigo_2024_ckd_p22_table_row_table_2_1"
+    ],
+    "returned": [
+      "nice_ng203_ckd_p36_recommendation_atom_1_9_11_145",
+      "kdigo_2024_ckd_p53_practice_point_practice_point_5_4_3_295"
+    ]
+  },
+  {
+    "id": "bp_target_paraphrase",
+    "kind": "paraphrase",
+    "category": "blood_pressure",
+    "query": "How far down should I be pushing the top blood pressure number in someone with kidney disease?",
+    "ndcg_at_10": 0.0,
+    "gold": [
+      "kdigo_2024_ckd_p43_recommendation_atom_recommendation_3_4_1_187",
+      "kdigo_2024_ckd_p97_recommendation_atom_recommendation_3_4_1_581"
+    ],
+    "returned": [
+      "nice_ng203_ckd_p65_section_passage_why_the_committee_made_the_recommendations_results_from_a_m_265",
+      "nice_ng203_ckd_p24_recommendation_atom_1_6_2_81"
+    ]
+  },
+  {
+    "id": "definition_paraphrase_2",
+    "kind": "paraphrase",
+    "category": "definition",
+    "query": "How long do the kidney problems have to have been going on before it counts as the chronic kind?",
+    "ndcg_at_10": 0.0,
+    "gold": [
+      "kdigo_2024_ckd_p11_section_passage_current_chronic_kidney_disease_ckd_nomenclature_used_by_kd_28",
+      "kdigo_2024_ckd_p22_section_passage_defi_nition_and_classification_of_ckd_defining_ckd_ckd_is_53"
+    ],
+    "returned": [
+      "kdigo_2024_ckd_p57_section_passage_1_1_3_evaluation_of_chronicity_kidney_diseases_may_be_acute_325",
+      "kdigo_2024_ckd_p22_figure_caption_table_1_56"
+    ]
+  }
+]

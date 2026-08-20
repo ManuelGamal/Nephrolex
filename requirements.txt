@@ -1,0 +1,34 @@
+# Pinned to the versions every measurement in reports/ was produced with.
+#
+# Unpinned dependencies would make the numbers in EVALUATION.md and ABLATION.md
+# unreproducible: a minor release of sentence-transformers or torch changes
+# embeddings slightly, and this project's whole argument is that its figures can
+# be re-derived rather than taken on trust.
+#
+# torch is installed from the CPU wheel index -- see the Dockerfile and README.
+# One warm container serves a whole site, so there is nothing for a GPU to do
+# after startup.
+
+# ── retrieval ────────────────────────────────────────────────────────────────
+numpy==2.2.6
+scikit-learn==1.7.2
+torch==2.13.0
+transformers==5.15.0
+sentence-transformers==5.7.0
+accelerate==1.14.0
+rank-bm25==0.2.2
+
+# ── ingestion: PDFs in, typed chunks with bounding boxes out ─────────────────
+# docling ships a CLI that parse_guidelines.py invokes as a subprocess.
+docling==2.120.1
+pymupdf==1.28.2
+pypdf==6.16.1
+pdfplumber==0.11.10
+
+# ── reports ──────────────────────────────────────────────────────────────────
+reportlab==5.0.0
+
+# Removed, having never been imported: qdrant-client, psycopg, pandas.
+# Vector-store and Postgres backends were considered and measured against the
+# in-process index; see reports/ABLATION.md. Keeping their clients installed
+# implied a dependency the system does not have.

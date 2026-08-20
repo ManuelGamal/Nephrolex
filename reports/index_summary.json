@@ -1,0 +1,21 @@
+{
+  "project": "NewbieDuo",
+  "stage": "full_accuracy_indexing",
+  "record_count": 1485,
+  "index_text_mode": "raw+section+hype",
+  "mean_indexed_chars": 701,
+  "tfidf": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\indexes\\tfidf.pkl",
+  "dense": {
+    "enabled": true,
+    "model_name": "abhinand/MedEmbed-large-v0.1",
+    "text_mode": "raw+section",
+    "shape": [
+      1485,
+      1024
+    ],
+    "encode_seconds": 26.6,
+    "chunks_per_second": 55.9,
+    "output": "data\\indexes\\dense\\abhinand__MedEmbed-large-v0_1.npy"
+  },
+  "hype_question_count": 3139
+}

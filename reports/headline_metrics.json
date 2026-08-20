@@ -1,0 +1,56 @@
+{
+  "provenance": {
+    "run_at": "2026-08-20T02:49:45",
+    "dense_model": "abhinand/MedEmbed-large-v0.1",
+    "reranker": "BAAI/bge-reranker-v2-m3",
+    "dense_vectors": [
+      1485,
+      1024
+    ],
+    "corpus_chunks": 1485,
+    "fusion_weights": {
+      "tfidf": 0.21,
+      "dense": 0.29,
+      "meta": 0.21,
+      "doc2query": 0.29
+    },
+    "numeric_band_prior": 0.4,
+    "band_selectivity": 0.5,
+    "candidate_pool": 120
+  },
+  "sets": {
+    "main": {
+      "cases": 67,
+      "ndcg_at_10": 0.725,
+      "recall_at_10": 0.8088,
+      "recall_at_20": 0.8387,
+      "mrr_at_10": 0.7228,
+      "p_at_5": 0.2507,
+      "total_miss": 4,
+      "success_at_5": 61,
+      "success_at_5_pct": 91.0
+    },
+    "heldout": {
+      "cases": 46,
+      "ndcg_at_10": 0.8411,
+      "recall_at_10": 0.9203,
+      "recall_at_20": 0.9203,
+      "mrr_at_10": 0.819,
+      "p_at_5": 0.1913,
+      "total_miss": 3,
+      "success_at_5": 42,
+      "success_at_5_pct": 91.3
+    },
+    "faq": {
+      "cases": 20,
+      "ndcg_at_10": 0.722,
+      "recall_at_10": 0.8083,
+      "recall_at_20": 0.85,
+      "mrr_at_10": 0.8292,
+      "p_at_5": 0.27,
+      "total_miss": 0,
+      "success_at_5": 20,
+      "success_at_5_pct": 100.0
+    }
+  }
+}

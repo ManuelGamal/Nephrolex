@@ -1,0 +1,147 @@
+{
+  "queries": 67,
+  "reranker": "BAAI/bge-reranker-v2-m3",
+  "baseline": {
+    "cases": 67,
+    "ndcg_at_10": 0.707,
+    "recall_at_10": 0.801,
+    "recall_at_20": 0.8445,
+    "mrr_at_10": 0.6956,
+    "p_at_5": 0.197,
+    "total_miss": 7
+  },
+  "variants": [
+    {
+      "variant": "without cross-encoder rerank",
+      "ndcg_at_10": 0.648,
+      "recall_at_20": 0.8358,
+      "mrr_at_10": 0.6221,
+      "delta_ndcg": -0.059,
+      "ci": [
+        -0.1297,
+        0.0017
+      ],
+      "significant": false
+    },
+    {
+      "variant": "without tfidf",
+      "ndcg_at_10": 0.6899,
+      "recall_at_20": 0.8246,
+      "mrr_at_10": 0.6824,
+      "delta_ndcg": -0.0171,
+      "ci": [
+        -0.0561,
+        0.0259
+      ],
+      "significant": false
+    },
+    {
+      "variant": "without dense",
+      "ndcg_at_10": 0.6355,
+      "recall_at_20": 0.7575,
+      "mrr_at_10": 0.6213,
+      "delta_ndcg": -0.0715,
+      "ci": [
+        -0.1355,
+        -0.0187
+      ],
+      "significant": true
+    },
+    {
+      "variant": "without meta",
+      "ndcg_at_10": 0.7076,
+      "recall_at_20": 0.8545,
+      "mrr_at_10": 0.6906,
+      "delta_ndcg": 0.0006,
+      "ci": [
+        -0.0235,
+        0.0219
+      ],
+      "significant": false
+    },
+    {
+      "variant": "with colbert (w=0.3)",
+      "ndcg_at_10": 0.701,
+      "recall_at_20": 0.8197,
+      "mrr_at_10": 0.69,
+      "delta_ndcg": -0.006,
+      "ci": [
+        -0.028,
+        0.0161
+      ],
+      "significant": false
+    },
+    {
+      "variant": "without chunk_type_prior",
+      "ndcg_at_10": 0.681,
+      "recall_at_20": 0.8371,
+      "mrr_at_10": 0.6542,
+      "delta_ndcg": -0.026,
+      "ci": [
+        -0.0544,
+        0.001
+      ],
+      "significant": false
+    },
+    {
+      "variant": "without numeric_band",
+      "ndcg_at_10": 0.7037,
+      "recall_at_20": 0.8445,
+      "mrr_at_10": 0.6881,
+      "delta_ndcg": -0.0033,
+      "ci": [
+        -0.0101,
+        0.0
+      ],
+      "significant": false
+    },
+    {
+      "variant": "without quality_penalty",
+      "ndcg_at_10": 0.7034,
+      "recall_at_20": 0.8445,
+      "mrr_at_10": 0.6879,
+      "delta_ndcg": -0.0036,
+      "ci": [
+        -0.0105,
+        0.0
+      ],
+      "significant": false
+    },
+    {
+      "variant": "without query/expansion blend",
+      "ndcg_at_10": 0.6944,
+      "recall_at_20": 0.8172,
+      "mrr_at_10": 0.6749,
+      "delta_ndcg": -0.0126,
+      "ci": [
+        -0.0399,
+        0.0138
+      ],
+      "significant": false
+    },
+    {
+      "variant": "without length damping",
+      "ndcg_at_10": 0.7046,
+      "recall_at_20": 0.8396,
+      "mrr_at_10": 0.6922,
+      "delta_ndcg": -0.0024,
+      "ci": [
+        -0.0153,
+        0.0126
+      ],
+      "significant": false
+    },
+    {
+      "variant": "RRF instead of convex fusion",
+      "ndcg_at_10": 0.6934,
+      "recall_at_20": 0.8433,
+      "mrr_at_10": 0.6646,
+      "delta_ndcg": -0.0136,
+      "ci": [
+        -0.0457,
+        0.0162
+      ],
+      "significant": false
+    }
+  ]
+}

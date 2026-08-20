@@ -1,0 +1,23 @@
+run provenance
+  run_at                 2026-08-19T21:50:20
+  corpus_chunks          1485
+  dense_vectors          [1485, 1024]
+  numeric_band_prior     0.4
+  fusion_weights         {'tfidf': 0.21, 'dense': 0.29, 'meta': 0.21, 'doc2query': 0.29}
+  corpus                 3,398,801 bytes  modified 2026-08-19T05:56:57
+  tfidf                  4,367,563 bytes  modified 2026-08-19T05:56:58
+  doc2query              2,384,965 bytes  modified 2026-08-19T06:38:15
+  dense                  6,082,688 bytes  modified 2026-08-19T05:57:37
+
+133 questions per weight, 3 weights
+
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights: 100%|##########| 393/393 [00:00<00:00, 3891.72it/s]
+w      main nDCG                 heldout nDCG              faq s@5   s      ms/q   cache
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|##########| 391/391 [00:00<00:00, 4406.98it/s]
+0.0    0.6885                   0.6143                   15/20      162    1220   0%
+0.21   0.6955 [-0.059,+0.071]  0.8269 [+0.089,+0.340]* 20/20      224    1682   0%
+0.29   0.7061 [-0.053,+0.088]  0.8440 [+0.111,+0.354]* 20/20      14     106    31%
+
+* = 95% CI excludes zero against w=0.0
+cross-encoder: 11,970 pair scores requested, 3,708 served from cache, 373s spent scoring
+wrote C:\Users\manue\Documents\Codex\2026-08-16\we\NewbieDuo\reports\doc2query_weight_sweep.json

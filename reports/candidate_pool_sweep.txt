@@ -1,0 +1,21 @@
+run provenance
+  run_at                 2026-08-19T22:04:25
+  corpus_chunks          1485
+  dense_vectors          [1485, 1024]
+  numeric_band_prior     0.4
+  fusion_weights         {'tfidf': 0.21, 'dense': 0.29, 'meta': 0.21, 'doc2query': 0.29}
+  corpus                 3,398,801 bytes  modified 2026-08-19T05:56:57
+  tfidf                  4,367,563 bytes  modified 2026-08-19T05:56:58
+  doc2query              2,384,965 bytes  modified 2026-08-19T06:38:15
+  dense                  6,082,688 bytes  modified 2026-08-19T05:57:37
+
+133 questions per depth, 2 depths
+
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights: 100%|##########| 393/393 [00:00<00:00, 3983.35it/s]
+pool   main nDCG                 heldout nDCG              faq s@5   s      ms/q   cache
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|##########| 391/391 [00:00<00:00, 4116.99it/s]
+120    0.7061                   0.8440                   20/20     294    2207   0%
+240    0.7099 [-0.002,+0.012]  0.8426 [-0.025,+0.023]  20/20     13     99     49%
+
+* = 95% CI excludes zero against pool 120
+wrote C:\Users\manue\Documents\Codex\2026-08-16\we\NewbieDuo\reports\candidate_pool_sweep.json

@@ -1,0 +1,6 @@
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 6352.57it/s]
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 6437.25it/s]
+False: MAIN nDCG 0.7152 R@10 0.8088 R@20 0.8483 miss 2 | HELD 0.7047 clin 0.5492 echo 0.9068
+True: MAIN nDCG 0.7080 R@10 0.8051 R@20 0.8184 miss 5 | HELD 0.8407 clin 0.7625 echo 0.9423
+MAIN on-vs-off: -0.0072 CI [-0.0621, +0.0459] within noise
+HELD on-vs-off: +0.1360 CI [+0.0538, +0.2299] SIGNIFICANT

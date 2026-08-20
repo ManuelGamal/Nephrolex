@@ -1,0 +1,58 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Licensed guideline content -- MUST NOT be committed.
+#
+# KDIGO 2024 and NICE NG203 are copyrighted clinical guidelines. This repository
+# holds the engine that reads them; it does not redistribute them. Everything
+# below either is the guideline text or is derived closely enough from it to be
+# the same thing in another shape: parsed pages, chunk files, the record store,
+# the generated question expansions, and any index built from them.
+#
+# An operator supplies their own licensed copies in data/raw/ and builds the
+# corpus locally -- see README.md, "Build the corpus".
+# ─────────────────────────────────────────────────────────────────────────────
+data/raw/
+data/parsed/
+data/docling/
+data/docling_chunks/
+data/chunks/
+data/chunks_v2/
+data/chunks_v2.bak/
+data/indexes/
+data/doc2query.jsonl
+data/hyde_cache.jsonl
+
+# Model weights and caches: large, and reproducible from the model names in code.
+.cache/
+models/
+*.safetensors
+*.bin
+*.onnx
+
+# Secrets. API keys are read from the environment, never from a file in the tree.
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Working files
+scratch/
+*.log
+reports/docling_stdout.log
+reports/docling_stderr.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

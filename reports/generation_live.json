@@ -1,0 +1,166 @@
+{
+  "counts": {
+    "verified": 14
+  },
+  "queries": 14,
+  "latency_ms": {
+    "mean": 13111,
+    "p50": 17150
+  },
+  "results": [
+    {
+      "id": "def_nice_direct",
+      "query": "How does NICE define chronic kidney disease?",
+      "answer_status": "answered",
+      "generation_status": "verified",
+      "latency_ms": 14168,
+      "problems": [],
+      "error": null,
+      "text": "NICE defines chronic kidney disease (CKD) as abnormalities of kidney function or structure present for more than 3 months, with implications for health [1]. This definition includes all individuals with markers of kidney damage, as well as those with a glomerularfiltration rate (GFR) of less than 60 ml/min/1.73 m2 on at least 2 occasions separated by a period of at least 90 days, with or without markers of kidney damage [1]. Additionally, CKD describes abnormal kidney function or structure [4].",
+      "rejected_text": null
+    },
+    {
+      "id": "def_paraphrase",
+      "query": "What has to be true for someone to actually count as having long-term kidney disease rather than just one bad blood test?",
+      "answer_status": "answered",
+      "generation_status": "verified",
+      "latency_ms": 19200,
+      "problems": [],
+      "error": null,
+      "text": "Do not assume chronicity based upon a single abnormal level for eGFR and ACR, as the finding could be the result of a recent acute kidney injury (AKI) event or acute kidney disease (AKD) [1].",
+      "rejected_text": null
+    },
+    {
+      "id": "kdigo_definition",
+      "query": "What is KDIGO's own formal definition of CKD?",
+      "answer_status": "answered",
+      "generation_status": "verified",
+      "latency_ms": 17316,
+      "problems": [],
+      "error": null,
+      "text": "Chronic kidney disease (CKD) is defined as abnormalities of kidney structure or function, present for a minimum of 3 months, with implications for health [1][2].",
+      "rejected_text": null
+    },
+    {
+      "id": "gfr_g3b",
+      "query": "What eGFR range corresponds to GFR category G3b?",
+      "answer_status": "answered",
+      "generation_status": "verified",
+      "latency_ms": 17917,
+      "problems": [],
+      "error": null,
+      "text": "The eGFR range corresponding to GFR category G3b is 30 - 44 [1][2][3][4] or 30 to 44 ml/min/1.73 m2 [5].",
+      "rejected_text": null
+    },
+    {
+      "id": "gfr_g4",
+      "query": "Which GFR category is described as severely decreased?",
+      "answer_status": "answered",
+      "generation_status": "verified",
+      "latency_ms": 2811,
+      "problems": [],
+      "error": null,
+      "text": "GFR category G4 is described as severely decreased with a GFR of 15 - 29 ml/min per 1.73 m2 [1]. GFR category G4 is also described as severely decreased with a range of 15-29 [2]. GFR category G4 with a GFR of 15-29 ml/min/1.73 m2 is described as severely decreased [3].",
+      "rejected_text": null
+    },
+    {
+      "id": "gfr_g5",
+      "query": "At what eGFR is a person classified as having kidney failure?",
+      "answer_status": "answered",
+      "generation_status": "verified",
+      "latency_ms": 16985,
+      "problems": [],
+      "error": null,
+      "text": "A person is classified as having kidney failure at an eGFR of less than 15 ml/min/1.73 m2 (referred to as GFR category G5) [1][2]. Additionally, kidney failure can be defined in clinical trials as a composite including a sustained eGFR < 15 ml/min per 1.73 m2 (or eGFR < 10 ml/min per 1.73 m2 in EMPA-KIDNEY), maintenance dialysis, or kidney transplantation [3].",
+      "rejected_text": null
+    },
+    {
+      "id": "staging_paraphrase",
+      "query": "My patient's filtration rate came back at 38. Which band does that put them in?",
+      "answer_status": "answered",
+      "generation_status": "verified",
+      "latency_ms": 18064,
+      "problems": [],
+      "error": null,
+      "text": "A filtration rate of 38 puts the patient in GFR category G3b: moderate to severe reduction (30 to 44 ml/min/1.73 m2) [3]. Alternatively, population databases list a GFR category of 30 - 44 (ml/min per 1.73 m2) [1].",
+      "rejected_text": null
+    },
+    {
+      "id": "age_management",
+      "query": "Should CKD management be decided on the basis of age alone?",
+      "answer_status": "answered",
+      "generation_status": "verified",
+      "latency_ms": 2885,
+      "problems": [],
+      "error": null,
+      "text": "CKD management should not be determined solely by age [1]. Similarly, age alone must not be used to determine the treatment of anaemia of CKD [2]. Additionally, blood pressure targets and the use of agents are encouraged to be individualized based on age alongside coexistent CVD and other comorbidities, risk of CKD progression, and treatment tolerance [4].",
+      "rejected_text": null
+    },
+    {
+      "id": "who_to_test",
+      "query": "Which adults should be offered testing for CKD?",
+      "answer_status": "answered",
+      "generation_status": "verified",
+      "latency_ms": 2679,
+      "problems": [],
+      "error": null,
+      "text": "Adults with any of the following risk factors should be offered testing for CKD using eGFRcreatinine and ACR: diabetes, hypertension, previous episode of acute kidney injury, cardiovascular disease (ischaemic heart disease, chronic heart failure, peripheral vascular disease, or cerebral vascular disease), structural renal tract disease, recurrent renal calculi, prostatic hypertrophy, multisystem diseases with potential kidney involvement (e.g., systemic lupus erythematosus), gout, family history of end-stage renal disease (GFR category G5) or hereditary kidney disease, and incidental detection of haematuria or proteinuria [1]. Age, gender, ethnicity, and obesity in the absence of metabolic syndrome, diabetes, or hypertension must not be used as risk factors indicating testing for CKD in adults [6].",
+      "rejected_text": null
+    },
+    {
+      "id": "acr_clinically_important",
+      "query": "What ACR level counts as clinically important proteinuria?",
+      "answer_status": "answered",
+      "generation_status": "verified",
+      "latency_ms": 2942,
+      "problems": [],
+      "error": null,
+      "text": "A confirmed ACR of 3 mg/mmol or more is regarded as clinically important proteinuria [1].",
+      "rejected_text": null
+    },
+    {
+      "id": "egfr_confirm",
+      "query": "Does a single low eGFR result need to be confirmed before diagnosing CKD?",
+      "answer_status": "answered",
+      "generation_status": "verified",
+      "latency_ms": 15621,
+      "problems": [],
+      "error": null,
+      "text": "Following incidental detection of a low estimated GFR (eGFR), repeat tests should be performed to confirm the presence of CKD [2]. Do not assume chronicity based upon a single abnormal level for eGFR, as the finding could be the result of a recent acute kidney injury (AKI) event or acute kidney disease (AKD) [1]. Any unexpected results should be verified before diagnosing a person as having CKD [4].",
+      "rejected_text": null
+    },
+    {
+      "id": "egfr_caution",
+      "query": "How should eGFR values of 60 ml/min/1.73 m2 or more be interpreted?",
+      "answer_status": "answered",
+      "generation_status": "verified",
+      "latency_ms": 17681,
+      "problems": [],
+      "error": null,
+      "text": "Interpret eGFR values of 60 ml/min/1.73 m2 or more with caution, bearing in mind that estimates of GFR become less accurate as the true GFR increases [2]. If eGFR is 60 ml/min/1.73 m2 or more in adults, children, and young people with anaemia, investigate other causes of anaemia because it is unlikely to be caused by CKD [1]. Additionally, measure proteinuria with urine ACR in adults with an eGFR of 60 ml/min/1.73 m2 or more if there is a strong suspicion of CKD [6].",
+      "rejected_text": null
+    },
+    {
+      "id": "cystatin_when",
+      "query": "When should cystatin C-based eGFR be used instead of creatinine alone?",
+      "answer_status": "answered",
+      "generation_status": "verified",
+      "latency_ms": 17898,
+      "problems": [],
+      "error": null,
+      "text": "In adults at risk for CKD, the GFR category should be estimated using a combination of creatinine and cystatin C if cystatin C is available [1]. Use eGFRcr-cys in clinical situations where eGFRcr is less accurate and GFR affects clinical decision-making [5]. Equations combining creatinine and cystatin C should be used where more accuracy is required for drug-related decision-making, drug toxicity, or clinical situations where eGFRcr estimates may be unreliable [4]. Consider using cystatin C-based estimated glomerular filtration rate in some specific circumstances [3].",
+      "rejected_text": null
+    },
+    {
+      "id": "gfr_initial_assessment",
+      "query": "What should be used for the initial assessment of GFR in adults?",
+      "answer_status": "answered",
+      "generation_status": "verified",
+      "latency_ms": 17393,
+      "problems": [],
+      "error": null,
+      "text": "For the initial assessment of GFR, use serum creatinine and an estimating equation [1]. Specifically, use creatinine-based estimated glomerular filtration rate (eGFRcr) for adults at risk for CKD [3]. Creatinine (eGFRcr) is the most used method and serves as the initial test for the evaluation of GFR in most cases, requiring a standardized assay to decrease between-center analytical variation [2].",
+      "rejected_text": null
+    }
+  ]
+}

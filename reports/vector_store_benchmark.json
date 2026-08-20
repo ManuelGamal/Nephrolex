@@ -1,0 +1,10 @@
+{
+  "vectors": 1760,
+  "dims": 1024,
+  "top_k": 20,
+  "flat_median_ms": 0.377,
+  "qdrant_median_ms": 17.005,
+  "speedup_of_flat": 45.1,
+  "result_agreement": 1.0,
+  "qdrant_mode": "server (Rust HNSW)"
+}

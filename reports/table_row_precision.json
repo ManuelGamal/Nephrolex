@@ -1,0 +1,117 @@
+{
+  "top_k": 10,
+  "right": 19,
+  "wrong": 1,
+  "table_absent": 0,
+  "correct_row_precision": 0.95,
+  "failures": [
+    {
+      "set": "main",
+      "id": "stag_g2_paraphrase",
+      "returned": "kdigo_2024_ckd_p11_table_row_table_3",
+      "expected": "kdigo_2024_ckd_p11_table_row_table_5"
+    }
+  ],
+  "cases": [
+    {
+      "set": "main",
+      "id": "gfr_g3b",
+      "verdict": "right"
+    },
+    {
+      "set": "main",
+      "id": "gfr_g4",
+      "verdict": "right"
+    },
+    {
+      "set": "main",
+      "id": "gfr_g5",
+      "verdict": "right"
+    },
+    {
+      "set": "main",
+      "id": "staging_paraphrase",
+      "verdict": "right"
+    },
+    {
+      "set": "main",
+      "id": "stag_g1_direct",
+      "verdict": "right"
+    },
+    {
+      "set": "main",
+      "id": "stag_g2_direct",
+      "verdict": "right"
+    },
+    {
+      "set": "main",
+      "id": "stag_g2_paraphrase",
+      "verdict": "wrong"
+    },
+    {
+      "set": "main",
+      "id": "stag_g1_paraphrase",
+      "verdict": "right"
+    },
+    {
+      "set": "heldout",
+      "id": "ho_10_medication_safety",
+      "verdict": "right"
+    },
+    {
+      "set": "heldout",
+      "id": "ho_11_referral",
+      "verdict": "right"
+    },
+    {
+      "set": "heldout",
+      "id": "ho_12_staging",
+      "verdict": "right"
+    },
+    {
+      "set": "heldout",
+      "id": "ho_17_risk",
+      "verdict": "right"
+    },
+    {
+      "set": "heldout",
+      "id": "ho_26_diet",
+      "verdict": "right"
+    },
+    {
+      "set": "heldout",
+      "id": "ho_27_testing",
+      "verdict": "right"
+    },
+    {
+      "set": "heldout",
+      "id": "ho_37_diet",
+      "verdict": "right"
+    },
+    {
+      "set": "heldout",
+      "id": "ho_38_anaemia",
+      "verdict": "right"
+    },
+    {
+      "set": "heldout",
+      "id": "ho_41_testing",
+      "verdict": "right"
+    },
+    {
+      "set": "faq",
+      "id": "faq_05_staging_g3b",
+      "verdict": "right"
+    },
+    {
+      "set": "faq",
+      "id": "faq_06_kidney_failure",
+      "verdict": "right"
+    },
+    {
+      "set": "faq",
+      "id": "faq_16_statin",
+      "verdict": "right"
+    }
+  ]
+}

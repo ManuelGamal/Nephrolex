@@ -1,0 +1,194 @@
+[
+  {
+    "id": "kdigo_2024_ckd_p98_practice_point_practice_point_3_6_4_599",
+    "chunk_type": "practice_point",
+    "page_start": 98,
+    "text": "Practice Point 3.6.4: Continue ACEi or ARB therapy unless serum creatinine rises by more than 30% within 4 weeks following initiation of treatment or an increase in dose."
+  },
+  {
+    "id": "kdigo_2024_ckd_p81_practice_point_practice_point_2_1_2_473",
+    "chunk_type": "practice_point",
+    "page_start": 81,
+    "text": "Practice Point 2.1.2: Assess albuminuria and GFR more often for individuals at higher risk of CKD progression when measurement will impact therapeutic decisions."
+  },
+  {
+    "id": "kdigo_2024_ckd_p52_practice_point_practice_point_5_3_1_2_1_289",
+    "chunk_type": "practice_point",
+    "page_start": 52,
+    "text": "Practice Point 5.3.1.2.1: Recognize that young people under 25 years of age with CKD are a unique population at high risk for adverse outcomes at least in part due to physiologic incomplete brain maturation."
+  },
+  {
+    "id": "kdigo_2024_ckd_p128_section_passage_key_information_values_and_preferences_high_value_on_the_u_785",
+    "chunk_type": "section_passage",
+    "page_start": 128,
+    "text": "Key information: Values and preferences. High value on the use of NOACs included the conclusion that the simple dosing and lack of INR monitoring compared with vitamin K antagonists would lead to a substantial reduction in burden for those with an indication for anticoagulation and their health services. There is also good evidence for improved efficacy and a relatively similar safety profile. Most fully informed people with CKD would be expected to select a NOAC over a vitamin K antagonist. Resource use and costs. NOACs have been shown to be cost-effective for stroke prevention in atrialfibrillation and may even be cost-saving in people with CKD. Vitamin K antagonist use may be associated with higher costs and achieve fewer quality-adjusted life-years compared with NOACs. 723 Considerations for implementation. A decision not to anticoagulate for thromboembolic prophylaxis due to low risk would ideally be re-evaluated at each consultation and at least every 6 months. When using antithrombotic therapy in people with CKD, it is prudent to treat modifiable risk factors for bleeding (e.g., alcohol intake) and use gastroprophylaxis with a PPI, particularly when combined with antiplatelet therapy."
+  },
+  {
+    "id": "kdigo_2024_ckd_p85_section_passage_key_information_values_and_preferences_the_work_group_judg_502",
+    "chunk_type": "section_passage",
+    "page_start": 85,
+    "text": "Key information: Values and preferences. The Work Group judged that the accurate prediction of kidney failure was of importance to people with CKD, their families, and healthcare providers, and that most people with CKD would choose to receive prognostic information about their individual risk of kidney failure as part of routine care. For a global guideline, the Work Group focused on prediction equations that were externally validated, had a low risk of bias, and included variables that were routinely available in most healthcare settings. Resource use and costs. Most externally validated risk equations for predicting kidney failure use routinely collected data including laboratory variables such as eGFR, albuminuria, and serum albumin, phosphate, calcium, or hemoglobin, or information on demographics and comorbid conditions that can be easily obtained. As such, these models can be easily implemented at low cost to health systems. Only 1 externally validated model (Z6 Score) used cystatin C, and its usability in global health will depend on the potential increased routine availability of cystatin C in laboratories worldwide."
+  },
+  {
+    "id": "kdigo_2024_ckd_p68_practice_point_practice_point_1_2_2_7_385",
+    "chunk_type": "practice_point",
+    "page_start": 68,
+    "text": "Practice Point 1.2.2.7: Understand the implications of differences between eGFRcr and eGFRcys, as these may be informative, in both direction and magnitude of those differences."
+  },
+  {
+    "id": "kdigo_2024_ckd_p84_recommendation_atom_recommendation_2_2_1_494",
+    "chunk_type": "recommendation_atom",
+    "page_start": 84,
+    "text": "Recommendation 2.2.1: In people with CKD G3 -G5, we recommend using an externally validated risk equation to estimate the absolute risk of kidney failure (1A) ."
+  },
+  {
+    "id": "kdigo_2024_ckd_p146_table_row_table_39_3",
+    "chunk_type": "table_row",
+    "page_start": 146,
+    "text": "Table 39| List of validated assessment tools for malnutrition (Validated malnutrition assessment tool / Attributes). Row 3: Validated malnutrition assessment tool: Mini Nutrition Assessment 878; Attributes: Includes assessment of dietary intake, mobility, neuropsychology, and some anthropometric measurements, including weight and calf circumference. A score of 12 - 14 points indicates normal nutrition status, 8 - 11 indicates at risk for malnutrition, and 0 - 7 points indicates malnutrition."
+  },
+  {
+    "id": "kdigo_2024_ckd_p64_table_row_table_8_5",
+    "chunk_type": "table_row",
+    "page_start": 64,
+    "text": "Table 8| Indications for use of cystatin C (Domain / Specific clinical condition / Cause of decreased accuracy / Comments on GFR evaluation). Row 5: Specific clinical condition: Class III obesity a,b; Cause of decreased accuracy: Non-GFR determinants of SCr and SCys; Comments on GFR evaluation: eGFRcr-cys demonstrated to be most accurate."
+  },
+  {
+    "id": "kdigo_2024_ckd_p92_practice_point_practice_point_3_2_2_2_538",
+    "chunk_type": "practice_point",
+    "page_start": 92,
+    "text": "Practice Point 3.2.2.2: People with CKD should be advised to avoid sedentary behavior."
+  },
+  {
+    "id": "kdigo_2024_ckd_p44_recommendation_atom_recommendation_3_7_3_208",
+    "chunk_type": "recommendation_atom",
+    "page_start": 44,
+    "text": "Recommendation 3.7.3: We suggest treating adults with eGFR 20 to 45 ml/min per 1.73 m2 with urine ACR < 200 mg/g ( < 20 mg/mmol) with an SGLT2i (2B) ."
+  },
+  {
+    "id": "nice_ng203_ckd_p54_section_passage_as_part_of_the_2021_update_the_guideline_committee_made_18_226",
+    "chunk_type": "section_passage",
+    "page_start": 54,
+    "text": "As part of the 2021 update, the guideline committee made 18 recommendations for research on chronic kidney disease (CKD). They prioritised 5 key recommendations for research. They also retained some recommendations for research from previous guidelines."
+  },
+  {
+    "id": "kdigo_2024_ckd_p119_recommendation_atom_recommendation_3_15_1_3_734",
+    "chunk_type": "recommendation_atom",
+    "page_start": 119,
+    "text": "Recommendation 3.15.1.3: In adults aged 18 -49 years with CKD but not treated with chronic dialysis or kidney transplantation, we suggest statin treatment in people with one or more of the following (2A) : \u000f known coronary disease (myocardial infarction or coronary revascularization), \u000f diabetes mellitus, \u000f estimated 10-year incidence of coronary death or nonfatal myocardial infarction > 10%. \u000f prior ischemic stroke, or"
+  },
+  {
+    "id": "kdigo_2024_ckd_p71_recommendation_atom_recommendation_1_2_4_1_409",
+    "chunk_type": "recommendation_atom",
+    "page_start": 71,
+    "text": "Recommendation 1.2.4.1: We recommend using a validated GFR estimating equation to derive GFR from serumfiltration markers (eGFR) rather than relying on the serumfiltration markers alone (1D) ."
+  },
+  {
+    "id": "kdigo_2024_ckd_p99_recommendation_atom_recommendation_3_7_2_610",
+    "chunk_type": "recommendation_atom",
+    "page_start": 99,
+    "text": "Recommendation 3.7.2: We recommend treating adults with CKD with an SGLT2i for the following (1A) : \u000f eGFR >= 20 ml/min per 1.73 m2 with urine ACR >= 200 mg/g ( >= 20 mg/mmol), or \u000f heart failure, irrespective of level of albuminuria."
+  },
+  {
+    "id": "kdigo_2024_ckd_p105_figure_body_figure_26_16",
+    "chunk_type": "figure_body",
+    "page_start": 105,
+    "text": "Figure 26: K + ≤4.8 mmol/l K + 4.9-5.5 mmol/l K + >5.5 mmol/l Initiatefinerenone Continuefinerenone 10 mg or 20 mg Holdfinerenone 10 mg daily if eGFR 25-59 ml/min/1.73 m2 Monitor K + every 4 months 20 mg daily if eGFR ≥60 ml/min/1.73 m2 Consider adjustments to diet or concomitant medications to mitigate hyperkalemia Recheck K + Monitor K + at 1 month after initiation and then every 4 months Consider reinitiation if/when K + ≤5.0 mmol/l Increase dose to 20 mg daily, if on 10 mg daily Restart 10 mg daily if previously held for hyperkalemia and K + now ≤5.0 mmol/l"
+  },
+  {
+    "id": "kdigo_2024_ckd_p118_section_passage_rationale_there_is_insufficient_evidence_to_recommend_the_u_726",
+    "chunk_type": "section_passage",
+    "page_start": 118,
+    "text": "Rationale: There is insufficient evidence to recommend the use of uric acid -lowering therapies in asymptomatic hyperuricemia for the specific purpose of delaying CKD progression. We make the recommendation not giving uric acid -lowering therapy in asymptomatic hyperuricemia for slowing of kidney disease based on the current evidence that suggests unclear benefits. We judge that it is best practice not to expose people to medications that provide little benefit."
+  },
+  {
+    "id": "kdigo_2024_ckd_p115_recommendation_atom_recommendation_3_14_1_704",
+    "chunk_type": "recommendation_atom",
+    "page_start": 115,
+    "text": "Recommendation 3.14.1: We recommend people with CKD and symptomatic hyperuricemia should be offered uric acid -lowering intervention (1C) ."
+  },
+  {
+    "id": "nice_ng203_ckd_p14_recommendation_atom_1_2_3_43",
+    "chunk_type": "recommendation_atom",
+    "page_start": 14,
+    "text": "1.2.3 Agree a plan to establish the cause of CKD during an informed discussion with the person with CKD, particularly if the cause may be treatable (for example, urinary tract obstruction, medicines that can adversely affect kidney function or glomerular disease). [2014]"
+  },
+  {
+    "id": "kdigo_2024_ckd_p97_table_row_table_22_5",
+    "chunk_type": "table_row",
+    "page_start": 97,
+    "text": "Table 22| Age-based sodium intake recommendations 495 (Age / Recommended adequate sodium intake (g/d)). Row 5: Age: 9 - 13 yr; Recommended adequate sodium intake (g/d): 1.2"
+  },
+  {
+    "id": "nice_ng203_ckd_p39_table_row_table_3_1",
+    "chunk_type": "table_row",
+    "page_start": 39,
+    "text": "Table 3 Example of high-dose intravenous iron regimen for adults (Iron status / Intravenous iron sucrose (high-dose regimen)). Row 1: Iron status: First month; Intravenous iron sucrose (high-dose regimen): 600 mg divided equally over 3 haemodialysis sessions"
+  },
+  {
+    "id": "nice_ng203_ckd_p50_recommendation_atom_1_12_5_211",
+    "chunk_type": "recommendation_atom",
+    "page_start": 50,
+    "text": "1.12.5 Offer colecalciferol or ergocalciferol to treat vitamin D deficiency in people with CKD and vitamin D deficiency. [2014]"
+  },
+  {
+    "id": "kdigo_2024_ckd_p136_section_passage_sick_day_rules_have_been_endorsed_as_useful_guidance_to_peop_829",
+    "chunk_type": "section_passage",
+    "page_start": 136,
+    "text": "Sick day rules have been endorsed as useful guidance to people with CKD in the setting of acute, dehydrating illness. Specifically, patients receive guidance to temporarily stop the following medications: sulfonylureas, ACEi, diuretics/direct renin inhibitors, metformin, ARBs, NSAIDs, and SGLT2i (often described with the acronym SADMANS). 780 However, there is a paucity of evidence to support sick day rules to prevent AKI or other clinically relevant outcomes. 781,782 Instead, data suggest potential harm if people make mistakes in recognizing dehydrating illness or about which drugs to stop and when to restart. 783 Figure 47 shows the steps that must occur correctly for sick day rules to be implemented appropriately. The most reported problem is failure to restart the medication. 784 The plan to restart medications should be detailed in the medical records and clearly communicated to the patients. Patients may additionally benefit from medication review within a month to ensure appropriate medications are restarted."
+  },
+  {
+    "id": "kdigo_2024_ckd_p58_section_passage_1_1_4_evaluation_of_cause_education_on_the_value_of_establi_334",
+    "chunk_type": "section_passage",
+    "page_start": 58,
+    "text": "1.1.4 Evaluation of cause: Education on the value of establishing a diagnosis of CKD is critical. This can be done through local, national, and international kidney societies and within healthcare training programs (Chapter 5). Additional resources may be required to support wider scale implementation of diagnostic tests, especially genetic testing, availability of biopsies, and the support required for implementation. Identification of cause is often achieved by standard clinical methods (i.e., history and examination), knowledge of the causes of CKD and their manifestations (i.e., level of GFR and specific marker of kidney damage such as hematuria, urine albumin, or cysts), together with specialized investigations (Figure 8). Not all evaluations of cause are required in all people. Information from the clinical context and initial tests may lead to further evaluations (Table 6), which are likely to be conducted as part of specialized kidney care services and dependent on resources (Chapter 5)."
+  },
+  {
+    "id": "kdigo_2024_ckd_p65_table_row_table_9_3",
+    "chunk_type": "table_row",
+    "page_start": 65,
+    "text": "Table 9| Comparison of estimated GFR and measured GFR (Estimated GFR by SCr and/or cystatin C / Measured GFR). Row 3: Estimated GFR by SCr and/or cystatin C: Not sufficiently accurate and precise for all clinical situations; Measured GFR: Accurate for GFR in all situations and across the GFR range. Requires individualized protocols"
+  },
+  {
+    "id": "kdigo_2024_ckd_p134_practice_point_practice_point_4_2_5_819",
+    "chunk_type": "practice_point",
+    "page_start": 134,
+    "text": "Practice Point 4.2.5: Consider and adapt drug dosing in people where GFR, non-GFR determinants of thefiltration markers, or volume of distribution are not in a steady state."
+  },
+  {
+    "id": "kdigo_2024_ckd_p125_section_passage_rationale_the_totality_of_the_evidence_from_the_ckd_specifi_769",
+    "chunk_type": "section_passage",
+    "page_start": 125,
+    "text": "Rationale: The totality of the evidence from the CKD-specific trials is consistent with no net difference between an initial conservative approach using aggressive medical therapy versus an invasive strategy when treating stable stress-test confirmed ischemic heart disease. This is consistent with the large general population-based ISCHEMIA trial. 707a"
+  },
+  {
+    "id": "kdigo_2024_ckd_p98_recommendation_atom_recommendation_3_6_4_595",
+    "chunk_type": "recommendation_atom",
+    "page_start": 98,
+    "text": "Recommendation 3.6.4: We recommend avoiding any combination of ACEi, ARB, and direct renin inhibitor (DRI) therapy in people with CKD, with or without diabetes (1B) ."
+  },
+  {
+    "id": "nice_ng203_ckd_p63_section_passage_why_the_committee_made_the_recommendations_the_committee_ma_258",
+    "chunk_type": "section_passage",
+    "page_start": 63,
+    "text": "Why the committee made the recommendations: The committee made a recommendation for research to identify the optimal frequency of ACR monitoring in adults, children and young people with CKD. The committee discussed whether specific recommendations are needed for children and young people with CKD and decline in eGFR, but agreed that this population would be referred to specialist care."
+  },
+  {
+    "id": "kdigo_2024_ckd_p39_practice_point_practice_point_1_3_1_3_140",
+    "chunk_type": "practice_point",
+    "page_start": 39,
+    "text": "Practice Point 1.3.1.3: Understand factors that may affect interpretation of measurements of urine albumin and urine creatinine and order confirmatory tests as indicated (Table 16)."
+  },
+  {
+    "id": "kdigo_2024_ckd_p117_section_passage_key_information_the_ertreview_identified_25_studies_26_pub_722",
+    "chunk_type": "section_passage",
+    "page_start": 117,
+    "text": "Key information: The ERTreview identified 25 studies (26 publications) that compared a uric acid -lowering therapy with placebo, usual care, or another uric acid -lowering therapy among people with CKD and hyperuricemia. 150,612 -619,622,637 -652 Twenty-two studies (23 publications) 150,612 -619,622,637 -652 were new studies published since the Cochrane review or were not captured by the Cochrane 2017 review. 609 We did not include 9 studies from the Sampson et al. 609 review because they did not include a separate analysis among people with CKD or because the study was reported as a meeting abstract only. Among people with CKD and hyperuricemia, the effects of uric acid -lowering therapy compared with placebo or usual care were unclear in terms of progression of kidney failure (pooled RR: 0.92; 95% CI: 0.43 -1.98 for studies ranged in follow-up from 3 months to 7 years), cutaneous reactions and hypersensitivity (pooled RR: 1.00; 95% CI: 0.60 -1.65), and hepatotoxicity (pooled RR: 0.92; 95% CI: 0.37 -2.30). Lastly, within the various therapies among people with CKD and hyperuricemia, the effects of febuxostat compared with benzbromarone on cutaneous reactions and hypersensitivity were unclear (RR: 0.20; 95% CI: 0.01 -4.01)."
+  },
+  {
+    "id": "kdigo_2024_ckd_p113_figure_caption_figure_32_687",
+    "chunk_type": "figure_caption",
+    "page_start": 113,
+    "text": "Figure 32| Actions to manage hyperkalemia (potassium > 5.5 mmol/l) in chronic kidney disease. MRA, mineralocorticoid receptor antagonists; NSAID, nonsteroidal anti-inflammatory drug; RASi, renin-angiotensin system inhibitors."
+  }
+]

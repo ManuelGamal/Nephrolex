@@ -1,0 +1,184 @@
+{
+  "cache_coverage": [
+    67,
+    67
+  ],
+  "missing": [],
+  "baseline": {
+    "cases": 67,
+    "ndcg_at_10": 0.7143,
+    "recall_at_10": 0.7968,
+    "recall_at_20": 0.8296,
+    "mrr_at_10": 0.7304,
+    "p_at_5": 0.2209,
+    "total_miss": 5
+  },
+  "runs": [
+    {
+      "variant": "max",
+      "mode": "max",
+      "w_hyde": 0.0,
+      "overall": {
+        "cases": 67,
+        "ndcg_at_10": 0.7213,
+        "recall_at_10": 0.8048,
+        "recall_at_20": 0.8298,
+        "mrr_at_10": 0.7334,
+        "p_at_5": 0.2299,
+        "total_miss": 5
+      },
+      "delta": 0.007000000000000006,
+      "ci": [
+        -0.013386567164179106,
+        0.026782089552238805
+      ],
+      "verdict": "within noise",
+      "rescued": [
+        "nephrotoxic_paraphrase"
+      ],
+      "newly_broken": [
+        "gfr_g5"
+      ],
+      "by_kind": {
+        "paraphrase": {
+          "ndcg_at_10": 0.4306,
+          "delta": 0.026599999999999957,
+          "ci": [
+            -0.002453333333333337,
+            0.06133333333333335
+          ],
+          "cases": 15
+        },
+        "direct": {
+          "ndcg_at_10": 0.8374,
+          "delta": -0.0030999999999999917,
+          "ci": [
+            -0.014466666666666664,
+            0.005288095238095236
+          ],
+          "cases": 42
+        },
+        "multi_doc": {
+          "ndcg_at_10": 0.6695,
+          "delta": 0.020000000000000018,
+          "ci": [
+            -0.09385000000000002,
+            0.12923
+          ],
+          "cases": 10
+        }
+      }
+    },
+    {
+      "variant": "blend 0.5",
+      "mode": "blend",
+      "w_hyde": 0.5,
+      "overall": {
+        "cases": 67,
+        "ndcg_at_10": 0.7163,
+        "recall_at_10": 0.7989,
+        "recall_at_20": 0.8188,
+        "mrr_at_10": 0.7244,
+        "p_at_5": 0.2269,
+        "total_miss": 5
+      },
+      "delta": 0.0020000000000000018,
+      "ci": [
+        -0.01637313432835821,
+        0.020713432835820896
+      ],
+      "verdict": "within noise",
+      "rescued": [
+        "nephrotoxic_paraphrase"
+      ],
+      "newly_broken": [
+        "cystatin_when"
+      ],
+      "by_kind": {
+        "paraphrase": {
+          "ndcg_at_10": 0.4287,
+          "delta": 0.0247,
+          "ci": [
+            -0.00968666666666667,
+            0.06365333333333333
+          ],
+          "cases": 15
+        },
+        "direct": {
+          "ndcg_at_10": 0.8325,
+          "delta": -0.008000000000000007,
+          "ci": [
+            -0.02386190476190476,
+            0.0034714285714285732
+          ],
+          "cases": 42
+        },
+        "multi_doc": {
+          "ndcg_at_10": 0.6597,
+          "delta": 0.010199999999999987,
+          "ci": [
+            -0.07610000000000001,
+            0.10661000000000001
+          ],
+          "cases": 10
+        }
+      }
+    },
+    {
+      "variant": "blend 0.7",
+      "mode": "blend",
+      "w_hyde": 0.7,
+      "overall": {
+        "cases": 67,
+        "ndcg_at_10": 0.7219,
+        "recall_at_10": 0.8064,
+        "recall_at_20": 0.8284,
+        "mrr_at_10": 0.7339,
+        "p_at_5": 0.2358,
+        "total_miss": 4
+      },
+      "delta": 0.00759999999999994,
+      "ci": [
+        -0.012786567164179106,
+        0.028495522388059698
+      ],
+      "verdict": "within noise",
+      "rescued": [
+        "nephrotoxic_paraphrase",
+        "stag_g1_paraphrase"
+      ],
+      "newly_broken": [
+        "cystatin_when"
+      ],
+      "by_kind": {
+        "paraphrase": {
+          "ndcg_at_10": 0.4456,
+          "delta": 0.04159999999999997,
+          "ci": [
+            -0.0025666666666666763,
+            0.09497333333333333
+          ],
+          "cases": 15
+        },
+        "direct": {
+          "ndcg_at_10": 0.8378,
+          "delta": -0.0027000000000000357,
+          "ci": [
+            -0.013654761904761902,
+            0.005773809523809525
+          ],
+          "cases": 42
+        },
+        "multi_doc": {
+          "ndcg_at_10": 0.6498,
+          "delta": 0.000300000000000078,
+          "ci": [
+            -0.11320000000000001,
+            0.10690999999999999
+          ],
+          "cases": 10
+        }
+      }
+    }
+  ]
+}

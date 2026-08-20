@@ -1,0 +1,168 @@
+{
+  "checked": 1479,
+  "corpus_size": 1479,
+  "citation_accuracy": 0.9912,
+  "overlap_threshold": 0.6,
+  "median_overlap": 0.9697,
+  "by_status": {
+    "resolves": 1466,
+    "mismatch": 12,
+    "no_bbox": 1
+  },
+  "by_chunk_type": {
+    "section_passage": 0.9983,
+    "figure_caption": 1.0,
+    "practice_point": 1.0,
+    "recommendation_atom": 0.9955,
+    "figure_body": 1.0,
+    "table_row": 0.9601
+  },
+  "table_numbering": {
+    "checked": 320,
+    "not_found_on_page": 0,
+    "examples": []
+  },
+  "failures": [
+    {
+      "chunk_id": "kdigo_2024_ckd_p76_section_passage_1_3_1_guidance_for_physicians_and_other_healthcare_providers_436",
+      "citation": "KDIGO 2024, 1.3.1 Guidance for physicians and other healthcare providers, p.76",
+      "chunk_type": "section_passage",
+      "document_id": "kdigo_2024_ckd",
+      "pages": [
+        76
+      ],
+      "status": "mismatch",
+      "overlap": 0.5833
+    },
+    {
+      "chunk_id": "kdigo_2024_ckd_p69_table_row_table_12_1",
+      "citation": "KDIGO 2024, Table 12, p.69",
+      "chunk_type": "table_row",
+      "document_id": "kdigo_2024_ckd",
+      "pages": [
+        69
+      ],
+      "status": "mismatch",
+      "overlap": 0.3956
+    },
+    {
+      "chunk_id": "kdigo_2024_ckd_p75_table_row_table_15_2",
+      "citation": "KDIGO 2024, Table 15, p.75",
+      "chunk_type": "table_row",
+      "document_id": "kdigo_2024_ckd",
+      "pages": [
+        75
+      ],
+      "status": "mismatch",
+      "overlap": 0.5366
+    },
+    {
+      "chunk_id": "kdigo_2024_ckd_p75_table_row_table_15_3",
+      "citation": "KDIGO 2024, Table 15, p.75",
+      "chunk_type": "table_row",
+      "document_id": "kdigo_2024_ckd",
+      "pages": [
+        75
+      ],
+      "status": "mismatch",
+      "overlap": 0.5238
+    },
+    {
+      "chunk_id": "kdigo_2024_ckd_p111_table_row_table_26_3",
+      "citation": "KDIGO 2024, Table 26, p.111",
+      "chunk_type": "table_row",
+      "document_id": "kdigo_2024_ckd",
+      "pages": [
+        111
+      ],
+      "status": "mismatch",
+      "overlap": 0.5769
+    },
+    {
+      "chunk_id": "kdigo_2024_ckd_p111_table_row_table_26_6",
+      "citation": "KDIGO 2024, Table 26, p.111",
+      "chunk_type": "table_row",
+      "document_id": "kdigo_2024_ckd",
+      "pages": [
+        111
+      ],
+      "status": "mismatch",
+      "overlap": 0.5833
+    },
+    {
+      "chunk_id": "kdigo_2024_ckd_p137_table_row_table_32_1",
+      "citation": "KDIGO 2024, Table 32, p.137",
+      "chunk_type": "table_row",
+      "document_id": "kdigo_2024_ckd",
+      "pages": [
+        137
+      ],
+      "status": "mismatch",
+      "overlap": 0.4872
+    },
+    {
+      "chunk_id": "kdigo_2024_ckd_p137_table_row_table_32_2",
+      "citation": "KDIGO 2024, Table 32, p.137",
+      "chunk_type": "table_row",
+      "document_id": "kdigo_2024_ckd",
+      "pages": [
+        137
+      ],
+      "status": "mismatch",
+      "overlap": 0.4872
+    },
+    {
+      "chunk_id": "kdigo_2024_ckd_p137_table_row_table_32_3",
+      "citation": "KDIGO 2024, Table 32, p.137",
+      "chunk_type": "table_row",
+      "document_id": "kdigo_2024_ckd",
+      "pages": [
+        137
+      ],
+      "status": "mismatch",
+      "overlap": 0.5
+    },
+    {
+      "chunk_id": "kdigo_2024_ckd_p137_table_row_table_32_4",
+      "citation": "KDIGO 2024, Table 32, p.137",
+      "chunk_type": "table_row",
+      "document_id": "kdigo_2024_ckd",
+      "pages": [
+        137
+      ],
+      "status": "mismatch",
+      "overlap": 0.5122
+    },
+    {
+      "chunk_id": "kdigo_2024_ckd_p137_table_row_table_32_5",
+      "citation": "KDIGO 2024, Table 32, p.137",
+      "chunk_type": "table_row",
+      "document_id": "kdigo_2024_ckd",
+      "pages": [
+        137
+      ],
+      "status": "mismatch",
+      "overlap": 0.5
+    },
+    {
+      "chunk_id": "kdigo_2024_ckd_p137_table_row_table_32_6",
+      "citation": "KDIGO 2024, Table 32, p.137",
+      "chunk_type": "table_row",
+      "document_id": "kdigo_2024_ckd",
+      "pages": [
+        137
+      ],
+      "status": "mismatch",
+      "overlap": 0.5122
+    },
+    {
+      "chunk_id": "kdigo_2024_ckd_p43_recommendation_atom_recommendation_3_6_2_0",
+      "citation": "KDIGO 2024, Recommendation 3.6.2, p.43",
+      "chunk_type": "recommendation_atom",
+      "document_id": "kdigo_2024_ckd",
+      "pages": [],
+      "status": "no_bbox",
+      "overlap": 0.0
+    }
+  ]
+}

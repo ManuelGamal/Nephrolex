@@ -1,0 +1,648 @@
+<title>NewbieDuo Architecture</title>
+<style>
+  /* Committed to a single dark treatment, matching the system's own interface.
+     Every colour is painted explicitly so the page holds on any host ground. */
+  :root {
+    --ground: #0d1015;
+    --panel: #161a21;
+    --panel-2: #1b202a;
+    --line: #262b36;
+    --line-soft: #1f242e;
+    --ink: #e9ecf1;
+    --muted: #939cad;
+    --dim: #6b7484;
+    --signal: #4c9aff;
+    --kdigo: #a371f7;
+    --nice: #3fb950;
+    --reject: #e5484d;
+    --warn: #f0a020;
+
+    --mono: ui-monospace, "Cascadia Mono", Consolas, "SF Mono", Menlo, monospace;
+    --sans: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 56px 40px 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
+  }
+
+  /* ---------------------------------------------------------------- header */
+  .masthead { display: flex; flex-direction: column; gap: 18px; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(38px, 6vw, 62px);
+    line-height: 1.02;
+    letter-spacing: -.028em;
+    font-weight: 800;
+    text-wrap: balance;
+  }
+
+  .thesis {
+    margin: 0;
+    max-width: 62ch;
+    font-size: 17.5px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+  .thesis strong { color: var(--ink); font-weight: 600; }
+
+  .sources { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .tag {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: .04em;
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: 1px solid var(--line);
+    color: var(--dim);
+  }
+  .tag.kdigo { color: var(--kdigo); border-color: #4a3a6b; }
+  .tag.nice  { color: var(--nice);  border-color: #2c5136; }
+
+  /* --------------------------------------------------------------- section */
+  section { display: flex; flex-direction: column; gap: 20px; }
+
+  .rule {
+    display: flex; align-items: baseline; gap: 14px;
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+  }
+  .rule h2 {
+    margin: 0;
+    font-size: 13px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .rule .note {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--dim);
+    margin-left: auto;
+    letter-spacing: .03em;
+  }
+
+  /* ------------------------------------------------------------- pipeline */
+  .diagram { width: 100%; overflow-x: auto; }
+  .diagram svg { display: block; min-width: 940px; width: 100%; height: auto; }
+
+  .caption { margin: 0; max-width: 70ch; color: var(--muted); font-size: 14.5px; }
+  .caption strong { color: var(--ink); font-weight: 600; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 11.5px; color: var(--dim); }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .swatch { width: 18px; height: 2px; display: inline-block; }
+
+  /* --------------------------------------------------------------- metrics */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1px;
+    background: var(--line-soft);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .metric { background: var(--panel); padding: 20px 22px; display: flex; flex-direction: column; gap: 7px; }
+  .metric .k {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--dim);
+  }
+  .metric .v {
+    font-family: var(--mono); font-size: 30px; font-weight: 600;
+    font-variant-numeric: tabular-nums; letter-spacing: -.02em; color: var(--ink);
+  }
+  .metric .v.pos { color: var(--nice); }
+  .metric .s { font-size: 12.5px; color: var(--muted); line-height: 1.45; }
+
+  /* ----------------------------------------------------------- eval chain */
+  .chain { display: flex; flex-direction: column; gap: 1px; background: var(--line-soft);
+           border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .link {
+    background: var(--panel);
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1.5fr) minmax(0, 1.9fr) auto;
+    gap: 18px;
+    align-items: baseline;
+    padding: 14px 20px;
+  }
+  .link .i { font-family: var(--mono); font-size: 12px; color: var(--dim); }
+  .link .q { font-weight: 600; font-size: 14.5px; }
+  .link .t { color: var(--muted); font-size: 13px; font-family: var(--mono); }
+  .link .r {
+    font-family: var(--mono); font-size: 13.5px; font-variant-numeric: tabular-nums;
+    color: var(--nice); white-space: nowrap; font-weight: 600;
+  }
+  @media (max-width: 720px) {
+    .link { grid-template-columns: 24px 1fr; }
+    .link .t, .link .r { grid-column: 2; }
+  }
+
+  /* ------------------------------------------------------------- rejected */
+  .rejected { display: grid; grid-template-columns: repeat(auto-fit, minmax(238px, 1fr)); gap: 14px; }
+  .card {
+    border: 1px solid var(--line);
+    border-left: 2px solid var(--reject);
+    border-radius: 3px;
+    background: var(--panel);
+    padding: 16px 18px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .card h3 { margin: 0; font-size: 14.5px; font-weight: 650; letter-spacing: -.01em; }
+  .card .num {
+    font-family: var(--mono); font-size: 12.5px; font-variant-numeric: tabular-nums;
+    color: var(--reject);
+  }
+  .card p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  /* --------------------------------------------------------------- footer */
+  footer {
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    color: var(--dim);
+    font-size: 12.5px;
+    display: flex; flex-wrap: wrap; gap: 8px 28px;
+  }
+  footer code { font-family: var(--mono); color: var(--muted); }
+</style>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <div class="eyebrow">Clinical decision support &middot; retrieval-augmented guidelines</div>
+    <h1>NewbieDuo</h1>
+    <p class="thesis">
+      Question answering over two CKD guidelines where <strong>every claim resolves to a
+      bounding box on a page</strong>, and every component either earns its place in a
+      measurement or is deleted. Five techniques were built, measured, and rejected; one
+      cleared its confidence interval and shipped.
+    </p>
+    <div class="sources">
+      <span class="tag kdigo">KDIGO 2024</span>
+      <span class="tag nice">NICE NG203</span>
+      <span class="tag">1,485 evidence chunks</span>
+      <span class="tag">three answer keys &middot; 133 questions</span>
+    </div>
+  </header>
+
+  <section>
+    <div class="rule">
+      <h2>Architecture</h2>
+      <span class="note">fan-out at build time, fan-in at query time</span>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 1200 728" role="img" aria-label="Three lanes. Build time: two PDFs parse into 1,485 evidence chunks feeding three indexes - TF-IDF, MedEmbed dense, and a separate doc2query index of 4,208 generated clinician-voice questions. Query time: a question passes a safety gate and query expansion, then three retrievers each nominate their top 120 into a shared candidate pool, which is fused by weight. Answer: flowing right to left, a cross-encoder reranks the top 30 reading both the chunk and its generated questions, then selection, a second safety gate, the extractive answer, LLM phrasing, verification, and the shown answer, with a rejection loop from verification back to the extractive answer.">
+        <defs>
+          <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#4c9aff"></path>
+          </marker>
+          <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#e5484d"></path>
+          </marker>
+          <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#4a5262"></path>
+          </marker>
+        </defs>
+
+        <g font-family="ui-monospace, Consolas, monospace">
+
+          <!-- ===================== LANE A — BUILD TIME ===================== -->
+          <rect x="12" y="24" width="1176" height="204" rx="5" fill="#12161d" stroke="#1f242e"></rect>
+          <text x="30" y="47" font-size="10" letter-spacing="2" fill="#4a5262">A &middot; BUILD TIME &mdash; RUNS ONCE</text>
+
+          <rect x="24" y="64" width="132" height="44" rx="3" fill="#161a21" stroke="#4a3a6b"></rect>
+          <text x="36" y="83" font-family="system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#a371f7">KDIGO 2024</text>
+          <text x="36" y="99" font-size="10.5" fill="#939cad">two-column PDF</text>
+
+          <rect x="24" y="122" width="132" height="44" rx="3" fill="#161a21" stroke="#2c5136"></rect>
+          <text x="36" y="141" font-family="system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#3fb950">NICE NG203</text>
+          <text x="36" y="157" font-size="10.5" fill="#939cad">single column</text>
+
+          <rect x="186" y="64" width="152" height="102" rx="3" fill="#161a21" stroke="#262b36"></rect>
+          <text x="198" y="83" font-size="10" letter-spacing="1.5" fill="#6b7484">PARSE</text>
+          <text x="198" y="105" font-family="system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#e9ecf1">Docling layout</text>
+          <text x="198" y="125" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">reading order, bbox</text>
+          <text x="198" y="145" font-size="10.5" fill="#6b7484">figures rebuilt</text>
+
+          <rect x="368" y="54" width="214" height="122" rx="3" fill="#1b202a" stroke="#262b36"></rect>
+          <text x="380" y="73" font-size="10" letter-spacing="1.5" fill="#6b7484">1,485 EVIDENCE ATOMS</text>
+          <text x="380" y="94" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">section passages</text>
+          <text x="570" y="94" font-size="11" fill="#e9ecf1" text-anchor="end">581</text>
+          <text x="380" y="111" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">table rows</text>
+          <text x="570" y="111" font-size="11" fill="#e9ecf1" text-anchor="end">282</text>
+          <text x="380" y="128" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">practice points</text>
+          <text x="570" y="128" font-size="11" fill="#e9ecf1" text-anchor="end">275</text>
+          <text x="380" y="145" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">recommendations</text>
+          <text x="570" y="145" font-size="11" fill="#e9ecf1" text-anchor="end">220</text>
+          <text x="380" y="162" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">figures</text>
+          <text x="570" y="162" font-size="11" fill="#e9ecf1" text-anchor="end">127</text>
+
+          <rect x="612" y="58" width="176" height="50" rx="3" fill="#161a21" stroke="#262b36"></rect>
+          <text x="624" y="78" font-family="system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#e9ecf1">TF-IDF index</text>
+          <text x="624" y="96" font-size="10.5" fill="#939cad">1-2 gram lexical</text>
+
+          <rect x="612" y="122" width="176" height="54" rx="3" fill="#161a21" stroke="#2f5486"></rect>
+          <text x="624" y="142" font-family="system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#e9ecf1">MedEmbed dense</text>
+          <text x="624" y="160" font-size="10.5" fill="#939cad">1,485 x 1,024 dims</text>
+
+          <rect x="818" y="58" width="196" height="118" rx="3" fill="#161a21" stroke="#7a5417"></rect>
+          <text x="830" y="78" font-size="10" letter-spacing="1.5" fill="#f0a020">DOC2QUERY INDEX</text>
+          <text x="830" y="100" font-family="system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#e9ecf1">4,208 questions</text>
+          <text x="830" y="119" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">written in clinician</text>
+          <text x="830" y="135" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">voice, one LLM pass</text>
+          <text x="830" y="156" font-size="10.5" fill="#6b7484">kept separate: generated</text>
+          <text x="830" y="170" font-size="10.5" fill="#6b7484">text never reaches a quote</text>
+
+          <line x1="158" y1="84" x2="182" y2="98" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="158" y1="142" x2="182" y2="128" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="340" y1="115" x2="364" y2="115" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="584" y1="105" x2="608" y2="88" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="584" y1="125" x2="608" y2="144" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+          <path d="M584 150 C700 200 760 190 816 160" fill="none" stroke="#f0a020" stroke-width="1.2" marker-end="url(#a)"></path>
+
+          <!-- ===================== LANE B — QUERY TIME ===================== -->
+          <rect x="12" y="248" width="1176" height="204" rx="5" fill="#12161d" stroke="#1f242e"></rect>
+          <text x="30" y="271" font-size="10" letter-spacing="2" fill="#4a5262">B &middot; QUERY TIME &mdash; PER QUESTION</text>
+
+          <rect x="24" y="310" width="110" height="48" rx="3" fill="#161a21" stroke="#262b36"></rect>
+          <text x="36" y="331" font-family="system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#e9ecf1">question</text>
+          <text x="36" y="348" font-size="10.5" fill="#939cad">free text</text>
+
+          <rect x="162" y="296" width="150" height="76" rx="3" fill="#161a21" stroke="#7a5417"></rect>
+          <text x="174" y="315" font-size="10" letter-spacing="1.5" fill="#f0a020">SAFETY &middot; PRE</text>
+          <text x="174" y="336" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">scope, genre, domain</text>
+          <text x="174" y="356" font-size="10.5" fill="#f0a020">refuses in 0-1 ms</text>
+
+          <rect x="350" y="296" width="222" height="76" rx="3" fill="#161a21" stroke="#262b36"></rect>
+          <text x="362" y="315" font-size="10" letter-spacing="1.5" fill="#6b7484">QUERY EXPANSION</text>
+          <text x="362" y="336" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">domain synonyms</text>
+          <text x="362" y="356" font-size="10.5" fill="#6b7484">original 0.7 / expansion 0.3</text>
+
+          <rect x="612" y="294" width="176" height="36" rx="3" fill="#161a21" stroke="#262b36"></rect>
+          <text x="624" y="317" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">TF-IDF &rarr; top 120</text>
+
+          <rect x="612" y="330" width="176" height="30" rx="3" fill="#161a21" stroke="#2f5486"></rect>
+          <text x="624" y="350" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">dense &rarr; top 120</text>
+
+          <rect x="612" y="366" width="176" height="30" rx="3" fill="#161a21" stroke="#7a5417"></rect>
+          <text x="624" y="386" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">doc2query &rarr; top 120</text>
+
+          <rect x="818" y="294" width="150" height="80" rx="3" fill="#1b202a" stroke="#2f5486"></rect>
+          <text x="830" y="313" font-size="10" letter-spacing="1.5" fill="#4c9aff">UNION</text>
+          <text x="830" y="334" font-family="system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#e9ecf1">candidate pool</text>
+          <text x="830" y="353" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">deduplicated</text>
+          <text x="830" y="368" font-size="10.5" fill="#6b7484">the recall stage</text>
+
+          <rect x="998" y="294" width="176" height="80" rx="3" fill="#161a21" stroke="#262b36"></rect>
+          <text x="1010" y="313" font-size="10" letter-spacing="1.5" fill="#6b7484">CONVEX FUSION</text>
+          <text x="1010" y="330" font-size="11" fill="#4c9aff">dense 0.29 . doc2query 0.29</text>
+          <text x="1010" y="345" font-size="11" fill="#4c9aff">tf-idf 0.21 . meta 0.21</text>
+          <text x="1010" y="360" font-size="10" fill="#6b7484">sums to 1, asserted at import</text>
+          <text x="1010" y="373" font-size="10" fill="#6b7484">x chunk-type x numeric band</text>
+
+          <line x1="136" y1="334" x2="158" y2="334" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="314" y1="334" x2="346" y2="334" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="574" y1="326" x2="608" y2="312" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="574" y1="342" x2="608" y2="348" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="574" y1="352" x2="608" y2="380" stroke="#f0a020" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="790" y1="312" x2="814" y2="326" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="790" y1="345" x2="814" y2="340" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="790" y1="381" x2="814" y2="352" stroke="#f0a020" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="970" y1="334" x2="994" y2="334" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+
+          <!-- A feeds B: a short vertical drop, indexes sit directly above the
+               retrievers that consult them -->
+          <line x1="700" y1="180" x2="700" y2="290" stroke="#4a5262" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ag)"></line>
+          <text x="712" y="240" font-size="10.5" fill="#5a6270">loaded once, held in memory</text>
+
+          <!-- ===================== LANE C — ANSWER ===================== -->
+          <rect x="12" y="472" width="1176" height="228" rx="5" fill="#12161d" stroke="#1f242e"></rect>
+          <text x="30" y="495" font-size="10" letter-spacing="2" fill="#4a5262">C &middot; ANSWER &mdash; READS RIGHT TO LEFT</text>
+
+          <rect x="1032" y="520" width="150" height="84" rx="3" fill="#161a21" stroke="#2f5486"></rect>
+          <text x="1044" y="539" font-size="10" letter-spacing="1.5" fill="#4c9aff">RERANK</text>
+          <text x="1044" y="560" font-family="system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#e9ecf1">bge-reranker-v2-m3</text>
+          <text x="1044" y="578" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">cross-encoder, depth 30</text>
+          <text x="1044" y="594" font-size="10.5" fill="#f0a020">reads chunk + doc2query</text>
+
+          <rect x="864" y="520" width="150" height="84" rx="3" fill="#161a21" stroke="#262b36"></rect>
+          <text x="876" y="539" font-size="10" letter-spacing="1.5" fill="#6b7484">SELECT</text>
+          <text x="876" y="560" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">diversify by section</text>
+          <text x="876" y="578" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">resolve figure refs</text>
+
+          <rect x="696" y="520" width="150" height="84" rx="3" fill="#161a21" stroke="#7a5417"></rect>
+          <text x="708" y="539" font-size="10" letter-spacing="1.5" fill="#f0a020">SAFETY &middot; POST</text>
+          <text x="708" y="560" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">premise check</text>
+          <text x="708" y="578" font-size="10.5" fill="#f0a020">value not in corpus</text>
+
+          <rect x="528" y="520" width="150" height="84" rx="3" fill="#1b202a" stroke="#2c5136"></rect>
+          <text x="540" y="539" font-size="10" letter-spacing="1.5" fill="#3fb950">EXTRACTIVE</text>
+          <text x="540" y="560" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">verbatim quotes</text>
+          <text x="540" y="578" font-size="10.5" fill="#6b7484">citation + bbox</text>
+
+          <rect x="360" y="520" width="150" height="84" rx="3" fill="#161a21" stroke="#262b36"></rect>
+          <text x="372" y="539" font-size="10" letter-spacing="1.5" fill="#6b7484">PHRASING</text>
+          <text x="372" y="560" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">LLM, strict prompt</text>
+          <text x="372" y="578" font-size="10.5" fill="#6b7484">context not citable</text>
+
+          <rect x="192" y="520" width="150" height="84" rx="3" fill="#161a21" stroke="#2f5486"></rect>
+          <text x="204" y="539" font-size="10" letter-spacing="1.5" fill="#4c9aff">VERIFY</text>
+          <text x="204" y="560" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">every value must</text>
+          <text x="204" y="578" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">appear in citation</text>
+
+          <rect x="24" y="520" width="150" height="84" rx="3" fill="#1b202a" stroke="#2c5136"></rect>
+          <text x="36" y="539" font-size="10" letter-spacing="1.5" fill="#3fb950">SHOWN</text>
+          <text x="36" y="560" font-family="system-ui, sans-serif" font-size="11.5" fill="#939cad">answer + evidence</text>
+          <text x="36" y="578" font-size="10.5" fill="#3fb950">0 fabricated values</text>
+
+          <line x1="1028" y1="562" x2="1018" y2="562" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="860" y1="562" x2="850" y2="562" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="692" y1="562" x2="682" y2="562" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="524" y1="562" x2="514" y2="562" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="356" y1="562" x2="346" y2="562" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+          <line x1="188" y1="562" x2="178" y2="562" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+
+          <!-- B feeds C: a short vertical drop from fusion into rerank -->
+          <line x1="1100" y1="378" x2="1100" y2="516" stroke="#4c9aff" stroke-width="1.3" marker-end="url(#a)"></line>
+
+          <!-- rejection: verification fails, the extractive answer stands -->
+          <path d="M267 608 L267 646 L603 646 L603 608" fill="none" stroke="#e5484d" stroke-width="1.3" stroke-dasharray="4 4" marker-end="url(#ar)"></path>
+          <text x="300" y="668" font-size="10.5" fill="#e5484d">verification fails &rarr; generated text discarded, the extractive answer stands</text>
+
+        </g>
+      </svg>
+    </div>
+
+    <p class="caption">
+      <strong>Read A left to right, B left to right, C right to left.</strong> The vertical
+      drops are the only cross-lane links: indexes are built once and sit directly above the
+      retrievers that consult them, and fusion hands its ranking straight down to the reranker.
+      Amber marks the document-expansion path &mdash; generated text reaches ranking and the
+      cross-encoder, and stops there. It never reaches a citation.
+    </p>
+
+    <p class="caption">
+      <strong>Safety appears twice because it runs twice.</strong> A paediatric dosing question is
+      stopped before retrieval &mdash; it never reaches an index, a model, or an API bill. A question
+      built on a threshold that does not exist can only be caught once evidence is in hand.
+      Splitting the gate is why the system records zero unsafe answers <em>and</em> zero false
+      declines rather than trading one against the other. The dashed red path is the other half of
+      that argument: an LLM phrasing that fails verification is discarded, and the verbatim
+      extractive answer stands.
+    </p>
+
+    <div class="legend">
+      <span><i class="swatch" style="background:#4c9aff"></i> data flow</span>
+      <span><i class="swatch" style="background:#e5484d"></i> rejection path</span>
+      <span><i class="swatch" style="background:#3d4452"></i> loaded once</span>
+      <span><i class="swatch" style="background:#f0a020"></i> safety gate &middot; document expansion</span>
+    </div>
+
+  </section>
+
+  <section>
+    <div class="rule">
+      <h2>Measured</h2>
+      <span class="note">three independent answer keys &middot; pinned chunk-level relevance</span>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <span class="k">Clinical FAQ</span>
+        <span class="v pos">100%</span>
+        <span class="s">success@5 on the 20 questions clinicians ask most, sourced from the primary-care literature. nDCG@10 0.7013.</span>
+      </div>
+      <div class="metric">
+        <span class="k">nDCG@10</span>
+        <span class="v">0.7074</span>
+        <span class="s">67-question gold set, recall@20 0.8163. Held-out chunk-first set 0.8516 across 46 questions written before any run.</span>
+      </div>
+      <div class="metric">
+        <span class="k">Correct table row</span>
+        <span class="v pos">95%</span>
+        <span class="s">18 of 19. Returning a sibling row is a wrong answer with a real citation, and nDCG cannot see it, so it is measured on its own.</span>
+      </div>
+      <div class="metric">
+        <span class="k">Citation accuracy</span>
+        <span class="v pos">99.1%</span>
+        <span class="s">Citations re-open in the source PDF and match the text under their own bounding box. 320 table numbers verified, 0 wrong.</span>
+      </div>
+      <div class="metric">
+        <span class="k">Answer correctness</span>
+        <span class="v">74.8%</span>
+        <span class="s">Of every threshold the gold evidence states, the share reaching the reader. 27 fully correct, 8 partial, 5 missing.</span>
+      </div>
+      <div class="metric">
+        <span class="k">Fabricated values</span>
+        <span class="v pos">0</span>
+        <span class="s">22 adversarial cases &mdash; invented thresholds, silent unit conversion, averaging two real values into a third. None reached the user.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="rule">
+      <h2>The evaluation chain</h2>
+      <span class="note">six links, each fails differently</span>
+    </div>
+
+    <div class="chain">
+      <div class="link">
+        <span class="i">01</span>
+        <span class="q">Is the corpus faithful to the PDF?</span>
+        <span class="t">check_corpus.py</span>
+        <span class="r">169/169 labelled items</span>
+      </div>
+      <div class="link">
+        <span class="i">02</span>
+        <span class="q">Is the right chunk retrieved?</span>
+        <span class="t">evaluate_gold.py</span>
+        <span class="r">nDCG@10 0.7074</span>
+      </div>
+      <div class="link">
+        <span class="i">03</span>
+        <span class="q">Is it the right <em>row</em> of the table?</span>
+        <span class="t">check_table_rows.py</span>
+        <span class="r">18/19 = 95%</span>
+      </div>
+      <div class="link">
+        <span class="i">04</span>
+        <span class="q">Does the citation resolve to real text?</span>
+        <span class="t">check_citations.py</span>
+        <span class="r">99.1%</span>
+      </div>
+      <div class="link">
+        <span class="i">05</span>
+        <span class="q">Does the answer state the right value?</span>
+        <span class="t">check_answers.py</span>
+        <span class="r">74.8%</span>
+      </div>
+      <div class="link">
+        <span class="i">06</span>
+        <span class="q">Can a fabricated value get through?</span>
+        <span class="t">check_generation.py</span>
+        <span class="r">0 of 22</span>
+      </div>
+    </div>
+
+    <p class="caption">
+      Link 05 is the one usually missing. Retrieval metrics say the chunk was found and citation
+      checks say the citation is real, but neither asks whether the number a clinician reads is
+      correct. Its own known flaw is reported with it: 1 expectation in 107 is a reference number
+      that the extractor reads as a range.
+    </p>
+  </section>
+
+  <section>
+    <div class="rule">
+      <h2>Measured and kept</h2>
+      <span class="note">the one technique that cleared its confidence interval</span>
+    </div>
+
+    <div class="rejected">
+      <div class="card">
+        <h3>doc2query in clinician voice</h3>
+        <span class="num">clinician-phrased +0.1612 &middot; CI [+0.075, +0.258]</span>
+        <p>
+          A clinician asks about &ldquo;a flozin&rdquo; and the word appears in neither
+          guideline. An LLM writes, per chunk, the questions a clinician would actually
+          ask &mdash; 4,208 of them, generated once and cached &mdash; indexed
+          <em>separately</em>, so generated text can move ranking and can never reach a
+          citation, a quote or the verifier.
+        </p>
+      </div>
+      <div class="card">
+        <h3>The phrasing gap it closes</h3>
+        <span class="num">0.9423 echo &middot; 0.7818 clinician-phrased</span>
+        <p>
+          Same content, same answer key, differing only in wording. Retrieval quality on
+          this system depends heavily on whether a question uses guideline vocabulary,
+          which is invisible to any benchmark written by reading the corpus.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="rule">
+      <h2>Tuned, then re-measured</h2>
+      <span class="note">every constant swept against the pipeline that exists now</span>
+    </div>
+
+    <div class="chain">
+      <div class="link">
+        <span class="i">&middot;</span>
+        <span class="q">Fusion weight on doc2query</span>
+        <span class="t">0 / 0.21 / <strong>0.29</strong></span>
+        <span class="r">off costs 5 of 20 FAQ</span>
+      </div>
+      <div class="link">
+        <span class="i">&middot;</span>
+        <span class="q">Candidates each retriever nominates</span>
+        <span class="t">120 / 240 &rarr; <strong>120</strong></span>
+        <span class="r">doubling gains nothing</span>
+      </div>
+      <div class="link">
+        <span class="i">&middot;</span>
+        <span class="q">Candidates the cross-encoder scores</span>
+        <span class="t">20 / <strong>30</strong> / 50</span>
+        <span class="r">50 loses a question</span>
+      </div>
+    </div>
+
+    <p class="caption">
+      All three had been inherited from a pipeline that no longer exists. All three came
+      back at the value already running &mdash; a duller result than a gain, and a more
+      useful one. Depth 50 scoring <em>worse</em> than 30 is the instructive case: a wider
+      window admits competitors the cross-encoder prefers over the right answer.
+    </p>
+  </section>
+
+  <section>
+    <div class="rule">
+      <h2>Built, measured, deleted</h2>
+      <span class="note">a negative result with a mechanism beats an untested assumption</span>
+    </div>
+
+    <div class="chain">
+      <div class="link">
+        <span class="i">&middot;</span>
+        <span class="q">Contextual Retrieval</span>
+        <span class="t">every chunk given a situating sentence</span>
+        <span class="r" style="color:var(--reject)">&minus;0.0964 paraphrase</span>
+      </div>
+      <div class="link">
+        <span class="i">&middot;</span>
+        <span class="q">MedCPT encoder</span>
+        <span class="t">trained on 255M PubMed click logs</span>
+        <span class="r" style="color:var(--reject)">&minus;0.267 echo</span>
+      </div>
+      <div class="link">
+        <span class="i">&middot;</span>
+        <span class="q">HyDE query rewriting</span>
+        <span class="t">search on a hypothetical answer</span>
+        <span class="r" style="color:var(--reject)">CI spans zero</span>
+      </div>
+      <div class="link">
+        <span class="i">&middot;</span>
+        <span class="q">ColBERT late interaction</span>
+        <span class="t">176k token vectors, MaxSim</span>
+        <span class="r" style="color:var(--reject)">&minus;0.0053 fused</span>
+      </div>
+      <div class="link">
+        <span class="i">&middot;</span>
+        <span class="q">Vector database</span>
+        <span class="t">Qdrant, fully ingested</span>
+        <span class="r" style="color:var(--reject)">17.0 ms vs 0.4 ms flat</span>
+      </div>
+      <div class="link">
+        <span class="i">&middot;</span>
+        <span class="q">BM25</span>
+        <span class="t">kept for recall, on an assumption</span>
+        <span class="r" style="color:var(--reject)">recall@20 +0.0074 without</span>
+      </div>
+    </div>
+
+    <p class="caption">
+      Six techniques built and removed, one kept. MedCPT is the one worth reading twice:
+      it <em>halved</em> the phrasing gap &mdash; by dragging the strong side down, not
+      lifting the weak one. Reporting the gap alone would have called it a success.
+    </p>
+  </section>
+
+  <footer>
+    <span>Every figure regenerated from stored runs in <code>reports/</code> &mdash; no number is retyped.</span>
+    <span><code>python scripts/check_corpus.py</code></span>
+    <span><code>python scripts/evaluate_gold.py</code></span>
+    <span><code>python scripts/evaluate_faq.py</code></span>
+    <span><code>python scripts/check_table_rows.py</code></span>
+  </footer>
+
+</div>

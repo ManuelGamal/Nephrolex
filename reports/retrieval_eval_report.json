@@ -1,0 +1,136 @@
+{
+  "case_count": 8,
+  "top_k": 8,
+  "hit_rate_at_k": 1.0,
+  "mrr": 0.775,
+  "results": [
+    {
+      "id": "ckd_definition",
+      "query": "What definition does the guideline use for chronic kidney disease?",
+      "hit": true,
+      "first_hit_rank": 1,
+      "top_ids": [
+        "nice_ng203_ckd_parent_24_51_51_management_g3_2008_terms_used_in_this_guideline",
+        "nice_ng203_ckd_p12_1_1_25_monitor_adults_children_and_young_people_for_the_development_or_p",
+        "nice_ng203_ckd_p53_threshold_these_include_albuminuria_acr_more_than_3_mg_mmol_urine_sediment_abnorma",
+        "kdigo_2024_ckd_p48_practice_point_3_16_1_follow_established_strategies_for_the_diagnosis_an",
+        "kdigo_2024_ckd_p57_practice_point_1_1_3_3_consider_initiation_of_treatments_for_the_most_ac",
+        "kdigo_2024_ckd_router_56_chapter_1_evaluation_of_ckd_1_1_detection_and_evaluation_of_ckd_early_de",
+        "kdigo_2024_ckd_p41_practice_point_3_1_1_treat_people_with_ckd_with_a_comprehensive_treatmen",
+        "kdigo_2024_ckd_p35_practice_point_1_1_4_2_use_tests_to_establish_a_cause_based_on_resources"
+      ]
+    },
+    {
+      "id": "egfr_category",
+      "query": "What CKD guidance mentions eGFR categories such as G3b?",
+      "hit": true,
+      "first_hit_rank": 5,
+      "top_ids": [
+        "nice_ng203_ckd_p27_1_6_20_for_medicines_recommended_as_options_in_nice_technology_appraisal",
+        "nice_ng203_ckd_p13_1_2_1_classify_ckd_in_adults_using_a_combination_of_gfr_and_acr_categori",
+        "kdigo_2024_ckd_p82_table_1_row_7",
+        "kdigo_2024_ckd_p34_practice_point_1_1_3_1_proof_of_chronicity_duration_of_a_minimum_of_3_mo",
+        "nice_ng203_ckd_router_20_management_g3_2008_classification_of_ckd",
+        "nice_ng203_ckd_p14_1_2_4_use_the_person_s_gfr_and_acr_categories_see_table_1_to_indicate_th",
+        "kdigo_2024_ckd_parent_19_11_11_chapter_3_delaying_ckd_progression_and_managing_its_complications_a1_a2",
+        "nice_ng203_ckd_p15_1_3_4_use_table_2_to_guide_the_minimum_frequency_of_egfrcreatinine_monit"
+      ]
+    },
+    {
+      "id": "acr_testing",
+      "query": "How should albuminuria or ACR be tested in CKD?",
+      "hit": true,
+      "first_hit_rank": 2,
+      "top_ids": [
+        "kdigo_2024_ckd_p31_table_1_row_23",
+        "nice_ng203_ckd_p8_1_1_12_for_the_initial_detection_of_proteinuria_in_adults_children_and_y",
+        "kdigo_2024_ckd_p39_practice_point_1_3_1_3_understand_factors_that_may_affect_interpretation",
+        "kdigo_2024_ckd_p31_table_1_row_3",
+        "kdigo_2024_ckd_p76_practice_point_1_3_1_2_use_more_accurate_methods_when_effectively_tubula",
+        "kdigo_2024_ckd_p40_practice_point_1_3_2_1_implement_the_laboratory_reporting_and_handling_s",
+        "nice_ng203_ckd_p9_1_1_14_measure_proteinuria_with_urine_acr_in_the_following_groups_adults",
+        "kdigo_2024_ckd_p160_threshold_clinical_question_in_children_and_young_adults_with_suspected_or_diagnos"
+      ]
+    },
+    {
+      "id": "kfre",
+      "query": "When should the Kidney Failure Risk Equation be used?",
+      "hit": true,
+      "first_hit_rank": 1,
+      "top_ids": [
+        "nice_ng203_ckd_p21_1_5_1_give_adults_with_ckd_and_their_family_members_or_carers_as_appropr",
+        "kdigo_2024_ckd_p41_practice_point_2_2_1_a_5_year_kidney_failure_risk_of_3_5_can_be_used_to",
+        "nice_ng203_ckd_p21_1_5_5_refer_adults_with_ckd_for_specialist_assessment_taking_into_accoun",
+        "kdigo_2024_ckd_p85_threshold_risk_equation_kfre_the_veterans_affairs_model_and_the_z6_kidney_failure",
+        "nice_ng203_ckd_p52_threshold_4_variable_kidney_failure_risk_equation",
+        "nice_ng203_ckd_p64_recommendation_1_5_1_to_1_5_9_why_the_committee_made_the_recommendations",
+        "nice_ng203_ckd_p54_threshold_what_is_the_accuracy_of_the_4_variable_kidney_failure_risk_equation_in_a",
+        "kdigo_2024_ckd_p141_threshold_high_risk_of_progression_to_kidney_failure_by_kfre_3_by_5_more_patients"
+      ]
+    },
+    {
+      "id": "referral",
+      "query": "When should an adult with CKD be referred to specialist kidney care?",
+      "hit": true,
+      "first_hit_rank": 2,
+      "top_ids": [
+        "nice_ng203_ckd_p22_1_5_7_consider_discussing_management_with_a_specialist_by_letter_email_t",
+        "kdigo_2024_ckd_p141_threshold_criteria_in_a_cross_sectional_study_from_the_uk_829_analysis_84_195_pati",
+        "nice_ng203_ckd_p56_threshold_9_risk_assessment_referral_criteria_and_shared_care",
+        "kdigo_2024_ckd_p41_practice_point_2_2_1_a_5_year_kidney_failure_risk_of_3_5_can_be_used_to",
+        "nice_ng203_ckd_p23_1_5_9_after_referral_agree_document_and_date_a_care_plan_with_the_person",
+        "kdigo_2024_ckd_parent_111_86_86_chapter_2_risk_assessment_in_people_with_ckd_erfk_rationale_practice_poi",
+        "nice_ng203_ckd_p15_1_3_3_see_the_recommendations_on_when_to_refer_adults_recommendation_1_5",
+        "kdigo_2024_ckd_p140_threshold_cid_3_evaluation_and_management_of_comorbid_conditions_nephrology_referr"
+      ]
+    },
+    {
+      "id": "monitoring",
+      "query": "How often should CKD monitoring be performed?",
+      "hit": true,
+      "first_hit_rank": 1,
+      "top_ids": [
+        "nice_ng203_ckd_p15_1_3_2_when_agreeing_the_frequency_of_monitoring_follow_the_recommendatio",
+        "nice_ng203_ckd_p10_1_1_19_persistent_invisible_haematuria_in_the_absence_of_proteinuria_sho",
+        "nice_ng203_ckd_p56_threshold_8_frequency_of_monitoring",
+        "nice_ng203_ckd_p15_1_3_1_if_an_adult_child_or_young_person_has_ckd_or_is_at_risk_of_it_agre",
+        "nice_ng203_ckd_p3_threshold_frequency_of_monitoring",
+        "kdigo_2024_ckd_p44_practice_point_3_7_3_sglt2i_initiation_or_use_does_not_necessitate_alter",
+        "kdigo_2024_ckd_p82_threshold_figure_13_frequency_of_monitoring_glomerular_filtration_rate_gfr_and_alb",
+        "nice_ng203_ckd_p50_1_12_2_measure_serum_calcium_phosphate_and_parathyroid_hormone_concentra"
+      ]
+    },
+    {
+      "id": "sglt2",
+      "query": "What does the guideline say about SGLT2 inhibitors for CKD?",
+      "hit": true,
+      "first_hit_rank": 1,
+      "top_ids": [
+        "kdigo_2024_ckd_p99_recommendation_3_7_2_we_recommend_treating_sglt2i_adults_with_ckd_with_a",
+        "kdigo_2024_ckd_p44_practice_point_3_7_3_sglt2i_initiation_or_use_does_not_necessitate_alter",
+        "kdigo_2024_ckd_p100_threshold_figure_22_effect_of_sodium_glucose_cotransporter_2_inhibitors_sglt2i_wit",
+        "kdigo_2024_ckd_p44_recommendation_3_7_1_we_recommend_treating_patients_with_type_2_diabetes",
+        "kdigo_2024_ckd_p45_recommendation_3_9_1_in_adults_with_t2d_and_ckd_who_have_not_achieved_in",
+        "nice_ng203_ckd_p25_1_6_8_for_sglt2_inhibitors_recommended_as_options_in_nice_technology_app",
+        "kdigo_2024_ckd_p44_practice_point_3_7_2_it_is_reasonable_to_withhold_sglt2i_during_times_of",
+        "kdigo_2024_ckd_p103_recommendation_3_7_3_we_suggest_treating_adults_from_2_rcts_evaluating_a"
+      ]
+    },
+    {
+      "id": "pregnancy_refusal",
+      "query": "Can this system manage CKD in pregnancy?",
+      "hit": true,
+      "first_hit_rank": 1,
+      "top_ids": [
+        "kdigo_2024_ckd_p49_practice_point_4_1_3_review_and_limit_the_use_of_over_the_counter_medici",
+        "kdigo_2024_ckd_p133_practice_point_4_1_4_when_prescribing_medications_to_appropriate_for_lac",
+        "kdigo_2024_ckd_parent_163_133_134_chapter_4_medication_management_and_drug_4_1_medication_choices_and_moni",
+        "nice_ng203_ckd_p27_1_6_15_measure_serum_potassium_concentrations_and_estimate_the_gfr_befor",
+        "kdigo_2024_ckd_parent_188_157_157_chapter_2_risk_assessment_in_people_with_ckd_optimal_medical_therapy_in",
+        "kdigo_2024_ckd_parent_111_86_86_chapter_2_risk_assessment_in_people_with_ckd_erfk_rationale_practice_poi",
+        "kdigo_2024_ckd_p98_practice_point_3_6_6_consider_starting_people_with_ckd_practice_points_f",
+        "nice_ng203_ckd_p50_1_12_4_do_not_routinely_offer_vitamin_d_supplementation_to_manage_or_pre"
+      ]
+    }
+  ]
+}

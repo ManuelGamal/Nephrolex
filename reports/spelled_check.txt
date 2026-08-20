@@ -1,0 +1,6 @@
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 4538.30it/s]
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 4032.79it/s]
+main     nDCG 0.7074  R@10 0.8051  R@20 0.8163  miss 5  success@5 60/67
+heldout  nDCG 0.8516  R@10 0.9420  R@20 0.9420  miss 2  success@5 43/46
+faq      nDCG 0.7013  R@10 0.8083  R@20 0.8500  miss 0  success@5 20/20
+correct-row precision: 18/19 = 95%

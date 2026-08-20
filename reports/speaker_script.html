@@ -1,0 +1,380 @@
+<title>NewbieDuo Speaker Script</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
+
+<style>
+:root{
+  --paper:#fbfcfe;
+  --card:#ffffff;
+  --ink:#0e1a26;
+  --ink-2:#33465a;
+  --muted:#5f6f7f;
+  --line:#dde6f0;
+  --blue:#1a5fa8;
+  --blue-wash:#e7f0fa;
+  --cue:#8a4b12;
+  --cue-wash:#fdf2e3;
+  --stop:#a8232b;
+  --stop-wash:#fbe6e7;
+  --serif:"Source Serif 4",Georgia,serif;
+  --sans:"IBM Plex Sans","Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0c141d; --card:#121d29; --ink:#e9f1f8; --ink-2:#bccbda; --muted:#8fa2b6; --line:#22323f; --blue:#6fadea; --blue-wash:#152a3f;
+    --cue:#e2a556; --cue-wash:#2a2010; --stop:#ef8b93; --stop-wash:#2f1418;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0c141d; --card:#121d29; --ink:#e9f1f8; --ink-2:#bccbda;
+  --muted:#8fa2b6; --line:#22323f; --blue:#6fadea; --blue-wash:#152a3f;
+  --cue:#e2a556; --cue-wash:#2a2010; --stop:#ef8b93; --stop-wash:#2f1418;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:17px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:820px; margin:0 auto; padding:0 20px 90px;}
+
+header{
+  position:sticky; top:0; z-index:10;
+  background:var(--paper); border-bottom:1px solid var(--line);
+  padding:14px 0 12px; margin-bottom:26px;
+}
+header .in{max-width:820px; margin:0 auto; padding:0 20px; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;}
+header h1{
+  font-family:var(--serif); font-size:21px; font-weight:700; margin:0; letter-spacing:-.01em;
+}
+header .meta{font-family:var(--mono); font-size:12px; color:var(--muted); letter-spacing:.04em;}
+
+.lede{font-size:18px; color:var(--ink-2); margin:0 0 30px;}
+
+.slide{
+  background:var(--card); border:1px solid var(--line); border-radius:11px;
+  padding:20px 24px 22px; margin-bottom:16px;
+}
+.head{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:12px;}
+.num{
+  font-family:var(--mono); font-size:12px; font-weight:600; color:#fff;
+  background:var(--blue); border-radius:6px; padding:3px 9px; flex:none;
+}
+.title{font-family:var(--serif); font-size:20px; font-weight:600; line-height:1.25; flex:1; min-width:200px;}
+.time{font-family:var(--mono); font-size:12px; color:var(--muted); white-space:nowrap;}
+
+.say p{margin:0 0 12px;}
+.say p:last-child{margin-bottom:0;}
+.say strong{font-weight:600;}
+.say em{font-style:italic; color:var(--ink);}
+
+.cue{
+  display:flex; gap:10px; align-items:flex-start;
+  background:var(--cue-wash); border-left:3px solid var(--cue);
+  border-radius:0 7px 7px 0; padding:9px 13px; margin:13px 0;
+  font-size:14.5px; color:var(--ink-2);
+}
+.cue b{color:var(--cue); font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; flex:none; padding-top:2px;}
+
+.beat{
+  font-family:var(--mono); font-size:12.5px; color:var(--muted);
+  border-top:1px dashed var(--line); padding-top:9px; margin-top:14px;
+}
+
+h2.sec{
+  font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--blue); margin:34px 0 14px; display:flex; align-items:center; gap:12px;
+}
+h2.sec::after{content:""; flex:1; height:1px; background:var(--line);}
+
+.qa{background:var(--card); border:1px solid var(--line); border-radius:11px; padding:18px 22px; margin-bottom:12px;}
+.qa .q{font-family:var(--serif); font-size:18px; font-weight:600; margin:0 0 8px; color:var(--ink);}
+.qa p{margin:0 0 10px; font-size:16px; color:var(--ink-2);}
+.qa p:last-child{margin-bottom:0;}
+
+.cut{background:var(--stop-wash); border:1px solid var(--stop); border-radius:11px; padding:16px 20px;}
+.cut h3{margin:0 0 8px; font-size:15px; color:var(--stop);}
+.cut ul{margin:0; padding-left:20px; font-size:15.5px; color:var(--ink-2);}
+.cut li{margin-bottom:5px;}
+
+.mono{font-family:var(--mono); font-size:.92em;}
+code{font-family:var(--mono); font-size:.9em; background:var(--blue-wash); color:var(--blue); padding:1px 5px; border-radius:4px;}
+@media(max-width:600px){body{font-size:16px;} .slide{padding:16px 17px 18px;} .wrap{padding:0 12px 70px;}}
+</style>
+
+<header>
+  <div class="in">
+    <h1>NewbieDuo &mdash; speaker script</h1>
+    <span class="meta">19 slides &middot; ~9 min &middot; &rarr; advances</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+<p class="lede">Written to be said out loud, not read off. Times are cumulative. The bracketed cues are stage directions &mdash; what to click, what to point at, when to stop talking.</p>
+
+<h2 class="sec">Opening</h2>
+
+<div class="slide">
+  <div class="head"><span class="num">01</span><span class="title">Guideline evidence, delivered where the decision is made.</span><span class="time">0:00 &ndash; 0:20</span></div>
+  <div class="say">
+    <p>This is NewbieDuo &mdash; clinical decision support for chronic kidney disease, over KDIGO 2024 and NICE NG203.</p>
+    <p>Three things make it different from a chatbot with a PDF. It answers <strong>only</strong> from the guidelines. It cites every number to a page and a bounding box. And when the evidence won't support an answer, it <strong>refuses</strong>.</p>
+    <p>Those four numbers on screen are what I'll spend the next nine minutes defending.</p>
+  </div>
+  <div class="beat">Don't read the metrics aloud. Let them sit there while you talk.</div>
+</div>
+
+<div class="slide">
+  <div class="head"><span class="num">02</span><span class="title">The guideline is 250 pages. The consultation is ten minutes.</span><span class="time">0:20 &ndash; 0:50</span></div>
+  <div class="say">
+    <p>The problem isn't that the answer is missing. It's in the guideline.</p>
+    <p>The problem is that a consultation is ten minutes. Ask which band an eGFR of 38 falls into, and the answer is one row, of one table, on page 22 &mdash; while the threshold that actually changes management sits in a different table, on a different page, in the <em>other</em> guideline.</p>
+    <p>A general assistant answers that instantly, with no citation and no page. A clinician can't act on that, and can't defend having acted on it.</p>
+    <p>So the bar here isn't fluency. It's <strong>traceability</strong>.</p>
+  </div>
+</div>
+
+<h2 class="sec">Where it lives</h2>
+
+<div class="slide">
+  <div class="head"><span class="num">03</span><span class="title">CDS Hooks: the evidence arrives without being asked for.</span><span class="time">0:50 &ndash; 1:15</span></div>
+  <div class="say">
+    <p>Which raises the question nobody asks until it's too late: a clinician is not going to leave their record software to visit a website.</p>
+    <p>So this is exposed as an HL7 <strong>CDS Hooks</strong> service. When a chart opens, the record calls us with the patient's eGFR and ACR as FHIR Observations, matched on LOINC codes. Five plain rules decide whether anything is worth saying &mdash; and you can read them, they're predicates, not a model.</p>
+    <p>Each question then runs the ordinary retrieval path. Same gates, same reranker, same verifier.</p>
+    <p>And the part that matters: if retrieval declines, or produces nothing citable, <strong>no card is emitted at all</strong>.</p>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="head"><span class="num">04</span><span class="title">One patient, start to finish.</span><span class="time">1:15 &ndash; 2:15</span></div>
+  <div class="cue"><b>click</b><span>Patient A &mdash; eGFR 24, ACR 85. Let the sequence play; don't talk over the rules appearing.</span></div>
+  <div class="say">
+    <p>Let me show you rather than describe it.</p>
+    <p>Chart opens. eGFR 24, ACR 85. The hook fires, and five rules evaluate against those two numbers &mdash; those are the real predicates from the service, running in this page. All five fire, and the service emits at most three cards.</p>
+    <p>Here's what lands in the corner of the chart. <strong>Verbatim guideline text</strong>, never generated prose &mdash; because this is pushed at a clinician who didn't ask for it, so it's held to the stricter standard. Each card names the rule that raised it and the page it resolves to.</p>
+  </div>
+  <div class="cue"><b>click</b><span>Patient B &mdash; eGFR 96, ACR 1.2. This is the money shot. Pause after "zero cards."</span></div>
+  <div class="say">
+    <p>Now the case that matters more. Healthy kidneys. All five rules go silent. <strong>Zero cards.</strong> The clinician's screen is untouched.</p>
+    <p>That's the outcome this service produces most often &mdash; and it's the whole reason it's worth leaving switched on.</p>
+  </div>
+</div>
+
+<h2 class="sec">The business case</h2>
+
+<div class="slide">
+  <div class="head"><span class="num">05</span><span class="title">Nobody sells this to a doctor.</span><span class="time">2:15 &ndash; 2:45</span></div>
+  <div class="say">
+    <p>You have just watched it work. So &mdash; who pays for it?</p>
+    <p>Not the clinician. Clinicians do not buy reference tools - their trust does, centrally, out of the budget line that already funds guideline access. So the unit is an annual <strong>site licence</strong> banded by headcount, and it is a substitution rather than a new category to create.</p>
+    <p>The channel is the record vendor's own marketplace. Epic and Oracle Health both distribute exactly this - CDS Hooks services a trust switches on - and we are <strong>already conformant</strong>, so the channel does the integration selling.</p>
+    <p>One more thing that decides whether this is sellable at all: software that hands a clinician a recommendation is, in most jurisdictions, a <strong>medical device</strong>. Software that shows them the source and lets them judge it generally is not. Verbatim text, a citation, and a visible refusal are what make that possible &mdash; and we built them for grounding, before anyone asked about procurement. A design posture, not a certification.</p>
+    <p>And the margins work because the five trigger questions are fixed. First hook after startup is <strong>four milliseconds</strong>; every patient after that is fifteen milliseconds from cache. Marginal cost per patient is effectively zero, so a site licence is close to pure gross margin.</p>
+  </div>
+</div>
+
+<h2 class="sec">How it's built &mdash; the corpus</h2>
+
+<div class="slide">
+  <div class="head"><span class="num">06</span><span class="title">Parsing and chunking: what you index is what you can cite.</span><span class="time">2:45 &ndash; 3:10</span></div>
+  <div class="say">
+    <p>Guidelines aren't prose. They're numbered recommendations, practice points, and cross-tabulated tables &mdash; so parsing is layout-aware and chunks are <em>typed</em>. 1,485 indexable chunks across six types, one table row per chunk.</p>
+    <p>Three defects on the right, and I'd rather name them than have them found. KDIGO's PDF maps "greater-than-or-equal" to a dollar sign, so 69 thresholds were stored as nonsense. The parser was dropping the very cell that names each table row &mdash; 245 of them. And a spanning header got repeated once per column it covered, which is keyword stuffing the guideline never wrote.</p>
+    <p>All three were found by measurement, not by reading.</p>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="head"><span class="num">07&ndash;08</span><span class="title">Every chunk knows exactly where it came from.</span><span class="time">3:10 &ndash; 3:50</span></div>
+  <div class="say">
+    <p>If you only remember one slide, make it this one.</p>
+    <p>These are rendered from the live corpus &mdash; the same coordinates the answer UI draws when a clinician opens a source. That's KDIGO Table 2, with the <strong>G3b row boxed</strong>, and the whole table outlined faintly around it, so a single row is never shown stripped of the header that gives it meaning.</p>
+  </div>
+  <div class="cue"><b>next</b><span>Second provenance slide.</span></div>
+  <div class="say">
+    <p>A NICE recommendation kept whole, so a quote can never be half a clinical instruction. A practice point carrying two boxes.</p>
+    <p>And one detail that's load-bearing: Docling emits element boxes bottom-left and table-cell boxes top-left. Flip the wrong one and you get a box that bounds nothing, sitting next to the text it was supposed to prove.</p>
+    <p>A citation here isn't a page reference. It's a rectangle on a page.</p>
+  </div>
+</div>
+
+<h2 class="sec">How it's built &mdash; retrieval</h2>
+
+<div class="slide">
+  <div class="head"><span class="num">09</span><span class="title">The gold set &mdash; what every number that follows is measured against.</span><span class="time">3:50 &ndash; 4:10</span></div>
+  <div class="say">
+    <p>Before I quote a single number, this is what they are measured against.</p>
+    <p>Three answer keys, built by different methods - because one key written alongside the system it grades will flatter it. <strong>141 questions, 282 chunk-level judgements</strong>, graded 2 or 1 rather than yes or no, which is what makes nDCG mean anything.</p>
+    <p>Forty-eight dev, twenty-seven test, and the test slice is never tuned on. I will come back at the end to how those judgements are pinned - and to the evaluator that could not fail.</p>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="head"><span class="num">10</span><span class="title">Why MedEmbed &mdash; and what the comparison actually proved.</span><span class="time">4:10 &ndash; 4:35</span></div>
+  <div class="say">
+    <p>Seven encoders, same gold set, same everything else. MedEmbed wins &mdash; but its real margin is <strong>recall at 20</strong>: 0.78 against 0.75. It puts more evidence inside the window the reranker can still rescue.</p>
+    <p>The more useful finding is on the right. Measured dense-only, two encoders differ by <strong>0.267 nDCG</strong>. With the cross-encoder re-ordering the top 30, that difference collapses to about <strong>0.02</strong>.</p>
+    <p>The models aren't alike. This pipeline's reranker <em>makes</em> them alike. That's a claim about the architecture, not about embeddings &mdash; and it's why the effort went into the document side instead of shopping for a better encoder.</p>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="head"><span class="num">11</span><span class="title">Four signals, each earning its place.</span><span class="time">4:35 &ndash; 5:05</span></div>
+  <div class="say">
+    <p>Four signals. None is here because the literature likes it &mdash; each is here because switching it off costs something measurable, on a case we can name.</p>
+    <p><strong>TF-IDF</strong> for exact clinical tokens. The token pattern is the whole point: it keeps <code>ml/min</code>, <code>&lt;15</code> and recommendation numbers intact instead of shattering them. And the IDF term does the discriminating &mdash; in a corpus entirely about CKD, "patient" and "kidney" are as uninformative as "the".</p>
+    <p><strong>Dense</strong> for vocabulary that never overlaps: "protein in the urine" against "albuminuria". TF-IDF scores that near zero, and no amount of lexical weighting recovers a word that isn't there.</p>
+    <p><strong>Metadata</strong> for structural grounding. And then doc2query, which needs its own slide.</p>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="head"><span class="num">12</span><span class="title">The phrasing gap, and the only thing that closed it.</span><span class="time">5:05 &ndash; 5:40</span></div>
+  <div class="say">
+    <p>This is the biggest single idea in the system.</p>
+    <p>Retrieval swung from <strong>0.90 to 0.38 on identical content</strong>, depending only on whether the question used guideline vocabulary. A clinician asks about "a flozin" &mdash; a word in neither guideline. About a "vomiting bug", where KDIGO writes "acute, dehydrating illness".</p>
+    <p>So an LLM writes, for each chunk, the questions a clinician would actually ask that it answers. 4,172 of them, generated once, cached, free at query time. It lifts the weak side by <strong>0.16</strong> with an interval that clears zero, and costs nothing on the strong side.</p>
+    <p>Two design choices carry it. The expansions live in <strong>their own index</strong> &mdash; they can influence ranking and can never reach a citation, a quote, or the verifier. A hallucinated question costs ranking and nothing else. That's a safety property, not an optimisation.</p>
+    <p>And we checked it isn't circular rather than assuming: zero of 4,172 match the corpus's own template questions, and 68% of the words in a generated question don't appear in its source chunk.</p>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="head"><span class="num">13</span><span class="title">One convex combination, two priors, and a cross-encoder.</span><span class="time">5:40 &ndash; 6:05</span></div>
+  <div class="say">
+    <p>The scoring function. A convex combination of the four signals, normalised by the weight of whatever is switched on &mdash; so an ablation measures the signal, not a scale change. Then three deliberately mild multiplicative priors, which nudge ranking and are never allowed to override relevance.</p>
+    <p>Then the cross-encoder re-orders the top 30 &mdash; and it reads the generated questions as well as the raw text, because otherwise it's blind to the very signal that surfaced the candidate.</p>
+    <p>Every constant in that table was swept <em>twice</em>. All of them had originally been chosen against a pipeline that no longer existed. Re-swept on the current one, they came back at the shipped values &mdash; and they're defended as <strong>indistinguishable from their neighbours</strong>, not as an argmax, because with 67 questions anything under about 0.05 isn't measurable.</p>
+  </div>
+</div>
+
+<h2 class="sec">Safety</h2>
+
+<div class="slide">
+  <div class="head"><span class="num">14</span><span class="title">Five categorical gates. Three before retrieval runs at all.</span><span class="time">6:05 &ndash; 6:35</span></div>
+  <div class="say">
+    <p>The system is built so the failure mode is <em>refusing to answer</em>, never <em>answering wrongly with a citation</em>.</p>
+    <p>Five categorical gates. <strong>Three of them run before retrieval touches the corpus at all</strong> &mdash; is it a question, is it a genre a guideline answers, is it in scope. Those refuse in under a millisecond. Domain and premise run after, because the premise check needs the evidence to look in.</p>
+    <p>None of the five is a tuned threshold. All of them are readable rules a clinician could disagree with.</p>
+    <p>Then the verifier, which is mechanical: every number-with-unit in a generated sentence must appear <strong>verbatim in the evidence that sentence actually cited</strong> &mdash; not the wider retrieved set, so a claim can't borrow a value from a source it never pointed at. If it fails, the generated text is discarded and the guideline's own words are shown instead.</p>
+    <p>And retrieval scores are <strong>deliberately not used</strong> for abstention. Three attempts failed, and the third told us why: "how many people worldwide have CKD" scores 0.838 cosine and 1.00 rerank &mdash; <em>above</em> the median answerable question. The similarity is high and correct. What's wrong is the <em>kind</em> of information asked for, and no threshold on similarity can express that.</p>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="head"><span class="num">15</span><span class="title">Three questions about kidneys. One gets an answer.</span><span class="time">6:35 &ndash; 7:05</span></div>
+  <div class="say">
+    <p>Three questions. All fluent, all genuinely about CKD, and a general assistant answers all three.</p>
+    <p>ACR threshold of <strong>30</strong> &mdash; answered, quoting the table that defines it.</p>
+    <p>ACR threshold of <strong>500</strong> &mdash; one number changed. 500 appears in no band in either guideline, so the question asserts something untrue. The system refuses, rather than retrieving the nearest plausible table and answering around a false premise.</p>
+    <p>And the epidemiology question &mdash; refused on genre, despite scoring higher than the median answerable one.</p>
+    <p><strong>Zero unsafe answers. Zero false declines.</strong> Across 75 audited cases, end to end.</p>
+  </div>
+</div>
+
+<h2 class="sec">Architecture and evidence</h2>
+
+<div class="slide">
+  <div class="head"><span class="num">16</span><span class="title">Fan-out at build time, fan-in at query time.</span><span class="time">7:05 &ndash; 7:30</span></div>
+  <div class="say">
+    <p>The whole system. Build time across the top, query time in the middle, and the answer flowing right to left along the bottom.</p>
+    <p>The two dashed red paths are <strong>the design, not error handling</strong>. A question the guidelines don't answer leaves at the gates with a reason. A generated sentence whose number can't be traced to its own citation is discarded whole, and the quotes stand in its place &mdash; so the worst case degrades to the guideline's own words, never to an unsupported claim.</p>
+    <p>And notice what the doc2query index <em>isn't</em> wired to. It feeds ranking and the reranker. It has no path to a quote, a citation, or the verifier.</p>
+  </div>
+  <div class="beat">This is the 15-point architecture section. Trace the three lanes with a finger; don't read the boxes.</div>
+</div>
+
+<div class="slide">
+  <div class="head"><span class="num">17</span><span class="title">The answer key, and the rule that lets it fail.</span><span class="time">7:30 &ndash; 8:05</span></div>
+  <div class="say">
+    <p>Back to the answer key, for the part that matters.</p>
+    <p>The judgements are pinned to <strong>what a chunk is</strong> - a NICE recommendation number, a KDIGO label, a distinctive phrase - never to a chunk ID, because IDs encode page and type and change whenever the chunker does. The corpus was rebuilt <strong>four times</strong> and the gold set survived every rebuild without re-annotation. The builder aborts if an anchor stops matching or goes ambiguous.</p>
+    <p>Then the rule that makes it able to fail: every anchor was chosen by <strong>reading the chunk in the guideline</strong>, never by running retrieval and keeping what came back.</p>
+    <p>That exact circularity is what made our first evaluator report hit-at-8 of 1.00 and MRR of 1.00. The same code, measured against pinned chunks, scores <strong>0.276</strong>.</p>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="head"><span class="num">18</span><span class="title">Three answer keys, because one can be gamed.</span><span class="time">8:05 &ndash; 8:35</span></div>
+  <div class="say">
+    <p>Results on all three. <strong>0.725</strong> nDCG on the main gold set. <strong>0.841</strong> on the held-out set, written from the chunks before any run. And <strong>100% success at 5</strong> on the clinician FAQ set &mdash; the only key whose questions didn't originate with this project.</p>
+    <p>The line underneath is the journey: 0.276 to 0.725. Questions returning zero relevant evidence, 26 down to 4. And the overfitting ratio &mdash; dev over test &mdash; from 2.56 down to 1.39.</p>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="head"><span class="num">19</span><span class="title">Measured, and rejected.</span><span class="time">8:35 &ndash; 9:05</span></div>
+  <div class="say">
+    <p>Last slide. What we built, measured, and threw away: MedCPT, HyDE, ColBERT, Contextual Retrieval, BM25 in the score, and three attempts at score-based abstention.</p>
+    <p>A negative result <em>with a mechanism</em> is a stronger answer to "why didn't you use X?" than never having measured it.</p>
+    <p>And the honesty notes are on the slide on purpose, because they'd be found anyway. Our original evaluator couldn't fail. 16 of the 75 gold cases were written by us. n = 67 is small for IR.</p>
+    <p>Thank you &mdash; happy to take questions.</p>
+  </div>
+</div>
+
+<h2 class="sec">If you're running long</h2>
+
+<div class="cut">
+  <h3>Cut in this order &mdash; each saves roughly 30 seconds</h3>
+  <ul>
+    <li><strong>Slide 10, Embedding</strong> &mdash; drop to one line: "seven encoders measured; the reranker makes them nearly interchangeable, which is why we attacked the document side instead."</li>
+    <li><strong>Slide 06, Corpus</strong> &mdash; keep the dollar-sign defect, drop the other two.</li>
+    <li><strong>Slide 19, Ablation</strong> &mdash; say only the "negative result with a mechanism" line and stop.</li>
+    <li><strong>Slide 13, Scoring</strong> &mdash; skip the sweep table; say "every constant was swept twice and came back where it started."</li>
+  </ul>
+  <p style="margin:10px 0 0; font-size:15px; color:var(--ink-2);"><strong>Never cut:</strong> the Patient B silence on slide 04, the boxed table row on slide 07, or the 0.276 evaluator story on slide 17. Those are the three moments that separate this from a demo.</p>
+</div>
+
+<h2 class="sec">Questions you should expect</h2>
+
+<div class="qa">
+  <p class="q">"Did you actually deploy this in an EHR?"</p>
+  <p><strong>No &mdash; and say so first.</strong> No vendor sandbox, no production FHIR server, no real patient data. What exists is a conformant CDS Hooks service: discovery and hook endpoints, tested over HTTP with a spec-shaped request. First call after startup is 4 milliseconds; a hook arriving during warm-up gets a 503 with Retry-After rather than a held connection. Missing before it could be deployed: JWT authentication and a FHIR fetch fallback. The transcript is in <span class="mono">CDS_HOOKS_WIRE_TEST.md</span>.</p>
+</div>
+
+<div class="qa">
+  <p class="q">"If they already have the container, why keep paying?"</p>
+  <p>They are not paying for the container &mdash; they are paying for it to stay correct. The corpus goes stale: KDIGO 2024 replaced KDIGO 2012, and NICE NG203 already carries 2021 amendments. Every revision means re-parsing, re-chunking and re-running the 141-question gold set to check retrieval did not silently get worse &mdash; which no trust will do for itself. A frozen container keeps answering confidently from superseded guidance, which is worse than not having it.</p>
+</div>
+
+<div class="qa">
+  <p class="q">"And in a year when the guideline does not change?"</p>
+  <p>Then that answer does not hold, and the honest one is that what recurs is not content. Epic ships quarterly releases, FHIR versions shift, LOINC updates twice a year &mdash; and the prefetch is matched on LOINC codes, so a service called correctly in January can stop being called in October because the record system moved, not the medicine. It is a container carrying PyTorch and a web server, so CVEs land continuously and no infosec team leaves an unpatched container on a clinical network. And a DCB0129 hazard log is maintained, not filed. That is why it is priced as implementation plus support rather than as a content subscription &mdash; the same reason a trust pays maintenance on PACS in a year when nothing about the underlying medicine changed.</p>
+</div>
+
+<div class="qa">
+  <p class="q">"Why not just fine-tune a model / use a bigger LLM?"</p>
+  <p>Because the requirement is traceability, not fluency. A fine-tuned model can't show you the rectangle on the page. Everything generated here is subordinate to retrieved text and is discarded if a single number fails to trace.</p>
+</div>
+
+<div class="qa">
+  <p class="q">"Isn't 67 questions too few?"</p>
+  <p>Yes, and that's stated on the slide. It's why nothing is defended as an argmax &mdash; anything under about 0.05 isn't measurable at that n, so constants are defended as indistinguishable from their neighbours, and every delta carries a paired bootstrap interval.</p>
+</div>
+
+<div class="qa">
+  <p class="q">"You wrote your own gold set. Isn't that circular?"</p>
+  <p>16 of 75 cases, yes, and it's on the slide rather than buried. Two things limit it: every anchor came from reading the guideline rather than from running retrieval, and anchors are text-based so they survived four corpus rebuilds. If you discount the rest, the held-out slice and the externally-sourced FAQ set are the numbers to trust.</p>
+</div>
+
+<div class="qa">
+  <p class="q">"What's the weakest part?"</p>
+  <p>Paraphrase questions &mdash; ones sharing no vocabulary with the source. doc2query closed most of the gap but not all of it. And the premise gate catches <em>contamination</em>, not false <em>relationships</em>: if a number is genuinely stated in exactly the context you ask about, a wrong claim about it still gets answered. The verifier is what stands behind that.</p>
+</div>
+
+<div class="qa">
+  <p class="q">"Why is nDCG only 0.72? That doesn't sound high."</p>
+  <p>Because it's measured against pinned chunks with graded relevance, not topic labels. The original evaluator on this same project reported 1.00 &mdash; and it literally could not fail, because it counted a hit whenever a returned chunk carried a matching topic label and the retriever boosted on those same labels. 0.72 is what honest measurement of this task looks like.</p>
+</div>
+
+<div class="qa">
+  <p class="q">"Could it give a wrong dose?"</p>
+  <p>That's exactly the failure we measure separately, because nDCG can't see it &mdash; returning the wrong row of the right table is a wrong answer with a real citation. Correct-row precision is 19 of 20. It caught a tenfold paediatric salt-dosing error that every aggregate metric scored as ordinary partial credit.</p>
+</div>
+
+</div>

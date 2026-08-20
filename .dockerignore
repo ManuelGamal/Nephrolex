@@ -1,0 +1,35 @@
+# Keep licensed guideline content out of the image. The corpus is mounted at
+# runtime, never baked in -- so the image can be pushed to a registry, and a
+# guideline revision does not mean rebuilding it.
+data/
+!data/.gitkeep
+
+# Secrets never enter the build context.
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Large or irrelevant to the runtime.
+.venv/
+venv/
+.git/
+.github/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+scratch/
+*.log
+
+# Presentation material. Useful in the repository, not inside a clinical
+# container -- and reports/presentation.html embeds cropped guideline page
+# images, which have no business in a distributable image.
+reports/
+
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

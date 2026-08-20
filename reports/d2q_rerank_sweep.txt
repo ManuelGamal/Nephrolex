@@ -1,0 +1,9 @@
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights:  92%|█████████▏| 360/391 [00:00<00:00, 3568.21it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 3657.91it/s]
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 4737.00it/s]
+never   main 0.7152 R@20 0.8483 miss 2 | held 0.7047 clin 0.5492 echo 0.9068
+always  main 0.7080 R@20 0.8184 miss 5 | held 0.8407 clin 0.7625 echo 0.9423
+auto    main 0.7115 R@20 0.8184 miss 4 | held 0.8267 clin 0.7378 echo 0.9423
+always vs never, main: -0.0072 CI [-0.0621, +0.0459] within noise
+always vs never, held: +0.1360 CI [+0.0538, +0.2299] SIGNIFICANT
+auto vs never, main: -0.0037 CI [-0.0580, +0.0478] within noise
+auto vs never, held: +0.1220 CI [+0.0427, +0.2122] SIGNIFICANT

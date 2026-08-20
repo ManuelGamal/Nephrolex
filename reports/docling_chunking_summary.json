@@ -1,0 +1,49 @@
+{
+  "source": "docling_json",
+  "total_chunks": 1991,
+  "indexable_chunks": 1485,
+  "per_document": {
+    "kdigo_2024_ckd": 1648,
+    "nice_ng203_ckd": 343
+  },
+  "chunk_types": {
+    "section_passage": 709,
+    "figure_caption": 109,
+    "practice_point": 281,
+    "recommendation_atom": 224,
+    "figure_body": 29,
+    "table_row": 639
+  },
+  "indexable_chunk_types": {
+    "section_passage": 581,
+    "figure_caption": 100,
+    "practice_point": 275,
+    "recommendation_atom": 220,
+    "figure_body": 27,
+    "table_row": 282
+  },
+  "topics": {
+    "egfr": 590,
+    "general_ckd": 311,
+    "albuminuria_acr": 255,
+    "risk_stratification": 226,
+    "pediatric": 193,
+    "referral": 112,
+    "dialysis": 112,
+    "anemia": 109,
+    "diet": 96,
+    "blood_pressure": 89,
+    "mineral_bone": 89,
+    "ras_inhibitors": 73,
+    "monitoring": 63,
+    "medication_safety": 53,
+    "ckd_definition": 29,
+    "kfre": 18,
+    "sglt2": 11,
+    "pregnancy": 3,
+    "diabetes": 3
+  },
+  "scope_flagged": 294,
+  "with_bbox": 1484,
+  "mean_chars": 510
+}

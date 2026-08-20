@@ -1,0 +1,2920 @@
+{
+  "project": "NewbieDuo",
+  "stage": "full_accuracy_pdf_parsing",
+  "docling": {
+    "status": "skipped_existing",
+    "output_dir": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\docling",
+    "file_count": 4
+  },
+  "parsed_documents": [
+    {
+      "document_id": "kdigo_2024_ckd",
+      "title": "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease",
+      "publisher": "KDIGO",
+      "source_url": "https://kdigo.org/guidelines/ckd-evaluation-and-management/",
+      "version_year": 2024,
+      "pdf_filename": "KDIGO-2024-CKD-Guideline.pdf",
+      "pdf_path": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\raw\\KDIGO-2024-CKD-Guideline.pdf",
+      "sha256": "0b77a9e32ca6c7bbccbddf902be4427bf8bc0d2dd7e3ffbc18042f602f371b27",
+      "page_count": 199,
+      "table_count": 46,
+      "table_rows": 316,
+      "pdf_metadata": {
+        "/CreationDate": "D:20240311135421-04'00'",
+        "/Creator": "Elsevier",
+        "/ModDate": "D:20260327125817-04'00'",
+        "/Producer": "Acrobat Distiller 8.1.0 (Windows)",
+        "/Subject": "Kidney International, 105 (2024) 1. doi:10.1016/S0085-2538(24)00110-8"
+      },
+      "outline_titles": [
+        "KDIGO_CKD_GL_KINT_3637_final.pdf",
+        "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease",
+        "flink1",
+        "Tables",
+        "Figures",
+        "Supplementary Material",
+        "KDIGO Executive Committee",
+        "Reference keys",
+        "Nomenclature and Description for Rating Guideline Recommendations",
+        "Current Chronic Kidney Disease (CKD) Nomenclature used by KDIGO",
+        "Conversion Factors of Conventional Units to SI Units",
+        "Equivalent Albuminuria Categories in CKD",
+        "Abbreviations and acronyms",
+        "Notice",
+        "I: Use of the Clinical Practice Guideline",
+        "II: Disclosure",
+        "Foreword",
+        "Work Group membership",
+        "Abstract",
+        "Patient foreword",
+        "Introduction, qualifying statements, and key concepts",
+        "Definition and classification of CKD",
+        "Defining CKD",
+        "Classifying CKD",
+        "The global burden of CKD",
+        "Screening and prevention",
+        "International considerations",
+        "Standardization/accuracy of testing tools including assays/equipment",
+        "Special considerations",
+        "Special considerations",
+        "Considerations in children and adolescents",
+        "Delivery of care",
+        "Growth, puberty, and young adulthood",
+        "Kidney development and long-term assessment of kidney risks",
+        "Neurodevelopment and education",
+        "Considerations in older adults",
+        "Considerations regarding sex and gender",
+        "Considerations regarding fertility and pregnancy",
+        "Fertility",
+        "Pregnancy",
+        "Summary of relative and absolute risks relevant to CKD from meta-analysis of large multinational population studies in the  ...",
+        "Outcomes relevant to CKD, and the prognostic importance of CKD categories",
+        "CKD staging by eGFRcr and ACR and association with adverse events",
+        "CKD staging by eGFRcr-cys and ACR and risk for adverse events",
+        "Rationale for using cystatin C containing equations for CKD staging",
+        "Summary of recommendation statements and practice points",
+        "Summary of recommendation statements and practice points",
+        "1.1. Detection and evaluation of CKD",
+        "1.1.1. Detection of CKD",
+        "1.1.2. Methods for staging of CKD",
+        "1.1.3. Evaluation of chronicity",
+        "1.1.4. Evaluation of cause",
+        "1.2. Evaluation of GFR",
+        "1.2.1. Other functions of kidneys besides GFR",
+        "1.2.2. Guidance to physicians and other healthcare providers",
+        "mk8",
+        "Outline placeholder",
+        "Outline placeholder",
+        "1.2.3. Guidance to clinical laboratories",
+        "Special considerations",
+        "Pediatric considerations",
+        "1.2.4. Selection of GFR estimating equations",
+        "Special considerations",
+        "Pediatric considerations",
+        "1.3. Evaluation of albuminuria",
+        "1.3.1. Guidance for physicians and other healthcare providers",
+        "Special considerations",
+        "Pediatric considerations",
+        "1.3.2. Guidance to clinical laboratories",
+        "1.4. Point-of-care testing",
+        "2: Risk assessment in people with CKD",
+        "2.1. Overview on monitoring for progression of CKD based upon GFR and ACR categories",
+        "2.2. Risk prediction in people with CKD",
+        "2.3. Prediction of cardiovascular risk in people with CKD",
+        "3: Delaying CKD progression and managing its complications",
+        "3.1. CKD treatment and risk modification",
+        "3.2. Lifestyle factors",
+        "3.2.1. Avoiding use of tobacco products",
+        "3.2.2. Physical activity and optimum weight",
+        "Special considerations",
+        "Pediatric considerations",
+        "3.3. Diet",
+        "3.3.1. Protein intake",
+        "Special considerations",
+        "Pediatric considerations",
+        "Older adults",
+        "3.3.2. Sodium intake",
+        "Special considerations",
+        "Pediatric considerations",
+        "3.4. Blood pressure control",
+        "Special considerations",
+        "Pediatric considerations",
+        "3.5. Glycemic control",
+        "3.6. Renin-angiotensin system inhibitors",
+        "3.7. Sodium-glucose cotransporter-2 inhibitors (SGLT2i)",
+        "3.8. Mineralocorticoid receptor antagonists (MRA)",
+        "3.9. Glucagon-like peptide-1 receptor agonists (GLP-1 RA)",
+        "3.10. Metabolic acidosis",
+        "3.11. Hyperkalemia in CKD",
+        "3.11.1. Awareness of factors impacting on potassium measurement",
+        "3.11.2. Potassium exchange agents",
+        "3.11.3. Timing to recheck potassium after identifying moderate and severe hyperkalemia in adults",
+        "3.11.4. Managing hyperkalemia",
+        "3.11.5. Dietary considerations",
+        "3.12. Anemia",
+        "3.13. CKD-Mineral Bone Disorder (CKD-MBD)",
+        "3.14. Hyperuricemia",
+        "Dietary approaches",
+        "3.15. Cardiovascular disease (CVD) and additional specific interventions to modify risk",
+        "3.15.1. Lipid management",
+        "Dietary approaches",
+        "3.15.2. Use of antiplatelet therapy",
+        "3.15.3. Invasive versus intensive medical therapy for coronary artery disease",
+        "3.16. CKD and atrial fibrillation",
+        "4: Medication management and drug stewardship in CKD",
+        "4.1. Medication choices and monitoring for safety",
+        "Medications and pregnancy",
+        "4.2. Dose adjustments by level of GFR",
+        "4.3. Polypharmacy and drug stewardship",
+        "4.3.1. Strategies to promote drug stewardship",
+        "4.4. Imaging studies",
+        "4.4.1. Radiocontrast: intra-arterial and intravenous dye studies",
+        "4.4.2. Gadolinium-containing contrast media",
+        "5: Optimal models of care",
+        "5.1. Referral to specialist kidney care services",
+        "Special considerations",
+        "Pediatric considerations",
+        "5.2. Symptoms in CKD",
+        "5.2.1. Prevalence and severity of symptoms",
+        "5.2.2. Identification and assessment of symptoms",
+        "5.2.3. Management of common symptoms for people with CKD",
+        "5.3. Team-based integrated care",
+        "Special considerations",
+        "5.3.1. Transition from pediatric to adult care",
+        "5.3.1.1. Pediatric providers",
+        "5.3.1.2. Adult providers",
+        "5.4. Timing the initiation of dialysis",
+        "Special considerations",
+        "Pediatric considerations",
+        "5.5. Structure and process of supportive care and comprehensive conservative management",
+        "1: Evaluation of CKD",
+        "1.1. Detection and evaluation of CKD",
+        "1.1.1. Detection of CKD",
+        "Special considerations",
+        "Pediatric considerations",
+        "1.1.2. Methods for staging of CKD",
+        "Key information",
+        "Balance of benefits and harms",
+        "Certainty of evidence",
+        "Values and preferences",
+        "Resource use and costs",
+        "Considerations for implementation",
+        "Rationale",
+        "1.1.3. Evaluation of chronicity",
+        "Special considerations",
+        "Pediatric considerations",
+        "1.1.4. Evaluation of cause",
+        "Key information",
+        "Balance of benefits and harms",
+        "Certainty of evidence",
+        "Values and preferences",
+        "Resource use and costs",
+        "Considerations for implementation",
+        "Rationale",
+        "Special considerations",
+        "Pediatric considerations",
+        "1.2. Evaluation of GFR",
+        "1.2.1. Other functions of kidneys besides GFR",
+        "Special considerations",
+        "Pediatric considerations",
+        "1.2.2. Guidance to physicians and other healthcare providers",
+        "Key information",
+        "Balance of benefits and harms",
+        "Certainty of evidence",
+        "Values and preferences",
+        "Resource use and costs",
+        "Considerations for implementation",
+        "Rationale",
+        "Special considerations",
+        "Sex and gender considerations",
+        "Pediatric considerations",
+        "1.2.3. Guidance to clinical laboratories",
+        "Creatinine",
+        "Cystatin C",
+        "Estimated GFR",
+        "Special considerations",
+        "Pediatric considerations",
+        "1.2.4. Selection of GFR estimating equations",
+        "Key information",
+        "Balance of benefits and harms",
+        "Certainty of evidence",
+        "Values and preferences",
+        "Resource use and costs",
+        "Considerations for implementation",
+        "Rationale",
+        "Special considerations",
+        "Pediatric considerations",
+        "1.3. Evaluation of albuminuria",
+        "1.3.1. Guidance for physicians and other healthcare providers",
+        "Special considerations",
+        "Pediatric considerations",
+        "1.3.2. Guidance to clinical laboratories",
+        "1.4. Point-of-care testing",
+        "Key information",
+        "Balance of benefits and harms",
+        "Certainty of evidence",
+        "Values and preferences",
+        "Resource use and costs",
+        "Considerations for implementation",
+        "Rationale",
+        "Special considerations",
+        "Pediatric considerations",
+        "2: Risk assessment in people with CKD",
+        "2.1. Overview on monitoring for progression of CKD based upon GFR and ACR categories",
+        "Special considerations",
+        "Pediatric considerations",
+        "Special considerations",
+        "Pediatric considerations",
+        "Considerations in older adults",
+        "2.2. Risk prediction in people with CKD",
+        "Key information",
+        "Balance of benefits and harms",
+        "Certainty of the evidence",
+        "Values and preferences",
+        "Resource use and costs",
+        "Considerations for implementation",
+        "Rationale",
+        "Special considerations",
+        "Pediatric considerations",
+        "Considerations regarding sex and gender",
+        "2.3. Prediction of cardiovascular risk in people with CKD",
+        "3: Delaying CKD progression and managing its complications",
+        "3.1. CKD treatment and risk modification",
+        "3.2. Lifestyle factors",
+        "3.2.1. Avoiding use of tobacco products",
+        "3.2.2. Physical activity and optimum weight",
+        "Special considerations",
+        "Pediatric considerations",
+        "3.3. Diet",
+        "3.3.1. Protein intake",
+        "Key information",
+        "Balance of benefits and harms",
+        "Certainty of evidence",
+        "Values and preferences",
+        "Resource use and costs",
+        "Considerations for implementation",
+        "Rationale",
+        "Special considerations",
+        "Pediatric considerations",
+        "Older adults",
+        "3.3.2. Sodium intake",
+        "Special considerations",
+        "Pediatric considerations",
+        "3.4. Blood pressure control",
+        "Special considerations",
+        "Pediatric considerations",
+        "3.5. Glycemic control",
+        "3.6. Renin-angiotensin system inhibitors",
+        "3.7. Sodium-glucose cotransporter-2 inhibitors (SGLT2i)",
+        "Key information",
+        "Balance of benefits and harms",
+        "Benefits",
+        "Harms",
+        "Certainty of evidence",
+        "Values and preferences",
+        "Resource use and costs",
+        "Considerations for implementation",
+        "Rationale",
+        "Key information",
+        "Benefits and harms",
+        "Certainty of evidence",
+        "Values and preferences",
+        "Resource use and costs",
+        "Considerations for implementation.",
+        "Rationale",
+        "Special considerations",
+        "Pediatric considerations",
+        "3.8. Mineralocorticoid receptor antagonists (MRA)",
+        "Special considerations",
+        "Pediatric considerations",
+        "3.9. Glucagon-like peptide-1 receptor agonists (GLP-1 RA)",
+        "3.10. Metabolic acidosis",
+        "Definition and prevalence",
+        "Dietary approaches",
+        "Special considerations",
+        "Pediatric considerations",
+        "3.11. Hyperkalemia in CKD",
+        "Definition and prevalence",
+        "3.11.1. Awareness of factors impacting on potassium measurement",
+        "3.11.2. Potassium exchange agents",
+        "3.11.3. Timing to recheck potassium after identifying moderate and severe hyperkalemia in adults",
+        "3.11.4. Managing hyperkalemia",
+        "3.11.5. Dietary considerations",
+        "Special considerations",
+        "International considerations",
+        "Pediatric considerations",
+        "3.12. Anemia",
+        "3.13. CKD-Mineral Bone Disorder (CKD-MBD)",
+        "3.14. Hyperuricemia",
+        "Definition and prevalence",
+        "Key information",
+        "Balance of benefits and harms",
+        "Certainty of evidence",
+        "Values and preferences",
+        "Resource use and costs",
+        "Considerations for implementation",
+        "Rationale",
+        "Dietary approaches",
+        "Special considerations",
+        "Pediatric considerations",
+        "International considerations",
+        "Key information",
+        "Balance of benefits and harms",
+        "Certainty of the evidence",
+        "Values and preferences",
+        "Resource use and costs",
+        "Considerations for implementation",
+        "Rationale",
+        "3.15. Cardiovascular disease (CVD) and additional specific interventions to modify risk",
+        "Prevalence and diagnosis",
+        "Management",
+        "3.15.1. Lipid management",
+        "Dietary approaches",
+        "3.15.2. Use of antiplatelet therapy",
+        "Key information",
+        "Balance of benefits and harm",
+        "Certainty of evidence",
+        "Values and preferences",
+        "Resource use and costs",
+        "Considerations for implementation",
+        "Rationale",
+        "Special considerations",
+        "International considerations",
+        "3.15.3. Invasive versus intensive medical therapy for coronary artery disease",
+        "Key information",
+        "Balance of benefits and harm",
+        "Benefits",
+        "Harms",
+        "Certainty of evidence",
+        "Values and preferences",
+        "Resource use and costs",
+        "Considerations for implementation",
+        "Rationale",
+        "3.16. CKD and atrial fibrillation",
+        "Prevalence and consequences",
+        "Identification and management",
+        "Prophylaxis against stroke and systemic thromboembolism",
+        "Key information",
+        "Balance of benefits and harms",
+        "Benefits",
+        "Harms",
+        "Certainty of evidence",
+        "Values and preferences",
+        "Resource use and costs",
+        "Considerations for implementation",
+        "Rationale",
+        "4: Medication management and drug stewardship in CKD",
+        "4.1. Medication choices and monitoring for safety",
+        "Special considerations",
+        "Global access to medications",
+        "Medications and pregnancy",
+        "Sex-specific aspects of medication use in CKD",
+        "4.2. Dose adjustments by level of GFR",
+        "Special considerations",
+        "Dose adjustments in cancer",
+        "Dose adjustment in children/neonates",
+        "Dose adjustment in pregnancy",
+        "4.3. Polypharmacy and drug stewardship",
+        "Special considerations",
+        "Pediatric considerations",
+        "4.3.1. Strategies to promote drug stewardship",
+        "Special considerations",
+        "Pediatric considerations",
+        "4.4. Imaging studies",
+        "4.4.1. Radiocontrast: intra-arterial and intravenous dye studies",
+        "Special considerations",
+        "Global access to contrast agents",
+        "4.4.2. Gadolinium-containing contrast media",
+        "Special considerations",
+        "Global access to gadolinium-contrast agents",
+        "Pediatric considerations",
+        "5: Optimal models of care",
+        "5.1. Referral to specialist kidney care services",
+        "Special considerations",
+        "Pediatric considerations",
+        "5.2. Symptoms in CKD",
+        "5.2.1. Prevalence and severity of symptoms",
+        "5.2.2. Identification and assessment of symptoms",
+        "5.2.3. Management of common symptoms for people with CKD",
+        "5.3. Team-based integrated care",
+        "Special considerations",
+        "Pediatric considerations",
+        "5.3.1. Transition from pediatric to adult care",
+        "5.3.1.2. Adult providers",
+        "5.4. Timing the initiation of dialysis",
+        "Special considerations",
+        "Pediatric considerations",
+        "5.5. Structure and process of supportive care and comprehensive conservative management",
+        "6: Research recommendations",
+        "Guiding principles for research",
+        "Screening",
+        "Methods for guideline development",
+        "Aim",
+        "Overview of the process",
+        "Commissioning of Work Group and ERT",
+        "Defining scope and topics and formulating key clinical questions",
+        "Literature searches and article selection",
+        "Data extraction",
+        "Risk of bias of studies and systematic reviews",
+        "Evidence synthesis and meta-analysis",
+        "Measures of treatment effect",
+        "Data synthesis",
+        "Assessment of heterogeneity",
+        "Grading the certainty of the evidence and the strength of a guideline recommendation",
+        "Summary of findings (SoF) tables",
+        "Updating and developing the guideline statements",
+        "Grading the strength of the recommendations",
+        "Balance of benefits and harms",
+        "The overall certainty of the evidence",
+        "Patient values and preferences",
+        "Resources and other costs",
+        "Practice points",
+        "Format for guideline recommendations",
+        "Limitations of the guideline development process",
+        "KDIGO Chairs",
+        "Methods Committee Representative",
+        "Evidence Review Team",
+        "Acknowledgments",
+        "References"
+      ],
+      "extraction_methods": {
+        "pdfplumber": 199
+      },
+      "flagged_pages": [
+        {
+          "page": 1,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9375,
+          "word_count": 35
+        },
+        {
+          "page": 3,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9375,
+          "word_count": 292
+        },
+        {
+          "page": 4,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.974,
+          "word_count": 501
+        },
+        {
+          "page": 5,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9496,
+          "word_count": 549
+        },
+        {
+          "page": 6,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9386,
+          "word_count": 633
+        },
+        {
+          "page": 7,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9295,
+          "word_count": 590
+        },
+        {
+          "page": 8,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9368,
+          "word_count": 607
+        },
+        {
+          "page": 11,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.754,
+          "word_count": 174
+        },
+        {
+          "page": 12,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8539,
+          "word_count": 134
+        },
+        {
+          "page": 13,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9203,
+          "word_count": 400
+        },
+        {
+          "page": 20,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8559,
+          "word_count": 945
+        },
+        {
+          "page": 21,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8523,
+          "word_count": 1231
+        },
+        {
+          "page": 22,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.851,
+          "word_count": 901
+        },
+        {
+          "page": 23,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8632,
+          "word_count": 711
+        },
+        {
+          "page": 24,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8714,
+          "word_count": 657
+        },
+        {
+          "page": 26,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9048,
+          "word_count": 566
+        },
+        {
+          "page": 27,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.879,
+          "word_count": 978
+        },
+        {
+          "page": 28,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8767,
+          "word_count": 738
+        },
+        {
+          "page": 29,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8568,
+          "word_count": 832
+        },
+        {
+          "page": 30,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.931,
+          "word_count": 879
+        },
+        {
+          "page": 31,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9218,
+          "word_count": 722
+        },
+        {
+          "page": 32,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8718,
+          "word_count": 740
+        },
+        {
+          "page": 33,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8561,
+          "word_count": 197
+        },
+        {
+          "page": 34,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8698,
+          "word_count": 371
+        },
+        {
+          "page": 35,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9059,
+          "word_count": 487
+        },
+        {
+          "page": 36,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8774,
+          "word_count": 509
+        },
+        {
+          "page": 37,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8898,
+          "word_count": 700
+        },
+        {
+          "page": 38,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8978,
+          "word_count": 711
+        },
+        {
+          "page": 39,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8777,
+          "word_count": 531
+        },
+        {
+          "page": 40,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8917,
+          "word_count": 586
+        },
+        {
+          "page": 41,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9153,
+          "word_count": 539
+        },
+        {
+          "page": 42,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9504,
+          "word_count": 590
+        },
+        {
+          "page": 43,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9202,
+          "word_count": 586
+        },
+        {
+          "page": 44,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9173,
+          "word_count": 663
+        },
+        {
+          "page": 45,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9148,
+          "word_count": 674
+        },
+        {
+          "page": 46,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9004,
+          "word_count": 449
+        },
+        {
+          "page": 47,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8837,
+          "word_count": 425
+        },
+        {
+          "page": 48,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9138,
+          "word_count": 421
+        },
+        {
+          "page": 49,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9434,
+          "word_count": 618
+        },
+        {
+          "page": 50,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9106,
+          "word_count": 470
+        },
+        {
+          "page": 51,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8712,
+          "word_count": 464
+        },
+        {
+          "page": 52,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.917,
+          "word_count": 571
+        },
+        {
+          "page": 53,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9058,
+          "word_count": 450
+        },
+        {
+          "page": 54,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8716,
+          "word_count": 703
+        },
+        {
+          "page": 55,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8635,
+          "word_count": 947
+        },
+        {
+          "page": 56,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.903,
+          "word_count": 591
+        },
+        {
+          "page": 57,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8719,
+          "word_count": 876
+        },
+        {
+          "page": 58,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8641,
+          "word_count": 790
+        },
+        {
+          "page": 59,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9139,
+          "word_count": 743
+        },
+        {
+          "page": 60,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9021,
+          "word_count": 705
+        },
+        {
+          "page": 61,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9342,
+          "word_count": 891
+        },
+        {
+          "page": 62,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9264,
+          "word_count": 528
+        },
+        {
+          "page": 63,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8976,
+          "word_count": 839
+        },
+        {
+          "page": 64,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9359,
+          "word_count": 658
+        },
+        {
+          "page": 65,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8796,
+          "word_count": 822
+        },
+        {
+          "page": 66,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8758,
+          "word_count": 968
+        },
+        {
+          "page": 67,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9267,
+          "word_count": 750
+        },
+        {
+          "page": 68,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9068,
+          "word_count": 937
+        },
+        {
+          "page": 69,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9177,
+          "word_count": 849
+        },
+        {
+          "page": 70,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.894,
+          "word_count": 935
+        },
+        {
+          "page": 71,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8969,
+          "word_count": 903
+        },
+        {
+          "page": 72,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.877,
+          "word_count": 823
+        },
+        {
+          "page": 73,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8546,
+          "word_count": 957
+        },
+        {
+          "page": 74,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8906,
+          "word_count": 569
+        },
+        {
+          "page": 75,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9199,
+          "word_count": 911
+        },
+        {
+          "page": 76,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8642,
+          "word_count": 735
+        },
+        {
+          "page": 77,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8957,
+          "word_count": 961
+        },
+        {
+          "page": 78,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8828,
+          "word_count": 920
+        },
+        {
+          "page": 79,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8772,
+          "word_count": 847
+        },
+        {
+          "page": 80,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8782,
+          "word_count": 785
+        },
+        {
+          "page": 81,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9222,
+          "word_count": 790
+        },
+        {
+          "page": 82,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8583,
+          "word_count": 657
+        },
+        {
+          "page": 83,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8867,
+          "word_count": 910
+        },
+        {
+          "page": 84,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8967,
+          "word_count": 710
+        },
+        {
+          "page": 85,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9211,
+          "word_count": 973
+        },
+        {
+          "page": 86,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8952,
+          "word_count": 724
+        },
+        {
+          "page": 87,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9129,
+          "word_count": 839
+        },
+        {
+          "page": 88,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8422,
+          "word_count": 810
+        },
+        {
+          "page": 89,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9558,
+          "word_count": 148
+        },
+        {
+          "page": 90,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9261,
+          "word_count": 512
+        },
+        {
+          "page": 91,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9307,
+          "word_count": 554
+        },
+        {
+          "page": 92,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8986,
+          "word_count": 824
+        },
+        {
+          "page": 93,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9324,
+          "word_count": 834
+        },
+        {
+          "page": 94,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9301,
+          "word_count": 761
+        },
+        {
+          "page": 95,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8857,
+          "word_count": 972
+        },
+        {
+          "page": 96,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9147,
+          "word_count": 915
+        },
+        {
+          "page": 97,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9002,
+          "word_count": 851
+        },
+        {
+          "page": 98,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9058,
+          "word_count": 801
+        },
+        {
+          "page": 99,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9347,
+          "word_count": 594
+        },
+        {
+          "page": 100,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9141,
+          "word_count": 918
+        },
+        {
+          "page": 101,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9205,
+          "word_count": 791
+        },
+        {
+          "page": 102,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8919,
+          "word_count": 787
+        },
+        {
+          "page": 103,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8926,
+          "word_count": 893
+        },
+        {
+          "page": 104,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9492,
+          "word_count": 547
+        },
+        {
+          "page": 105,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9019,
+          "word_count": 835
+        },
+        {
+          "page": 106,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9406,
+          "word_count": 778
+        },
+        {
+          "page": 107,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9175,
+          "word_count": 765
+        },
+        {
+          "page": 108,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9064,
+          "word_count": 869
+        },
+        {
+          "page": 109,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9363,
+          "word_count": 871
+        },
+        {
+          "page": 110,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9327,
+          "word_count": 525
+        },
+        {
+          "page": 111,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9324,
+          "word_count": 624
+        },
+        {
+          "page": 112,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9422,
+          "word_count": 663
+        },
+        {
+          "page": 113,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9444,
+          "word_count": 506
+        },
+        {
+          "page": 114,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9561,
+          "word_count": 763
+        },
+        {
+          "page": 115,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8778,
+          "word_count": 767
+        },
+        {
+          "page": 116,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9095,
+          "word_count": 822
+        },
+        {
+          "page": 117,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9048,
+          "word_count": 873
+        },
+        {
+          "page": 118,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9316,
+          "word_count": 728
+        },
+        {
+          "page": 119,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9224,
+          "word_count": 827
+        },
+        {
+          "page": 120,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9598,
+          "word_count": 655
+        },
+        {
+          "page": 121,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8918,
+          "word_count": 844
+        },
+        {
+          "page": 122,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9219,
+          "word_count": 328
+        },
+        {
+          "page": 123,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9007,
+          "word_count": 851
+        },
+        {
+          "page": 124,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8763,
+          "word_count": 896
+        },
+        {
+          "page": 125,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8455,
+          "word_count": 979
+        },
+        {
+          "page": 126,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9119,
+          "word_count": 782
+        },
+        {
+          "page": 127,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9157,
+          "word_count": 855
+        },
+        {
+          "page": 128,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9418,
+          "word_count": 796
+        },
+        {
+          "page": 129,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9379,
+          "word_count": 681
+        },
+        {
+          "page": 130,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.964,
+          "word_count": 353
+        },
+        {
+          "page": 131,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8712,
+          "word_count": 730
+        },
+        {
+          "page": 132,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9162,
+          "word_count": 677
+        },
+        {
+          "page": 133,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9263,
+          "word_count": 677
+        },
+        {
+          "page": 134,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9272,
+          "word_count": 846
+        },
+        {
+          "page": 135,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.907,
+          "word_count": 680
+        },
+        {
+          "page": 136,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9321,
+          "word_count": 750
+        },
+        {
+          "page": 137,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8851,
+          "word_count": 830
+        },
+        {
+          "page": 138,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8065,
+          "word_count": 949
+        },
+        {
+          "page": 140,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9,
+          "word_count": 526
+        },
+        {
+          "page": 141,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8943,
+          "word_count": 789
+        },
+        {
+          "page": 142,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9111,
+          "word_count": 770
+        },
+        {
+          "page": 143,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9492,
+          "word_count": 663
+        },
+        {
+          "page": 144,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9149,
+          "word_count": 533
+        },
+        {
+          "page": 145,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9206,
+          "word_count": 539
+        },
+        {
+          "page": 146,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.734,
+          "word_count": 688
+        },
+        {
+          "page": 147,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9283,
+          "word_count": 445
+        },
+        {
+          "page": 148,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9339,
+          "word_count": 436
+        },
+        {
+          "page": 149,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9281,
+          "word_count": 649
+        },
+        {
+          "page": 150,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9042,
+          "word_count": 747
+        },
+        {
+          "page": 151,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8779,
+          "word_count": 839
+        },
+        {
+          "page": 152,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9125,
+          "word_count": 742
+        },
+        {
+          "page": 153,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8966,
+          "word_count": 759
+        },
+        {
+          "page": 154,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9077,
+          "word_count": 330
+        },
+        {
+          "page": 155,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9038,
+          "word_count": 695
+        },
+        {
+          "page": 156,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8208,
+          "word_count": 758
+        },
+        {
+          "page": 157,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8677,
+          "word_count": 863
+        },
+        {
+          "page": 158,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8112,
+          "word_count": 851
+        },
+        {
+          "page": 159,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8723,
+          "word_count": 769
+        },
+        {
+          "page": 160,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8772,
+          "word_count": 634
+        },
+        {
+          "page": 161,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8764,
+          "word_count": 660
+        },
+        {
+          "page": 162,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9079,
+          "word_count": 656
+        },
+        {
+          "page": 163,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9238,
+          "word_count": 673
+        },
+        {
+          "page": 164,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8324,
+          "word_count": 657
+        },
+        {
+          "page": 165,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8842,
+          "word_count": 691
+        },
+        {
+          "page": 166,
+          "flags": [
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.8571,
+          "word_count": 809
+        },
+        {
+          "page": 168,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8771,
+          "word_count": 738
+        },
+        {
+          "page": 171,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8449,
+          "word_count": 760
+        },
+        {
+          "page": 172,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8346,
+          "word_count": 782
+        },
+        {
+          "page": 173,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8655,
+          "word_count": 861
+        },
+        {
+          "page": 174,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.8428,
+          "word_count": 786
+        },
+        {
+          "page": 182,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.973,
+          "word_count": 1347
+        },
+        {
+          "page": 183,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9389,
+          "word_count": 1358
+        },
+        {
+          "page": 185,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9652,
+          "word_count": 1309
+        },
+        {
+          "page": 186,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9579,
+          "word_count": 1292
+        },
+        {
+          "page": 187,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9587,
+          "word_count": 1361
+        },
+        {
+          "page": 188,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9801,
+          "word_count": 1400
+        },
+        {
+          "page": 195,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9556,
+          "word_count": 1309
+        },
+        {
+          "page": 197,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9651,
+          "word_count": 1295
+        },
+        {
+          "page": 199,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9643,
+          "word_count": 756
+        }
+      ],
+      "outputs": {
+        "pages_jsonl": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\parsed\\kdigo_2024_ckd_pages.jsonl",
+        "tables_jsonl": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\parsed\\kdigo_2024_ckd_tables.jsonl",
+        "metadata_json": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\parsed\\kdigo_2024_ckd_metadata.json"
+      }
+    },
+    {
+      "document_id": "nice_ng203_ckd",
+      "title": "NICE NG203 Chronic kidney disease: assessment and management",
+      "publisher": "NICE",
+      "source_url": "https://www.nice.org.uk/guidance/ng203",
+      "version_year": 2021,
+      "pdf_filename": "chronic-kidney-disease-assessment-and-management-pdf-66143713055173.pdf",
+      "pdf_path": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\raw\\chronic-kidney-disease-assessment-and-management-pdf-66143713055173.pdf",
+      "sha256": "86736192863d86d6c8f16a911b97590ac3e5731e21d88f8ef28f5ecc8d04645b",
+      "page_count": 78,
+      "table_count": 4,
+      "table_rows": 19,
+      "pdf_metadata": {
+        "/CreationDate": "D:20211124000000Z",
+        "/Producer": "Prince 12.5 (www.princexml.com)",
+        "/Creator": "NICE Publications",
+        "/Keywords": "NG203",
+        "/Subject": "Chronic kidney disease: assessment and management (NG203)",
+        "/Author": "National Institute for Health and Care Excellence (NICE)",
+        "/Title": "Chronic kidney disease: assessment and management"
+      },
+      "outline_titles": [
+        "Chronic kidney disease: assessment and management",
+        "Your responsibility",
+        "Contents",
+        "Overview",
+        "Who is it for?",
+        "Recommendations",
+        "1.1 Investigations for chronic kidney disease",
+        "Measuring kidney function",
+        "Creatinine-based estimate of glomerular filtration rate",
+        "1.1.1",
+        "1.1.2",
+        "1.1.3",
+        "1.1.4",
+        "Reporting and interpreting GFR values",
+        "1.1.5",
+        "1.1.6",
+        "1.1.7",
+        "1.1.8",
+        "When highly accurate measures of GFR are needed",
+        "1.1.9",
+        "Investigations for proteinuria",
+        "1.1.10",
+        "1.1.11",
+        "1.1.12",
+        "1.1.13",
+        "1.1.14",
+        "Incidental finding of proteinuria on reagent strips",
+        "1.1.15",
+        "Haematuria",
+        "1.1.16",
+        "Managing isolated invisible haematuria",
+        "1.1.17",
+        "1.1.18",
+        "1.1.19",
+        "Who should be tested for CKD",
+        "1.1.20",
+        "1.1.21",
+        "1.1.22",
+        "1.1.23",
+        "1.1.24",
+        "1.1.25",
+        "1.1.26",
+        "1.2 Classification of CKD in adults",
+        "1.2.1",
+        "1.2.2",
+        "Investigating the cause of CKD and determining the risk of adverse outcomes",
+        "1.2.3",
+        "1.2.4",
+        "Indications for renal ultrasound in adults",
+        "1.2.5",
+        "1.2.6",
+        "1.3 Frequency of monitoring",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "Defining progression in adults",
+        "1.3.5",
+        "1.3.6",
+        "1.3.7",
+        "1.3.8",
+        "Risk factors associated with CKD progression in adults",
+        "1.3.9",
+        "1.3.10",
+        "1.4 Information and education for people with CKD",
+        "1.4.1",
+        "1.4.2",
+        "1.4.3",
+        "1.4.4",
+        "1.4.5",
+        "Lifestyle advice",
+        "1.4.6",
+        "Dietary interventions",
+        "1.4.7",
+        "1.4.8",
+        "Low-protein diets",
+        "1.4.9",
+        "Self-management",
+        "1.4.10",
+        "1.4.11",
+        "1.5 Risk assessment, referral criteria and shared care",
+        "Risk assessment",
+        "1.5.1",
+        "1.5.2",
+        "1.5.3",
+        "1.5.4",
+        "Referral criteria",
+        "1.5.5",
+        "1.5.6",
+        "1.5.7",
+        "1.5.8",
+        "Shared care",
+        "1.5.9",
+        "1.6 Pharmacotherapy",
+        "Blood pressure control",
+        "1.6.1",
+        "1.6.2",
+        "1.6.3",
+        "Treating hypertension",
+        "1.6.4",
+        "1.6.5",
+        "Treating CKD in adults, children, and young people with related persistent proteinuria",
+        "Adults",
+        "1.6.6",
+        "1.6.7",
+        "1.6.8",
+        "1.6.9",
+        "Children and young people",
+        "1.6.10",
+        "1.6.11",
+        "Medicines optimisation",
+        "1.6.12",
+        "Renin–angiotensin system antagonists for adults",
+        "1.6.13",
+        "1.6.14",
+        "1.6.15",
+        "1.6.16",
+        "1.6.17",
+        "1.6.18",
+        "1.6.19",
+        "1.6.20",
+        "1.6.21",
+        "1.6.22",
+        "1.6.23",
+        "Statins for adults",
+        "1.6.24",
+        "Oral antiplatelets and anticoagulants for adults",
+        "1.6.25",
+        "1.6.26",
+        "1.7 Diagnosing and assessing anaemia",
+        "Diagnostic role of haemoglobin levels",
+        "1.7.1",
+        "Diagnostic role of glomerular filtration rate",
+        "1.7.2",
+        "Diagnostic tests to determine iron status and predict response to iron therapy",
+        "1.7.3",
+        "1.7.4",
+        "1.7.5",
+        "1.8 Managing anaemia",
+        "Starting erythropoietic stimulating agent therapy in iron deficiency",
+        "1.8.1",
+        "Maximum iron levels in people with anaemia of CKD",
+        "1.8.2",
+        "Clinical utility of ESA therapy in people with sufficient iron",
+        "1.8.3",
+        "1.8.4",
+        "1.8.5",
+        "1.8.6",
+        "1.8.7",
+        "Hypoxia-inducible factor prolyl-hydroxylase inhibitors",
+        "1.8.8",
+        "1.8.9",
+        "Nutritional supplements",
+        "1.8.10",
+        "Androgens",
+        "1.8.11",
+        "Secondary hyperparathyroidism",
+        "1.8.12",
+        "1.8.13",
+        "1.8.14",
+        "Person-centred care and ESAs",
+        "1.8.15",
+        "1.8.16",
+        "1.8.17",
+        "1.8.18",
+        "1.8.19",
+        "Patient education programmes",
+        "1.8.20",
+        "1.9 Assessing and optimising erythropoiesis in people with anaemia",
+        "Benefits of treatment with ESAs",
+        "1.9.1",
+        "Blood transfusions",
+        "1.9.2",
+        "1.9.3",
+        "Comparisons of ESAs",
+        "1.9.4",
+        "Coordinating care",
+        "1.9.5",
+        "Providing ESAs",
+        "1.9.6",
+        "ESAs: optimal route of administration",
+        "1.9.7",
+        "1.9.8",
+        "ESAs: dose and frequency",
+        "1.9.9",
+        "Optimal Hb levels",
+        "1.9.10",
+        "1.9.11",
+        "1.9.12",
+        "1.9.13",
+        "Adjusting ESA treatment",
+        "1.9.14",
+        "1.9.15",
+        "1.9.16",
+        "Correcting iron deficiency",
+        "1.9.17",
+        "1.9.18",
+        "Maintaining iron levels after a deficiency is corrected",
+        "1.9.19",
+        "Monitoring iron status during ESA treatment",
+        "1.9.20",
+        "Iron therapy for people who are iron deficient and not on ESA therapy",
+        "1.9.21",
+        "1.9.22",
+        "Iron therapy for people who are iron deficient and receiving ESA therapy",
+        "1.9.23",
+        "1.9.24",
+        "1.9.25",
+        "1.10 Monitoring anaemia treatment",
+        "Monitoring iron status",
+        "1.10.1",
+        "1.10.2",
+        "Monitoring Hb levels",
+        "1.10.3",
+        "Detecting ESA resistance",
+        "1.10.4",
+        "1.10.5",
+        "1.10.6",
+        "Managing ESA resistance",
+        "1.10.7",
+        "1.10.8",
+        "Role of blood transfusion in managing ESA resistance",
+        "1.10.9",
+        "1.10.10",
+        "1.10.11",
+        "1.10.12",
+        "1.11 Hyperphosphataemia in people with CKD stage 4 or 5",
+        "Dietary management for adults, children and young people",
+        "1.11.1",
+        "1.11.2",
+        "1.11.3",
+        "1.11.4",
+        "Before starting phosphate binders for adults, children and young people",
+        "1.11.5",
+        "1.11.6",
+        "1.11.7",
+        "1.11.8",
+        "Phosphate binders for children and young people",
+        "1.11.9",
+        "1.11.10",
+        "1.11.11",
+        "Phosphate binders for adults",
+        "First phosphate binder for adults",
+        "1.11.12",
+        "1.11.13",
+        "1.11.14",
+        "1.11.15",
+        "Combinations of phosphate binders for adults",
+        "1.11.16",
+        "1.11.17",
+        "Review of treatments in adults, children and young people",
+        "1.11.18",
+        "1.12 Other complications in adults",
+        "Bone metabolism and osteoporosis",
+        "1.12.1",
+        "1.12.2",
+        "1.12.3",
+        "Vitamin D supplements in the management of CKD–mineral and bone disorders",
+        "1.12.4",
+        "1.12.5",
+        "1.12.6",
+        "1.12.7",
+        "Oral bicarbonate supplements in the management of metabolic acidosis",
+        "1.12.8",
+        "Terms used in this guideline",
+        "Chronic kidney disease (CKD)",
+        "Classification of CKD",
+        "Glomerular filtration rate (GFR)",
+        "4-variable Kidney Failure Risk Equation",
+        "Markers of kidney damage",
+        "Pre-dialysis",
+        "Renal replacement therapy (RRT)",
+        "Renin–angiotensin–aldosterone system antagonist",
+        "Renin–angiotensin system antagonist",
+        "Recommendations for research",
+        "Key recommendations for research",
+        "1 Creatinine-based estimate of eGFR – existing calculations",
+        "2 Creatinine-based estimate of eGFR – improving accuracy of calculations",
+        "3 Risk assessment for black, Asian and minority ethnic groups",
+        "4 Managing anaemia – optimal Hb levels for children and young people",
+        "5 Hyperphosphatemia in people with CKD stage 4 or 5",
+        "Other recommendations for research",
+        "6 Cystatin-C equations",
+        "7 Investigations for proteinuria",
+        "8 Frequency of monitoring",
+        "9 Risk assessment, referral criteria and shared care",
+        "10 Frequency of review",
+        "11 Managing anaemia",
+        "12 Phosphate binders",
+        "13 Self-management of CKD",
+        "14 Antiplatelet therapy",
+        "15 Renin–angiotensin–aldosterone system antagonists",
+        "16 Vitamin D supplements in the management of CKD–mineral and bone disorders",
+        "17 Management of anaemia of CKD with concurrent illness",
+        "18 Treatment of ESA resistance in people on haemodialysis",
+        "Rationale and impact",
+        "Creatinine-based estimate of glomerular filtration rate (GFR)",
+        "Why the committee did not make recommendations",
+        "Impact on practice",
+        "Investigations for proteinuria",
+        "Why the committee made the recommendations",
+        "How the recommendations might affect practice",
+        "Reagent strips for proteinuria and haematuria",
+        "Why the committee made the recommendations",
+        "How the recommendations might affect practice",
+        "Who should be tested for CKD",
+        "Why the committee made the recommendations",
+        "How the recommendations might affect practice",
+        "Frequency of monitoring",
+        "Why the committee made the recommendations",
+        "How the recommendations might affect practice",
+        "Risk assessment, referral criteria and shared care",
+        "Why the committee made the recommendations",
+        "How the recommendations might affect practice",
+        "Pharmacotherapy for blood pressure control",
+        "Why the committee made the recommendations",
+        "How the recommendations might affect practice",
+        "Pharmacotherapy for proteinuria and choice of antihypertensive agent",
+        "Why the committee made the recommendations",
+        "People without diabetes",
+        "People with type 2 diabetes",
+        "How the recommendations might affect practice",
+        "Diagnostic role of glomerular filtration rate",
+        "Why the committee made the recommendation",
+        "How the recommendations might affect practice",
+        "Optimal Hb levels",
+        "Why the committee made the recommendation",
+        "Correcting iron deficiency",
+        "Why the committee made the recommendation",
+        "How the recommendations might affect practice",
+        "Hyperphosphataemia in people with CKD stage 4 or 5",
+        "Why the committee made the recommendations",
+        "Which phosphate binders to use for children and young people",
+        "Which phosphate binders to use for adults",
+        "How the recommendations might affect practice",
+        "Context",
+        "Finding more information and committee details",
+        "Update information"
+      ],
+      "extraction_methods": {
+        "pdfplumber": 78
+      },
+      "flagged_pages": [
+        {
+          "page": 2,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9871,
+          "word_count": 267
+        },
+        {
+          "page": 3,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9831,
+          "word_count": 211
+        },
+        {
+          "page": 4,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9697,
+          "word_count": 78
+        },
+        {
+          "page": 5,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9714,
+          "word_count": 105
+        },
+        {
+          "page": 6,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9852,
+          "word_count": 237
+        },
+        {
+          "page": 7,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9884,
+          "word_count": 303
+        },
+        {
+          "page": 8,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9753,
+          "word_count": 281
+        },
+        {
+          "page": 9,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9726,
+          "word_count": 251
+        },
+        {
+          "page": 10,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9863,
+          "word_count": 261
+        },
+        {
+          "page": 11,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9837,
+          "word_count": 207
+        },
+        {
+          "page": 12,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9912,
+          "word_count": 195
+        },
+        {
+          "page": 13,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9857,
+          "word_count": 296
+        },
+        {
+          "page": 14,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9804,
+          "word_count": 281
+        },
+        {
+          "page": 15,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9867,
+          "word_count": 239
+        },
+        {
+          "page": 16,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9881,
+          "word_count": 330
+        },
+        {
+          "page": 17,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9712,
+          "word_count": 246
+        },
+        {
+          "page": 18,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9862,
+          "word_count": 268
+        },
+        {
+          "page": 19,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9869,
+          "word_count": 254
+        },
+        {
+          "page": 20,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9845,
+          "word_count": 195
+        },
+        {
+          "page": 21,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9859,
+          "word_count": 225
+        },
+        {
+          "page": 22,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.965,
+          "word_count": 226
+        },
+        {
+          "page": 23,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9858,
+          "word_count": 236
+        },
+        {
+          "page": 24,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9858,
+          "word_count": 281
+        },
+        {
+          "page": 25,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9828,
+          "word_count": 284
+        },
+        {
+          "page": 26,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9876,
+          "word_count": 261
+        },
+        {
+          "page": 27,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9867,
+          "word_count": 255
+        },
+        {
+          "page": 28,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9856,
+          "word_count": 269
+        },
+        {
+          "page": 29,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9716,
+          "word_count": 244
+        },
+        {
+          "page": 30,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9851,
+          "word_count": 234
+        },
+        {
+          "page": 31,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9869,
+          "word_count": 310
+        },
+        {
+          "page": 32,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9853,
+          "word_count": 234
+        },
+        {
+          "page": 33,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9868,
+          "word_count": 224
+        },
+        {
+          "page": 34,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.982,
+          "word_count": 194
+        },
+        {
+          "page": 35,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.985,
+          "word_count": 226
+        },
+        {
+          "page": 36,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9825,
+          "word_count": 184
+        },
+        {
+          "page": 37,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9885,
+          "word_count": 304
+        },
+        {
+          "page": 38,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9885,
+          "word_count": 285
+        },
+        {
+          "page": 39,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9861,
+          "word_count": 279
+        },
+        {
+          "page": 40,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9865,
+          "word_count": 271
+        },
+        {
+          "page": 41,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9845,
+          "word_count": 282
+        },
+        {
+          "page": 42,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.984,
+          "word_count": 277
+        },
+        {
+          "page": 43,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9853,
+          "word_count": 236
+        },
+        {
+          "page": 44,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9877,
+          "word_count": 281
+        },
+        {
+          "page": 45,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9924,
+          "word_count": 216
+        },
+        {
+          "page": 46,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9858,
+          "word_count": 247
+        },
+        {
+          "page": 47,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9862,
+          "word_count": 238
+        },
+        {
+          "page": 48,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9823,
+          "word_count": 247
+        },
+        {
+          "page": 49,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9858,
+          "word_count": 223
+        },
+        {
+          "page": 50,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9733,
+          "word_count": 265
+        },
+        {
+          "page": 51,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9739,
+          "word_count": 253
+        },
+        {
+          "page": 52,
+          "flags": [
+            "ckd_threshold_page",
+            "possible_table_page"
+          ],
+          "parser_agreement": 0.9645,
+          "word_count": 257
+        },
+        {
+          "page": 53,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9831,
+          "word_count": 170
+        },
+        {
+          "page": 54,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9813,
+          "word_count": 246
+        },
+        {
+          "page": 55,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9808,
+          "word_count": 234
+        },
+        {
+          "page": 56,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9798,
+          "word_count": 214
+        },
+        {
+          "page": 57,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9739,
+          "word_count": 270
+        },
+        {
+          "page": 58,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.975,
+          "word_count": 116
+        },
+        {
+          "page": 59,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9894,
+          "word_count": 373
+        },
+        {
+          "page": 60,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.988,
+          "word_count": 310
+        },
+        {
+          "page": 61,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9869,
+          "word_count": 326
+        },
+        {
+          "page": 62,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9866,
+          "word_count": 303
+        },
+        {
+          "page": 63,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9863,
+          "word_count": 308
+        },
+        {
+          "page": 64,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9884,
+          "word_count": 334
+        },
+        {
+          "page": 65,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9905,
+          "word_count": 362
+        },
+        {
+          "page": 66,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9879,
+          "word_count": 299
+        },
+        {
+          "page": 67,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9832,
+          "word_count": 294
+        },
+        {
+          "page": 68,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9753,
+          "word_count": 274
+        },
+        {
+          "page": 69,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9786,
+          "word_count": 330
+        },
+        {
+          "page": 70,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9902,
+          "word_count": 381
+        },
+        {
+          "page": 71,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.989,
+          "word_count": 311
+        },
+        {
+          "page": 72,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9869,
+          "word_count": 360
+        },
+        {
+          "page": 73,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9844,
+          "word_count": 195
+        },
+        {
+          "page": 74,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9952,
+          "word_count": 387
+        },
+        {
+          "page": 75,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.971,
+          "word_count": 98
+        },
+        {
+          "page": 76,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9714,
+          "word_count": 116
+        },
+        {
+          "page": 77,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9853,
+          "word_count": 303
+        },
+        {
+          "page": 78,
+          "flags": [
+            "ckd_threshold_page"
+          ],
+          "parser_agreement": 0.9574,
+          "word_count": 46
+        }
+      ],
+      "outputs": {
+        "pages_jsonl": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\parsed\\nice_ng203_ckd_pages.jsonl",
+        "tables_jsonl": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\parsed\\nice_ng203_ckd_tables.jsonl",
+        "metadata_json": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\parsed\\nice_ng203_ckd_metadata.json"
+      }
+    }
+  ],
+  "missing_documents": [],
+  "python": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\.venv\\Scripts\\python.exe"
+}

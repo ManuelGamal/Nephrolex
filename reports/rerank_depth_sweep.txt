@@ -1,0 +1,29 @@
+run provenance
+  run_at                 2026-08-19T22:11:36
+  corpus_chunks          1485
+  dense_vectors          [1485, 1024]
+  numeric_band_prior     0.4
+  fusion_weights         {'tfidf': 0.21, 'dense': 0.29, 'meta': 0.21, 'doc2query': 0.29}
+  candidate_pool         120
+  corpus                 3,398,801 bytes  modified 2026-08-19T05:56:57
+  tfidf                  4,367,563 bytes  modified 2026-08-19T05:56:58
+  doc2query              2,384,965 bytes  modified 2026-08-19T06:38:15
+  dense                  6,082,688 bytes  modified 2026-08-19T05:57:37
+
+133 questions per depth, 3 depths, deepest first
+
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights: 100%|##########| 393/393 [00:00<00:00, 5647.30it/s]
+depth  main nDCG   heldout nDCG  faq s@5   s      ms/q   cache
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|##########| 391/391 [00:00<00:00, 4940.96it/s]
+50     0.7051      0.8401        19/20     247    1854   0%
+30     0.7061      0.8440        20/20     7      54     38%
+20     0.7039      0.8269        20/20     7      56     50%
+
+paired bootstrap against depth 30:
+  depth 20   main     -0.0021  CI [-0.0138, +0.0088]  within noise
+  depth 20   heldout  -0.0171  CI [-0.0436, +0.0000]  within noise
+  depth 50   main     -0.0010  CI [-0.0111, +0.0073]  within noise
+  depth 50   heldout  -0.0039  CI [-0.0217, +0.0084]  within noise
+
+cross-encoder: 13,300 pair scores requested, 6,650 served from cache, 233s spent scoring
+wrote C:\Users\manue\Documents\Codex\2026-08-16\we\NewbieDuo\reports\rerank_depth_sweep.json

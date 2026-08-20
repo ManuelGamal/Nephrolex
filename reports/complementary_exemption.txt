@@ -1,0 +1,17 @@
+provenance: 1485 chunks, [1485, 1024] | weights {'tfidf': 0.21, 'dense': 0.29, 'meta': 0.21, 'doc2query': 0.29}
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:  65%|██████▌   | 257/393 [00:00<00:00, 2534.47it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 2572.64it/s]
+
+exemption  main      heldout   faq s@5   faq nDCG  row prec  s
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights:  81%|████████  | 317/391 [00:00<00:00, 3166.50it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 3301.76it/s]
+False      0.7061    0.8440    20/20      0.7008    18/19      408
+True       0.7075    0.8411    20/20      0.7225    18/19      8
+
+paired bootstrap, exemption on vs off:
+  main      +0.0014  CI [-0.0062, +0.0103]  within noise
+  heldout   -0.0030  CI [-0.0085, +0.0000]  within noise
+  faq       +0.0217  CI [+0.0000, +0.0500]  within noise
+  main      recall@20 0.8250 -> 0.8312 | misses 5 -> 5
+  heldout   recall@20 0.9203 -> 0.9203 | misses 3 -> 3
+  faq       recall@20 0.8500 -> 0.8500 | misses 0 -> 0
+
+cross-encoder: 7,980 pairs, 3,990 cached

@@ -1,0 +1,117 @@
+{
+  "provenance": {
+    "run_at": "2026-08-19T22:04:25",
+    "dense_model": "abhinand/MedEmbed-large-v0.1",
+    "reranker": "BAAI/bge-reranker-v2-m3",
+    "dense_vectors": [
+      1485,
+      1024
+    ],
+    "corpus_chunks": 1485,
+    "fusion_weights": {
+      "tfidf": 0.21,
+      "dense": 0.29,
+      "meta": 0.21,
+      "doc2query": 0.29
+    },
+    "numeric_band_prior": 0.4,
+    "rerank_with_doc2query": true,
+    "files": {
+      "corpus": {
+        "bytes": 3398801,
+        "modified": "2026-08-19T05:56:57"
+      },
+      "tfidf": {
+        "bytes": 4367563,
+        "modified": "2026-08-19T05:56:58"
+      },
+      "doc2query": {
+        "bytes": 2384965,
+        "modified": "2026-08-19T06:38:15"
+      },
+      "dense": {
+        "bytes": 6082688,
+        "modified": "2026-08-19T05:57:37"
+      }
+    },
+    "swept": "CANDIDATE_POOL"
+  },
+  "runs": [
+    {
+      "pool": 120,
+      "main": {
+        "cases": 67,
+        "ndcg_at_10": 0.7061,
+        "recall_at_10": 0.8001,
+        "recall_at_20": 0.825,
+        "mrr_at_10": 0.693,
+        "p_at_5": 0.2418,
+        "total_miss": 5
+      },
+      "heldout": {
+        "cases": 46,
+        "ndcg_at_10": 0.844,
+        "recall_at_10": 0.9203,
+        "recall_at_20": 0.9203,
+        "mrr_at_10": 0.8261,
+        "p_at_5": 0.1913,
+        "total_miss": 3
+      },
+      "faq": {
+        "cases": 20,
+        "ndcg_at_10": 0.7008,
+        "recall_at_10": 0.8083,
+        "recall_at_20": 0.85,
+        "mrr_at_10": 0.8058,
+        "p_at_5": 0.26,
+        "total_miss": 0
+      },
+      "faq_success_at_5": 20,
+      "ms_per_query": 2207.3,
+      "seconds": 293.6,
+      "rerank_cache_hit_rate": 0.0
+    },
+    {
+      "pool": 240,
+      "main": {
+        "cases": 67,
+        "ndcg_at_10": 0.7099,
+        "recall_at_10": 0.8126,
+        "recall_at_20": 0.8288,
+        "mrr_at_10": 0.6928,
+        "p_at_5": 0.2388,
+        "total_miss": 5
+      },
+      "main_ci": [
+        -0.0018611940298507484,
+        0.011922388059701493
+      ],
+      "heldout": {
+        "cases": 46,
+        "ndcg_at_10": 0.8426,
+        "recall_at_10": 0.9203,
+        "recall_at_20": 0.9203,
+        "mrr_at_10": 0.8245,
+        "p_at_5": 0.1913,
+        "total_miss": 3
+      },
+      "heldout_ci": [
+        -0.024680434782608694,
+        0.023115217391304347
+      ],
+      "faq": {
+        "cases": 20,
+        "ndcg_at_10": 0.6973,
+        "recall_at_10": 0.8083,
+        "recall_at_20": 0.85,
+        "mrr_at_10": 0.8017,
+        "p_at_5": 0.26,
+        "total_miss": 0
+      },
+      "faq_success_at_5": 20,
+      "ms_per_query": 98.6,
+      "seconds": 13.1,
+      "rerank_cache_hit_rate": 0.488
+    }
+  ]
+}

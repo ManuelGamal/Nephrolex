@@ -1,0 +1,46 @@
+NewbieDuo
+Copyright 2026 the NewbieDuo authors
+
+This product includes software developed by the NewbieDuo authors, licensed
+under the Apache License, Version 2.0. See LICENSE.
+
+
+THIRD-PARTY CONTENT NOT COVERED BY THAT LICENCE
+───────────────────────────────────────────────────────────────────────────────
+
+This repository contains the engine that reads clinical guidelines. It does not
+contain, and does not grant any right to, the guidelines themselves.
+
+  KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of
+  Chronic Kidney Disease
+      © Kidney Disease: Improving Global Outcomes (KDIGO).
+      Obtain from kdigo.org under KDIGO's terms.
+
+  NICE NG203, Chronic kidney disease: assessment and management
+      © National Institute for Health and Care Excellence.
+      Obtain from nice.org.uk under the NICE UK Open Content Licence, which
+      restricts commercial reuse and requires attribution.
+
+An operator supplies their own licensed copies. `.gitignore` and `.dockerignore`
+exclude the source PDFs and everything derived closely from them -- parsed
+pages, chunk files, the record store, generated question expansions, and any
+index built over them -- because those are the guideline text in another shape.
+
+The one exception, stated so it is not discovered: `reports/presentation.html`
+embeds four small cropped images of guideline pages, used to illustrate how
+citations resolve to a bounding box. They are excluded from the container image
+by `.dockerignore`. If this repository is made public, review whether those
+excerpts are acceptable under the applicable licence, or replace them with
+redacted equivalents.
+
+
+MODEL WEIGHTS
+───────────────────────────────────────────────────────────────────────────────
+
+Downloaded at first run and cached under the data volume, not redistributed:
+
+  abhinand/MedEmbed-large-v0.1     dense retrieval encoder
+  BAAI/bge-reranker-v2-m3          cross-encoder reranker
+
+Each carries its own licence on the Hugging Face Hub. Check both before
+deploying commercially.

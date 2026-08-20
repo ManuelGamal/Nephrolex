@@ -1,0 +1,976 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>NewbieDuo — CKD guideline evidence</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  /* Layout follows what the two leading clinical answer tools converged on: the answer
+     reads as prose with citation markers inline on the claims, and the source text lives
+     in a panel the reader opens. The markers are never hidden - they are what make the
+     answer trustworthy at a glance - only the full quote and its page are tucked away. */
+  /* White with blue accents, matching the deck. The neutrals are tinted toward the
+     accent rather than pure grey, so a panel reads as paper rather than as a box. */
+  :root {
+    --ground: #ffffff;
+    --raised: #f4f8fc;
+    --raised-2: #eaf1f9;
+    --line: #d3e0ed;
+    --line-soft: #e2ebf4;
+    --ink: #0e1a26;
+    --muted: #516375;
+    --dim: #64768a;
+    --signal: #1a5fa8;
+    --kdigo: #6b3fa0;
+    --nice: #166b47;
+    --warn: #9a6212;
+    --bad: #a8232b;
+    --signal-wash: #dcebf9;
+    --signal-edge: #a9cbeb;
+    --nice-edge: #b3d8c4;
+    --warn-edge: #e3cba1;
+    --bad-wash: #fbeced;
+    --bad-edge: #edbdc0;
+    --sans: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "Cascadia Mono", Consolas, "SF Mono", Menlo, monospace;
+    --drawer: 620px;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: var(--sans); font-size: 15.5px; line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+
+  /* ------------------------------------------------------------------- header */
+  header {
+    flex: 0 0 auto; display: flex; align-items: center; gap: 12px;
+    padding: 12px 20px; border-bottom: 1px solid var(--line-soft);
+    background: rgba(255,255,255,.9); backdrop-filter: blur(8px); z-index: 40;
+  }
+  .brand { font-weight: 700; letter-spacing: -.02em; font-size: 15px; }
+  .brand span { color: var(--dim); font-weight: 500; margin-left: 8px; font-size: 12.5px; }
+  .status {
+    margin-left: auto; display: inline-flex; align-items: center; gap: 7px;
+    font-family: var(--mono); font-size: 11.5px; color: var(--dim);
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--warn); }
+  .dot.ok { background: var(--nice); } .dot.bad { background: var(--bad); }
+
+  /* ------------------------------------------------------------------ sidebar */
+  .sidebar {
+    flex: 0 0 264px; min-width: 0; display: flex; flex-direction: column;
+    background: var(--raised); border-right: 1px solid var(--line);
+    transition: margin-left .18s ease;
+  }
+  body.nosb .sidebar { margin-left: -264px; }
+  .sb-head { padding: 12px; border-bottom: 1px solid var(--line); }
+  .sb-tabs { display: flex; gap: 4px; padding: 8px 8px 0; }
+  .sb-tab {
+    flex: 1 1 0; background: none; border: 0; border-bottom: 2px solid transparent;
+    color: var(--dim); font: inherit; font-size: 13px; padding: 7px 4px 8px;
+    cursor: pointer; border-radius: 6px 6px 0 0;
+  }
+  .sb-tab:hover { color: var(--ink); }
+  .sb-tab.on { color: var(--signal); border-bottom-color: var(--signal); font-weight: 600; }
+  .pane { flex: 1 1 auto; overflow-y: auto; padding: 8px; }
+  .pane[hidden] { display: none; }
+  .faq-note {
+    color: var(--dim); font-size: 12px; line-height: 1.5; padding: 4px 8px 10px;
+  }
+  .faq {
+    display: block; width: 100%; text-align: left; background: none;
+    border: 1px solid transparent; border-radius: 8px; color: var(--muted);
+    font: inherit; font-size: 13.5px; line-height: 1.45; padding: 8px 10px;
+    cursor: pointer; margin-bottom: 2px;
+  }
+  .faq:hover { background: var(--raised-2); color: var(--ink); border-color: var(--line); }
+  .faq b {
+    display: block; font-family: var(--mono); font-size: 10.5px; font-weight: 500;
+    letter-spacing: .06em; text-transform: uppercase; color: var(--dim); margin-bottom: 2px;
+  }
+  .faq:hover b { color: var(--signal); }
+  .newchat {
+    width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--raised-2); color: var(--ink); border: 1px solid var(--line);
+    border-radius: 9px; padding: 9px 12px; font: inherit; font-size: 14px; cursor: pointer;
+  }
+  .newchat:hover { border-color: var(--signal); color: var(--signal); }
+  .convs { flex: 1 1 auto; overflow-y: auto; padding: 8px; }
+  .convs .empty { color: var(--dim); font-size: 13px; padding: 10px 8px; line-height: 1.5; }
+  .conv {
+    display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px;
+    cursor: pointer; color: var(--muted); font-size: 13.5px; margin-bottom: 2px;
+  }
+  .conv:hover { background: var(--raised-2); color: var(--ink); }
+  .conv.active { background: var(--raised-2); color: var(--ink); }
+  .conv .t { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .conv .del {
+    flex: none; opacity: 0; border: 0; background: none; color: var(--dim);
+    cursor: pointer; font-size: 15px; line-height: 1; padding: 2px 4px;
+  }
+  .conv:hover .del { opacity: 1; }
+  .conv .del:hover { color: var(--bad); }
+  .status + .sb-toggle { margin-left: 4px; }
+  .sb-toggle {
+    flex: none; background: none; border: 1px solid var(--line); color: var(--muted);
+    border-radius: 7px; width: 30px; height: 30px; cursor: pointer; font-size: 14px;
+    line-height: 1; display: grid; place-items: center;
+  }
+  .sb-toggle:hover { color: var(--ink); border-color: var(--signal); }
+
+  /* --------------------------------------------------------------------- tts */
+  .ttsbtn {
+    display: inline-flex; align-items: center; gap: 6px; margin-top: 10px;
+    background: var(--raised-2); border: 1px solid var(--line); color: var(--muted);
+    border-radius: 100px; padding: 4px 12px; font: inherit; font-size: 12.5px; cursor: pointer;
+  }
+  .ttsbtn:hover { color: var(--ink); border-color: var(--signal); }
+  .ttsbtn.on { color: var(--signal); border-color: var(--signal); }
+  .ttsbtn[hidden] { display: none; }
+
+  @media (max-width: 900px) {
+    .sidebar { position: absolute; z-index: 40; height: 100%; }
+    body:not(.sbopen) .sidebar { margin-left: -264px; }
+  }
+
+  /* -------------------------------------------------------------------- shell */
+  .shell { flex: 1 1 auto; display: flex; min-height: 0; position: relative; }
+  .thread-wrap { flex: 1 1 auto; display: flex; flex-direction: column; min-width: 0; }
+  .thread { flex: 1 1 auto; overflow-y: auto; scroll-behavior: smooth; }
+  .thread-inner { max-width: 780px; margin: 0 auto; padding: 28px 24px 8px; }
+
+  /* ------------------------------------------------------------------ welcome */
+  .welcome { padding: 8vh 0 0; text-align: center; }
+  .welcome h1 { margin: 0 0 10px; font-size: 30px; letter-spacing: -.03em; font-weight: 700; }
+  .welcome p { margin: 0 auto 26px; max-width: 46ch; color: var(--muted); font-size: 15px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .chip {
+    border: 1px solid var(--line); background: var(--raised); color: var(--muted);
+    border-radius: 999px; padding: 7px 14px; font-size: 13px; cursor: pointer;
+    transition: border-color .12s, color .12s;
+  }
+  .chip:hover { border-color: var(--signal); color: var(--ink); }
+
+  /* ----------------------------------------------------------------- messages */
+  .turn { margin-bottom: 30px; }
+  .user {
+    display: flex; justify-content: flex-end; margin-bottom: 20px;
+  }
+  .user span {
+    background: var(--raised-2); border: 1px solid var(--line);
+    border-radius: 16px 16px 4px 16px; padding: 10px 15px; max-width: 84%;
+  }
+  .answer { animation: rise .22s ease-out; }
+  @keyframes rise { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; } }
+  .answer p { margin: 0 0 13px; }
+  .answer p:last-child { margin-bottom: 0; }
+
+  /* verdict strip above an answer */
+  .verdict {
+    display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .09em; text-transform: uppercase;
+    border: 1px solid var(--line); border-radius: 5px; padding: 5px 10px; color: var(--muted);
+  }
+  .verdict b { font-weight: 700; letter-spacing: .09em; }
+  .verdict.ok b { color: var(--nice); } .verdict.ok { border-color: var(--nice-edge); }
+  .verdict.warn b { color: var(--warn); } .verdict.warn { border-color: var(--warn-edge); }
+  .verdict.bad b { color: var(--bad); } .verdict.bad { border-color: var(--bad-edge); }
+
+  /* inline citation markers - the trust signal, always visible */
+  .cite {
+    display: inline-block; min-width: 17px; height: 17px; line-height: 17px;
+    margin: 0 1px; padding: 0 4px; border-radius: 4px; text-align: center;
+    background: var(--signal-wash); color: var(--signal); border: 1px solid var(--signal-edge);
+    font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+    cursor: pointer; vertical-align: 1px; transition: background .12s;
+  }
+  .cite:hover, .cite.active { background: var(--signal); color: #fff; }
+
+  /* the guideline speaking for itself, when no generated answer survived */
+  .exq {
+    border-left: 2px solid var(--line); padding: 2px 0 2px 15px; margin: 0 0 15px;
+    cursor: pointer; transition: border-color .12s;
+  }
+  .exq:hover { border-left-color: var(--signal); }
+  .exq p { margin: 0 0 6px; }
+  .exc {
+    display: flex; align-items: center; gap: 7px;
+    font-family: var(--mono); font-size: 11.5px; color: var(--dim);
+  }
+  .exc i {
+    font-style: normal; background: var(--signal-wash); color: var(--signal);
+    border: 1px solid var(--signal-edge);
+    border-radius: 4px; padding: 0 5px; font-size: 10.5px; font-weight: 600;
+  }
+
+  /* When the model itself declines, the guideline text is still there - but it is
+     the answer to a question the system just said it could not answer, so it sits
+     behind a disclosure rather than reading like a reply. */
+  details.fallback { margin: 4px 0 0; }
+  details.fallback > summary {
+    cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 7px;
+    font-size: 13px; color: var(--muted); border: 1px solid var(--line);
+    background: var(--raised); border-radius: 100px; padding: 5px 13px;
+  }
+  details.fallback > summary::-webkit-details-marker { display: none; }
+  details.fallback > summary::before { content: "B8"; font-size: 10px; color: var(--dim); }
+  details.fallback[open] > summary::before { content: "BE"; }
+  details.fallback > summary:hover { color: var(--ink); border-color: var(--signal); }
+  details.fallback .inner { padding-top: 14px; }
+
+  /* why a generated answer was thrown away - the safety machinery, made visible */
+  .why {
+    border: 1px solid var(--bad-edge); border-radius: 7px; background: var(--bad-wash);
+    padding: 11px 14px; margin: 12px 0 14px; font-size: 13px; color: var(--muted);
+  }
+  .whyhead {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--bad); margin-bottom: 6px;
+  }
+  .why div + div { margin-top: 3px; }
+  .whyfoot { margin-top: 8px; color: var(--dim); font-size: 12.5px; }
+
+  /* divergence: the thing this system does that a single-guideline tool cannot */
+  .diverge {
+    border: 1px solid var(--bad-edge); border-left: 3px solid var(--bad);
+    border-radius: 7px; background: var(--bad-wash); padding: 13px 15px; margin: 16px 0;
+  }
+  .diverge h4 { margin: 0 0 7px; font-size: 13px; color: var(--bad); letter-spacing: .01em; }
+  .diverge .row { font-size: 13.5px; color: var(--muted); margin-top: 5px; }
+  .diverge .row b { color: var(--ink); font-weight: 600; }
+
+  /* source rail under an answer */
+  .rail { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+  .src {
+    display: inline-flex; align-items: center; gap: 7px; cursor: pointer;
+    border: 1px solid var(--line); background: var(--raised); border-radius: 7px;
+    padding: 6px 11px; font-size: 12.5px; color: var(--muted);
+    transition: border-color .12s, color .12s;
+  }
+  .src:hover { border-color: var(--signal); color: var(--ink); }
+  .src i { font-style: normal; font-family: var(--mono); font-size: 10.5px; color: var(--dim); }
+  .src.kdigo { border-left: 2px solid var(--kdigo); }
+  .src.nice { border-left: 2px solid var(--nice); }
+  .meta { margin-top: 11px; font-family: var(--mono); font-size: 11px; color: var(--dim); }
+
+  /* ---------------------------------------------------------------- composer */
+  .composer { flex: 0 0 auto; padding: 10px 24px 22px; }
+  .composer form {
+    max-width: 780px; margin: 0 auto; display: flex; gap: 9px; align-items: flex-end;
+    background: var(--raised); border: 1px solid var(--line); border-radius: 14px;
+    padding: 9px 9px 9px 16px; transition: border-color .12s;
+  }
+  .composer form:focus-within { border-color: var(--signal); }
+  .composer textarea {
+    flex: 1 1 auto; resize: none; border: 0; outline: 0; background: transparent;
+    color: var(--ink); font-family: var(--sans); font-size: 15.5px; line-height: 1.5;
+    max-height: 168px; padding: 5px 0;
+  }
+  .composer textarea::placeholder { color: var(--dim); }
+  .send {
+    flex: 0 0 auto; width: 34px; height: 34px; border-radius: 9px; border: 0;
+    background: var(--signal); color: #fff; cursor: pointer; font-size: 16px;
+    display: grid; place-items: center; transition: opacity .12s;
+  }
+  .send:disabled { opacity: .35; cursor: default; }
+  .foot { max-width: 780px; margin: 9px auto 0; text-align: center;
+          font-size: 11.5px; color: var(--dim); }
+
+  /* ------------------------------------------------------------------ drawer */
+  .drawer {
+    flex: 0 0 var(--drawer); width: var(--drawer); border-left: 1px solid var(--line);
+    background: var(--raised); display: flex; flex-direction: column;
+    transform: translateX(100%); transition: transform .2s ease, margin-right .2s ease;
+    margin-right: calc(-1 * var(--drawer));
+  }
+  .drawer.open { transform: translateX(0); margin-right: 0; }
+  .drawer header {
+    background: transparent; border-bottom: 1px solid var(--line-soft); backdrop-filter: none;
+    padding: 13px 16px; gap: 10px;
+  }
+  .drawer .title { font-size: 13px; font-weight: 650; letter-spacing: -.01em; }
+  .close {
+    margin-left: auto; background: transparent; border: 1px solid var(--line);
+    color: var(--muted); border-radius: 7px; width: 27px; height: 27px; cursor: pointer;
+    display: grid; place-items: center; font-size: 15px; line-height: 1;
+  }
+  .close:hover { color: var(--ink); border-color: var(--signal); }
+  .drawer .body { flex: 1 1 auto; overflow-y: auto; padding: 16px; }
+  .quote {
+    border-left: 2px solid var(--signal); background: var(--raised-2);
+    padding: 12px 14px; border-radius: 0 7px 7px 0; margin-bottom: 14px;
+    font-size: 14px; line-height: 1.6;
+  }
+  /* The cropped span is the whole argument of this system, so it goes first and it goes
+     big. A full A4 page in a side panel renders the cited line about ten pixels tall -
+     present, and unreadable. */
+  .proof { margin: 0 0 16px; }
+  .proofhead {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--nice); margin-bottom: 8px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .proofhead::after {
+    content: ""; flex: 1 1 auto; height: 1px; background: var(--line);
+  }
+  .cropimg {
+    width: 100%; border-radius: 8px; border: 1px solid var(--line);
+    background: #fff; cursor: zoom-in; display: block;
+  }
+  .toggle {
+    margin: 14px 0 8px; background: transparent; border: 1px solid var(--line);
+    color: var(--muted); border-radius: 7px; padding: 6px 12px; cursor: pointer;
+    font-family: var(--mono); font-size: 11.5px;
+  }
+  .toggle:hover { border-color: var(--signal); color: var(--ink); }
+  /* full-screen look at the page */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 90; background: rgba(14,26,38,.72);
+    display: none; place-items: center; padding: 28px; cursor: zoom-out;
+  }
+  .lightbox.open { display: grid; }
+  .lightbox img {
+    max-width: 100%; max-height: 100%; border-radius: 8px;
+    background: #fff; box-shadow: 0 24px 70px rgba(14,26,38,.35);
+  }
+  .attrib { font-family: var(--mono); font-size: 11.5px; color: var(--muted); margin-bottom: 16px; }
+  .attrib b { color: var(--ink); }
+  .pagelabel { font-family: var(--mono); font-size: 10.5px; color: var(--dim); margin: 12px 0 6px; }
+  .pageimg { width: 100%; border-radius: 7px; border: 1px solid var(--line);
+             background: #fff; cursor: zoom-in; display: block; }
+  .spinner, .empty { color: var(--dim); font-size: 13px; padding: 18px 0; text-align: center; }
+
+  @media (max-width: 900px) {
+    :root { --drawer: 100%; }
+    .drawer { position: fixed; inset: 0; z-index: 60; margin-right: 0; }
+  }
+</style>
+
+<header>
+  <button class="sb-toggle" id="sbtoggle" title="Show or hide history" aria-label="Toggle history">☰</button>
+  <div class="brand">NewbieDuo <span>KDIGO 2024 · NICE NG203</span></div>
+  <div class="status"><span class="dot" id="dot"></span><span id="statustext">warming…</span></div>
+  <button class="sb-toggle" id="full" title="Full screen (F)" aria-label="Full screen">&#9974;</button>
+</header>
+
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="sb-head">
+      <button class="newchat" id="newchat">＋ New chat</button>
+    </div>
+    <div class="sb-tabs">
+      <button class="sb-tab on" id="tabhist" type="button">History</button>
+      <button class="sb-tab" id="tabfaq" type="button">FAQ 20</button>
+    </div>
+    <div class="pane convs" id="convs"></div>
+    <div class="pane" id="faqpane" hidden></div>
+  </aside>
+
+  <div class="thread-wrap">
+    <div class="thread" id="thread">
+      <div class="thread-inner" id="inner">
+        <div class="welcome" id="welcome">
+          <h1>Ask the guidelines</h1>
+          <p>Every claim is quoted verbatim and traced to its page. When the guidelines
+             don't clearly answer, this says so instead of guessing.</p>
+          <div class="chips" id="chips"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="composer">
+      <form id="form">
+        <textarea id="q" rows="1" placeholder="Ask a CKD guideline question…"></textarea>
+        <button class="send" id="send" type="submit" title="Ask">↑</button>
+      </form>
+      <div class="foot">Evidence tool for clinicians. Not a substitute for clinical judgement.</div>
+    </div>
+  </div>
+
+  <aside class="drawer" id="drawer">
+    <header>
+      <div class="title" id="drawertitle">Source</div>
+      <button class="close" id="close" title="Close">×</button>
+    </header>
+    <div class="body" id="drawerbody"></div>
+  </aside>
+</div>
+
+<div class="lightbox" id="lightbox"><img id="lightboximg" alt="source page"></div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const srcClass = (d) => d === "kdigo_2024_ckd" ? "kdigo" : "nice";
+const srcName  = (d) => d === "kdigo_2024_ckd" ? "KDIGO 2024" : "NICE NG203";
+
+let busy = false;
+let lastSources = [];
+
+/* ----------------------------------------------------------------- history */
+// Conversations are kept in localStorage as the raw API responses, not as rendered
+// HTML, so restoring one runs the same render() the live answer did - a restored
+// citation opens the same drawer, with the same page and the same box. Storing markup
+// would have frozen old answers against any later change to how answers are drawn.
+const STORE = "newbieduo.chats.v1";
+const MAX_CHATS = 25;
+let chats = [];
+let currentId = null;
+
+function loadChats() {
+  try { chats = JSON.parse(localStorage.getItem(STORE) || "[]"); }
+  catch (e) { chats = []; }
+  if (!Array.isArray(chats)) chats = [];
+}
+
+function saveChats() {
+  // A single answer carries every quote it cited, so a long session can outgrow the
+  // quota. Drop the oldest conversations until it fits rather than losing the write.
+  for (let attempt = 0; attempt < 6; attempt++) {
+    try { localStorage.setItem(STORE, JSON.stringify(chats)); return; }
+    catch (e) { if (chats.length <= 1) return; chats.pop(); }
+  }
+}
+
+function currentChat() { return chats.find(c => c.id === currentId) || null; }
+
+function newChat() {
+  currentId = null;
+  stopSpeech();
+  clearTurns();
+  showWelcome();
+  renderConvs();
+  box.focus();
+}
+
+function recordTurn(question, response) {
+  let chat = currentChat();
+  if (!chat) {
+    chat = { id: String(Date.now()), title: question.slice(0, 60), turns: [] };
+    chats.unshift(chat);
+    if (chats.length > MAX_CHATS) chats.length = MAX_CHATS;
+    currentId = chat.id;
+  }
+  chat.turns.push({ q: question, r: response });
+  saveChats();
+  renderConvs();
+}
+
+function renderConvs() {
+  const host = $("convs");
+  if (!chats.length) {
+    host.innerHTML = '<div class="empty">Questions you ask are kept here, on this device only.</div>';
+    return;
+  }
+  host.innerHTML = "";
+  chats.forEach(c => {
+    const el = document.createElement("div");
+    el.className = "conv" + (c.id === currentId ? " active" : "");
+    el.innerHTML = '<span class="t"></span><button class="del" title="Delete">×</button>';
+    el.querySelector(".t").textContent = c.title || "Untitled";
+    el.onclick = (e) => { if (!e.target.closest(".del")) openChat(c.id); };
+    el.querySelector(".del").onclick = (e) => {
+      e.stopPropagation();
+      chats = chats.filter(x => x.id !== c.id);
+      saveChats();
+      if (currentId === c.id) newChat(); else renderConvs();
+    };
+    host.appendChild(el);
+  });
+}
+
+function openChat(id) {
+  const chat = chats.find(c => c.id === id);
+  if (!chat) return;
+  stopSpeech();
+  currentId = id;
+  const w = $("welcome"); if (w) w.style.display = "none";
+  clearTurns();
+  chat.turns.forEach(t => {
+    const turn = document.createElement("div");
+    turn.className = "turn";
+    turn.innerHTML = '<div class="user"><span>' + esc(t.q) + "</span></div>" +
+                     '<div class="answer"></div>';
+    $("inner").appendChild(turn);
+    render(t.r, turn.querySelector(".answer"));
+  });
+  renderConvs();
+  scroll();
+}
+
+function clearTurns() {
+  $("inner").querySelectorAll(".turn").forEach(t => t.remove());
+}
+
+function showWelcome() {
+  const w = $("welcome");
+  if (w) w.style.display = "";
+}
+
+/* --------------------------------------------------------------------- tts */
+/* --------------------------------------------------------------------- faq */
+// The 20 questions the clinician-FAQ benchmark is scored on, served from the same
+// file the evaluation reads. They are here so a question can be asked without typing
+// it - and because being able to click any of the twenty, in front of an audience,
+// is a stronger claim than a screenshot of the score.
+function showPane(which) {
+  const hist = which === "hist";
+  $("convs").hidden = !hist;
+  $("faqpane").hidden = hist;
+  $("tabhist").classList.toggle("on", hist);
+  $("tabfaq").classList.toggle("on", !hist);
+}
+
+function loadFaq() {
+  fetch("/api/faq").then(r => r.json()).then(rows => {
+    const host = $("faqpane");
+    host.innerHTML = '<div class="faq-note">The 20 questions the FAQ benchmark scores. ' +
+                     'Every one of them retrieves its answer in the top 5.</div>';
+    (rows || []).forEach(q => {
+      const b = document.createElement("button");
+      b.className = "faq"; b.type = "button";
+      b.innerHTML = "<b></b><span></span>";
+      b.querySelector("b").textContent = q.category || "";
+      b.querySelector("span").textContent = q.query;
+      b.onclick = () => {
+        box.value = q.query;
+        submit();
+        if (window.matchMedia("(max-width: 900px)").matches) document.body.classList.remove("sbopen");
+      };
+      host.appendChild(b);
+    });
+  }).catch(() => {
+    $("faqpane").innerHTML = '<div class="faq-note">Could not load the FAQ set.</div>';
+  });
+}
+
+/* --------------------------------------------------------------------- tts */
+// Reads the answer aloud. What is spoken is built from the response object, not
+// scraped from the page, so citation markers, source rails and latency notes are
+// never read out - and a refusal is spoken as the refusal, not as silence.
+const synth = window.speechSynthesis || null;
+let speakingBtn = null;
+
+function stopSpeech() {
+  if (synth) { try { synth.cancel(); } catch (e) {} }
+  if (speakingBtn) { speakingBtn.classList.remove("on"); speakingBtn.textContent = "🔊 Listen"; }
+  speakingBtn = null;
+}
+
+function spokenText(r) {
+  if (!r) return "";
+  if (r.status !== "answered") {
+    return r.text || "The guidelines do not answer this question.";
+  }
+  const g = r.generated || {};
+  if (g.status === "verified" && g.text) {
+    // Drop the citation markers; "one" read aloud after every clause is noise.
+    return String(g.text).replace(/\s*\[\d+\]/g, "");
+  }
+  const quotes = r.quotes || [];
+  if (!quotes.length) return r.text || "No grounded evidence for this question.";
+  return quotes.slice(0, 3).map(q => {
+    const cite = q.citation || srcName(q.document_id);
+    return "From " + cite + ". " + forSpeech(clean(q.text));
+  }).join(" ");
+}
+
+// NICE stamps its recommendations with the year they were issued - "[2021]",
+// "[2014, amended 2021]". On the page that is part of the quote and stays. Read aloud
+// it lands as a bare number in the middle of a sentence, so it is dropped from the
+// spoken form only; the text on screen and in the drawer is untouched.
+function forSpeech(text) {
+  return String(text).replace(/\s*\[\s*\d{4}(?:,[^\]]*)?\]/g, "");
+}
+
+function speak(r, btn) {
+  if (!synth) return;
+  if (speakingBtn === btn) { stopSpeech(); return; }
+  stopSpeech();
+  const text = spokenText(r).trim();
+  if (!text) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate = 1.0; u.pitch = 1.0; u.lang = "en-GB";
+  const voices = synth.getVoices() || [];
+  const pick = voices.find(v => /en-GB/i.test(v.lang)) || voices.find(v => /^en/i.test(v.lang));
+  if (pick) u.voice = pick;
+  u.onend = u.onerror = () => stopSpeech();
+  speakingBtn = btn;
+  btn.classList.add("on"); btn.textContent = "■ Stop";
+  synth.speak(u);
+}
+
+/* ------------------------------------------------------------------- health */
+// The server loads the embedding model and the cross-encoder in a background thread and
+// reports `warm` when they are in memory. Reading that matters: the first question asked
+// before it finishes waits on the load and takes over a minute, and a header that says
+// "ready" throughout makes that look like the system being slow rather than not started.
+let chipsDone = false;
+function health() {
+  fetch("/api/health").then(r => r.json()).then(h => {
+    if (!chipsDone) {
+      (h.examples || []).slice(0, 4).forEach(ex => {
+        const c = document.createElement("button");
+        c.className = "chip"; c.type = "button"; c.textContent = ex.q;
+        c.onclick = () => { $("q").value = ex.q; submit(); };
+        $("chips").appendChild(c);
+      });
+      chipsDone = true;
+    }
+    if (h.degraded) {
+      $("dot").className = "dot bad";
+      $("statustext").textContent = "degraded · lexical only";
+      return;
+    }
+    if (!h.warm) {
+      $("dot").className = "dot";
+      $("statustext").textContent = "loading models…";
+      setTimeout(health, 2000);
+      return;
+    }
+    $("dot").className = "dot ok";
+    $("statustext").textContent = h.generate ? "ready · generation on" : "ready · extractive";
+  }).catch(() => {
+    $("dot").className = "dot bad";
+    $("statustext").textContent = "offline";
+    setTimeout(health, 3000);
+  });
+}
+health();
+
+/* ----------------------------------------------------------------- composer */
+const box = $("q");
+box.addEventListener("input", () => {
+  box.style.height = "auto";
+  box.style.height = Math.min(box.scrollHeight, 168) + "px";
+});
+box.addEventListener("keydown", e => {
+  if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); submit(); }
+});
+$("form").addEventListener("submit", e => { e.preventDefault(); submit(); });
+
+loadChats();
+renderConvs();
+loadFaq();
+
+// ---- presentation mode -------------------------------------------------
+// Escape is not bound here on purpose: leaving full screen is the browser's own
+// gesture, and every browser already answers Escape with it. Binding it as well
+// would mean two different things claiming the same key.
+var fsBtn = document.getElementById("full");
+function fsOn(){ return !!(document.fullscreenElement || document.webkitFullscreenElement); }
+function toggleFull(){
+  try {
+    if (fsOn()) {
+      (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    } else {
+      var el = document.documentElement;
+      (el.requestFullscreen || el.webkitRequestFullscreen).call(el);
+    }
+  } catch (e) { /* a browser that refuses simply stays windowed */ }
+}
+function syncFs(){
+  if (!fsBtn) return;
+  var on = fsOn();
+  fsBtn.textContent = on ? "\u2715" : "\u26F6";
+  fsBtn.title = on ? "Leave full screen (Esc)" : "Full screen (F)";
+  fsBtn.setAttribute("aria-label", fsBtn.title);
+}
+if (fsBtn) fsBtn.addEventListener("click", toggleFull);
+document.addEventListener("fullscreenchange", syncFs);
+document.addEventListener("webkitfullscreenchange", syncFs);
+syncFs();
+
+$("newchat").addEventListener("click", newChat);
+$("tabhist").addEventListener("click", () => showPane("hist"));
+$("tabfaq").addEventListener("click", () => showPane("faq"));
+$("sbtoggle").addEventListener("click", () => {
+  // Two behaviours on purpose: on a narrow screen the sidebar is an overlay that
+  // opens, on a wide one it is a column that collapses out of the way.
+  if (window.matchMedia("(max-width: 900px)").matches) document.body.classList.toggle("sbopen");
+  else document.body.classList.toggle("nosb");
+});
+// Speech carrying on after the tab is hidden is startling to come back to.
+document.addEventListener("keydown", e => {
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const tag = (e.target.tagName || "").toLowerCase();
+  if (tag === "textarea" || tag === "input") return;   // "f" is a letter first
+  if (e.key === "f" || e.key === "F") { e.preventDefault(); toggleFull(); }
+});
+document.addEventListener("visibilitychange", () => { if (document.hidden) stopSpeech(); });
+window.addEventListener("beforeunload", stopSpeech);
+
+function submit() {
+  const text = box.value.trim();
+  if (!text || busy) return;
+  stopSpeech();
+  const w = $("welcome"); if (w) w.style.display = "none";
+
+  busy = true; $("send").disabled = true;
+  box.value = ""; box.style.height = "auto";
+
+  const turn = document.createElement("div");
+  turn.className = "turn";
+  turn.innerHTML = '<div class="user"><span>' + esc(text) + "</span></div>" +
+                   '<div class="answer"><div class="spinner">searching the guidelines…</div></div>';
+  $("inner").appendChild(turn);
+  scroll();
+
+  fetch("/api/ask", {
+    method: "POST", headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({query: text})
+  })
+  .then(r => r.json())
+  .then(r => {
+    turn.querySelector(".answer").innerHTML = "";
+    render(r, turn.querySelector(".answer"));
+    recordTurn(text, r);
+  })
+  .catch(() => { turn.querySelector(".answer").innerHTML =
+      '<div class="verdict bad"><b>error</b> the server did not respond</div>'; })
+  .finally(() => { busy = false; $("send").disabled = false; scroll(); box.focus(); });
+}
+
+const scroll = () => { const t = $("thread"); t.scrollTop = t.scrollHeight; };
+
+/* ------------------------------------------------------------------- render */
+function render(r, host) {
+  const sources = r.quotes || [];
+  lastSources = sources;
+
+  // A refusal is a result, not a failure, and says which gate stopped it.
+  if (r.status !== "answered") {
+    const label = { declined: "out of scope", out_of_domain: "not a kidney question",
+                    premise_not_found: "premise not in the guidelines",
+                    no_question: "not a question",
+                    insufficient_evidence: "no grounded evidence" }[r.status] || r.status;
+    host.innerHTML = '<div class="verdict warn"><b>declined</b> ' + esc(label) + "</div>" +
+                     "<p>" + esc(r.text || "The guidelines do not answer this.") + "</p>";
+    return;
+  }
+
+  const g = r.generated || {};
+  let html = "";
+
+  if (g.available && g.status === "verified") {
+    html += '<div class="verdict ok"><b>verified</b> every figure traces to a cited source</div>';
+  } else if (g.available && g.status === "failed_verification") {
+    // Say what failed, not just that something did. This is the one moment the safety
+    // machinery is visible, and "rejected" alone asks the reader to take it on trust -
+    // the exact thing the system is built not to do.
+    html += '<div class="verdict bad"><b>rejected</b> a generated claim did not trace to its citation</div>';
+    const problems = (g.verification && g.verification.problems) || [];
+    if (problems.length) {
+      html += '<div class="why"><div class="whyhead">why it was discarded</div>';
+      problems.forEach(x => { html += "<div>• " + esc(x) + "</div>"; });
+      html += '<div class="whyfoot">The verbatim guideline text below is shown instead.</div></div>';
+    }
+  } else if (g.available && g.status === "model_refused") {
+    html += '<div class="verdict warn"><b>declined</b> the model judged the evidence insufficient</div>';
+  } else if (g.available && g.status === "generation_failed") {
+    html += '<div class="verdict warn"><b>evidence only</b> ' + esc(g.error || "generation unavailable") + "</div>";
+  }
+
+  // `r.text` is the evidence pack the generator is given - question, then every quote
+  // with its citation, 3.6k characters of it. It is an input, not prose, and rendering
+  // it as the answer put the raw prompt on screen. When there is no verified generated
+  // answer the honest presentation is the guideline text itself, quoted.
+  // The model declining is a refusal, not an answer. Leading with the guideline text
+  // underneath it reads as though the system answered anyway, so the evidence is
+  // folded away - present, one click off, but not presented as the reply.
+  const modelDeclined = g.available && g.status === "model_refused";
+
+  if (g.status === "verified" && g.text) {
+    html += "<div>" + markers(esc(g.text), sources.length) + "</div>";
+  } else if (sources.length) {
+    let quotes = "";
+    sources.slice(0, 3).forEach((s, i) => {
+      quotes += '<div class="exq" data-i="' + i + '">' +
+              "<p>" + esc(clean(s.text)) + "</p>" +
+              '<div class="exc"><i>' + (i + 1) + "</i>" +
+              esc(s.citation || srcName(s.document_id)) + "</div></div>";
+    });
+    if (modelDeclined) {
+      const n = Math.min(3, sources.length);
+      html += '<details class="fallback"><summary>closest guideline text (' + n + ')</summary>' +
+              '<div class="inner">' + quotes + "</div></details>";
+    } else {
+      html += quotes;
+    }
+  } else {
+    html += "<p>" + esc(r.text || "No grounded evidence for this question.") + "</p>";
+  }
+
+  // Divergence is the claim a single-guideline tool cannot make, so it is stated
+  // rather than left for the reader to notice across two quotes.
+  // A divergence carries `headline` keyed by guideline - {kdigo: "< 120 mmHg",
+  // nice: "< 140 mmHg"} - not a list of positions.
+  //
+  // Only divergences with a stated population are shown. An "unspecified" one on this
+  // very question compares NICE's *diastolic* 90 mmHg against KDIGO's *systolic* 120
+  // and reports a disagreement that does not exist. Printing that next to a real
+  // divergence would discredit both, so the detector's own population field is used as
+  // the confidence filter. The dropped comparisons remain in the API response.
+  (r.divergences || [])
+    .filter(d => d.population && d.population !== "unspecified")
+    .slice(0, 2)
+    .forEach(d => {
+      const scope = d.population ? ", " + esc(d.population) : "";
+      html += '<div class="diverge"><h4>The guidelines differ &mdash; ' +
+              esc(d.label || "value") + scope + "</h4>";
+      Object.entries(d.headline || {}).forEach(([doc, value]) => {
+        html += '<div class="row"><b>' + esc(srcName(doc)) + "</b> &mdash; " +
+                esc(value) + "</div>";
+      });
+      html += "</div>";
+    });
+
+  if (sources.length && !modelDeclined) {
+    html += '<div class="rail">';
+    sources.forEach((s, i) => {
+      html += '<div class="src ' + srcClass(s.document_id) + '" data-i="' + i + '">' +
+              "<i>" + (i + 1) + "</i>" + esc(s.citation || srcName(s.document_id)) + "</div>";
+    });
+    html += "</div>";
+  }
+
+  const bits = [];
+  if (r.latency_ms) bits.push(r.latency_ms + " ms");
+  if ((r.guidelines_used || []).length > 1) bits.push("both guidelines");
+  if (sources.length) bits.push(sources.length + " sources");
+  if (bits.length) html += '<div class="meta">' + bits.join(" · ") + "</div>";
+
+  host.innerHTML = html;
+  // Bind this turn's own sources. `lastSources` is fine while a single answer is on
+  // screen, but a restored conversation renders several - and clicking a citation in
+  // an older turn would otherwise open a source belonging to the newest one.
+  host.querySelectorAll(".cite, .src, .exq").forEach(el => {
+    el.onclick = () => openSource(parseInt(el.dataset.i, 10), sources);
+  });
+
+  if (synth) {
+    const btn = document.createElement("button");
+    btn.className = "ttsbtn"; btn.type = "button"; btn.textContent = "🔊 Listen";
+    btn.onclick = () => speak(r, btn);
+    host.appendChild(btn);
+  }
+}
+
+// [1] in the answer becomes a clickable marker. The markers stay in the prose because
+// that is where they do their work - a claim you can see is sourced, without opening
+// anything. The drawer holds the text, not the fact that a source exists.
+function markers(html, count) {
+  // Only a number that indexes a source we actually have is a citation. NICE stamps
+  // its recommendations with a year - "[2021]", "[2014, amended 2021]" - and linkifying
+  // those turned a publication date into a clickable source that pointed at nothing.
+  return html.replace(/\[(\d+)\]/g, (m, n) => {
+    const i = parseInt(n, 10) - 1;
+    if (i < 0 || i >= count) return m;
+    return '<span class="cite" data-i="' + i + '">' + n + "</span>";
+  });
+}
+
+const clean = (s) => String(s ?? "").replace(/\s+/g, " ").trim();
+
+/* ------------------------------------------------------------------- drawer */
+function pageURL(s, page, crop) {
+  return "/api/page?doc=" + encodeURIComponent(s.document_id) + "&page=" + page +
+         "&prov=" + encodeURIComponent(JSON.stringify(s.provenance || [])) +
+         (crop ? "&crop=1" : "");
+}
+
+function openSource(i, sources) {
+  const pool = sources || lastSources;
+  const s = pool[i];
+  if (!s) return;
+  $("drawer").classList.add("open");
+  $("drawertitle").textContent = s.citation || srcName(s.document_id);
+
+  const pages = pagesOf(s.provenance, s.page_start);
+  $("drawerbody").innerHTML =
+    '<div class="proof">' +
+      '<div class="proofhead">the cited text, on the page</div>' +
+      '<img class="cropimg" id="cropimg" alt="the cited span, boxed on the source page">' +
+    "</div>" +
+    '<div class="quote">' + esc(clean(s.text)) + "</div>" +
+    '<div class="attrib"><b>' + esc(srcName(s.document_id)) + "</b>" +
+    (pages.length > 1 ? " · pages " + pages.join(" and ") : " · page " + pages[0]) +
+    (s.chunk_type ? " · " + esc(s.chunk_type.replace(/_/g, " ")) : "") + "</div>" +
+    '<button class="toggle" id="fullpage">show the whole page</button>' +
+    '<div id="pagewrap"></div>';
+
+  const crop = $("cropimg");
+  crop.onerror = () => { $("cropimg").closest(".proof").remove(); showPage(s); };
+  crop.onclick = () => lightbox(pageURL(s, pages[0], false));
+  crop.src = pageURL(s, pages[0], true);
+
+  $("fullpage").onclick = () => {
+    const wrap = $("pagewrap");
+    if (wrap.childElementCount) { wrap.innerHTML = ""; $("fullpage").textContent = "show the whole page"; return; }
+    $("fullpage").textContent = "hide the whole page";
+    showPage(s);
+  };
+}
+
+function lightbox(src) {
+  const box = $("lightbox");
+  $("lightboximg").src = src;
+  box.classList.add("open");
+}
+
+$("close").onclick = () => $("drawer").classList.remove("open");
+document.addEventListener("keydown", e => {
+  if (e.key !== "Escape") return;
+  // Escape closes the topmost thing only, so a page opened from the drawer does not
+  // take the drawer with it.
+  if ($("lightbox").classList.contains("open")) $("lightbox").classList.remove("open");
+  else $("drawer").classList.remove("open");
+});
+$("lightbox").onclick = () => $("lightbox").classList.remove("open");
+
+// A chunk can span two pages. Showing only one and captioning it as the source is
+// worse than showing nothing, because the reader cannot tell a second page exists.
+function pagesOf(prov, fallback) {
+  const seen = [];
+  (prov || []).forEach(p => {
+    const page = (p && p.page !== undefined) ? p.page : null;
+    if (page !== null && !seen.includes(page)) seen.push(page);
+  });
+  return seen.length ? seen.sort((a, b) => a - b) : [fallback];
+}
+
+function showPage(s) {
+  const pages = pagesOf(s.provenance, s.page_start);
+  const wrap = $("pagewrap");
+  wrap.innerHTML = '<div class="spinner">rendering the page…</div>';
+  const holder = document.createElement("div");
+  let pending = pages.length, failed = 0;
+
+  pages.forEach(p => {
+    if (pages.length > 1) {
+      const label = document.createElement("div");
+      label.className = "pagelabel"; label.textContent = "page " + p;
+      holder.appendChild(label);
+    }
+    const img = new Image();
+    img.className = "pageimg";
+    img.onclick = () => lightbox(pageURL(s, p, false));
+    img.onload = img.onerror = () => {
+      if (img.naturalWidth === 0) failed += 1;
+      if (--pending === 0) {
+        wrap.innerHTML = "";
+        if (failed === pages.length) {
+          wrap.innerHTML = '<div class="empty">Could not render that page.</div>';
+        } else {
+          wrap.appendChild(holder);
+        }
+      }
+    };
+    img.src = pageURL(s, p, false);
+    holder.appendChild(img);
+  });
+}
+
+box.focus();
+</script>

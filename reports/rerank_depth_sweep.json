@@ -1,0 +1,165 @@
+{
+  "provenance": {
+    "run_at": "2026-08-19T22:11:36",
+    "dense_model": "abhinand/MedEmbed-large-v0.1",
+    "reranker": "BAAI/bge-reranker-v2-m3",
+    "dense_vectors": [
+      1485,
+      1024
+    ],
+    "corpus_chunks": 1485,
+    "fusion_weights": {
+      "tfidf": 0.21,
+      "dense": 0.29,
+      "meta": 0.21,
+      "doc2query": 0.29
+    },
+    "numeric_band_prior": 0.4,
+    "rerank_with_doc2query": true,
+    "files": {
+      "corpus": {
+        "bytes": 3398801,
+        "modified": "2026-08-19T05:56:57"
+      },
+      "tfidf": {
+        "bytes": 4367563,
+        "modified": "2026-08-19T05:56:58"
+      },
+      "doc2query": {
+        "bytes": 2384965,
+        "modified": "2026-08-19T06:38:15"
+      },
+      "dense": {
+        "bytes": 6082688,
+        "modified": "2026-08-19T05:57:37"
+      }
+    },
+    "swept": "rerank_depth"
+  },
+  "runs": [
+    {
+      "rerank_depth": 50,
+      "main": {
+        "cases": 67,
+        "ndcg_at_10": 0.7051,
+        "recall_at_10": 0.7989,
+        "recall_at_20": 0.8275,
+        "mrr_at_10": 0.6959,
+        "p_at_5": 0.2388,
+        "total_miss": 5
+      },
+      "main_success_at_5": 61,
+      "heldout": {
+        "cases": 46,
+        "ndcg_at_10": 0.8401,
+        "recall_at_10": 0.9058,
+        "recall_at_20": 0.9058,
+        "mrr_at_10": 0.8207,
+        "p_at_5": 0.1913,
+        "total_miss": 4
+      },
+      "heldout_success_at_5": 42,
+      "faq": {
+        "cases": 20,
+        "ndcg_at_10": 0.6864,
+        "recall_at_10": 0.7833,
+        "recall_at_20": 0.825,
+        "mrr_at_10": 0.8017,
+        "p_at_5": 0.25,
+        "total_miss": 0
+      },
+      "faq_success_at_5": 19,
+      "seconds": 246.5,
+      "ms_per_query": 1853.7,
+      "rerank_cache_hit_rate": 0.0,
+      "main_ci_vs_30": [
+        -0.01105671641791045,
+        0.007344776119402982
+      ],
+      "heldout_ci_vs_30": [
+        -0.021723913043478264,
+        0.008400000000000001
+      ]
+    },
+    {
+      "rerank_depth": 30,
+      "main": {
+        "cases": 67,
+        "ndcg_at_10": 0.7061,
+        "recall_at_10": 0.8001,
+        "recall_at_20": 0.825,
+        "mrr_at_10": 0.693,
+        "p_at_5": 0.2418,
+        "total_miss": 5
+      },
+      "main_success_at_5": 60,
+      "heldout": {
+        "cases": 46,
+        "ndcg_at_10": 0.844,
+        "recall_at_10": 0.9203,
+        "recall_at_20": 0.9203,
+        "mrr_at_10": 0.8261,
+        "p_at_5": 0.1913,
+        "total_miss": 3
+      },
+      "heldout_success_at_5": 42,
+      "faq": {
+        "cases": 20,
+        "ndcg_at_10": 0.7008,
+        "recall_at_10": 0.8083,
+        "recall_at_20": 0.85,
+        "mrr_at_10": 0.8058,
+        "p_at_5": 0.26,
+        "total_miss": 0
+      },
+      "faq_success_at_5": 20,
+      "seconds": 7.2,
+      "ms_per_query": 54.0,
+      "rerank_cache_hit_rate": 0.375
+    },
+    {
+      "rerank_depth": 20,
+      "main": {
+        "cases": 67,
+        "ndcg_at_10": 0.7039,
+        "recall_at_10": 0.7927,
+        "recall_at_20": 0.8275,
+        "mrr_at_10": 0.698,
+        "p_at_5": 0.2328,
+        "total_miss": 5
+      },
+      "main_success_at_5": 60,
+      "heldout": {
+        "cases": 46,
+        "ndcg_at_10": 0.8269,
+        "recall_at_10": 0.8768,
+        "recall_at_20": 0.9203,
+        "mrr_at_10": 0.817,
+        "p_at_5": 0.187,
+        "total_miss": 5
+      },
+      "heldout_success_at_5": 41,
+      "faq": {
+        "cases": 20,
+        "ndcg_at_10": 0.6953,
+        "recall_at_10": 0.7958,
+        "recall_at_20": 0.8417,
+        "mrr_at_10": 0.8058,
+        "p_at_5": 0.26,
+        "total_miss": 0
+      },
+      "faq_success_at_5": 20,
+      "seconds": 7.4,
+      "ms_per_query": 55.8,
+      "rerank_cache_hit_rate": 0.5,
+      "main_ci_vs_30": [
+        -0.013826865671641793,
+        0.008837313432835822
+      ],
+      "heldout_ci_vs_30": [
+        -0.043576086956521744,
+        0.0
+      ]
+    }
+  ]
+}
