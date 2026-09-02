@@ -43,7 +43,7 @@ import sys
 from pathlib import Path
 
 
-from newbieduo.paths import ROOT
+from nephrolex.paths import ROOT
 CORPUS = ROOT / "data" / "chunks_v2" / "retrieval_corpus.jsonl"
 MAX_MATCHES = 4
 OUT = ROOT / "eval" / "ckd_gold_eval.jsonl"

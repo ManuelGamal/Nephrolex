@@ -1,4 +1,4 @@
-# NewbieDuo CKD Evidence RAG
+# Nephrolex CKD Evidence RAG
 
 Full-accuracy CKD evidence retrieval pipeline for the hackathon.
 
@@ -66,12 +66,21 @@ worse. `--ocr` handles scanned or low-text PDFs.
 5. Every chunk keeps raw citable text separate from contextual retrieval text.
 6. Every chunk receives CKD topics, exact terms, threshold terms, and deterministic HyPE-style seed questions.
 7. Indexing builds:
-   - BM25 sparse retrieval
-   - TF-IDF lexical retrieval fallback
-   - optional SentenceTransformer dense embeddings
-   - HyPE question file
-8. Retrieval uses BM25 + TF-IDF + optional dense RRF fusion, deterministic CKD query expansion, topic/exact-term boosts, chunk-type authority boosts, section diversity, two-guideline coverage, parent-context attachment, and optional cross-encoder reranking.
-9. Evaluation reports hit rate and MRR against CKD judge-style queries.
+   - a TF-IDF lexical index
+   - MedEmbed-large-v0.1 dense vectors
+   - a doc2query index of generated clinician-voice questions, kept separate from
+     the chunk text so a generated sentence can never reach a citation
+   - the HyPE question file (retrieval boosts on it, so evaluation excludes it)
+8. Retrieval fuses four signals convexly - TF-IDF 0.21, dense 0.29, metadata 0.21,
+   doc2query 0.29 - over a 120-candidate pool, applies chunk-type and numeric-band
+   priors multiplicatively, and reranks the top 30 with a `bge-reranker-v2-m3`
+   cross-encoder. Deterministic CKD query expansion, parent-context attachment and
+   reference resolution sit around it. BM25 was measured and removed; RRF remains
+   available behind `--fusion rrf` for comparison rather than as the default.
+9. Evaluation reports nDCG@10, recall@10/@20 and MRR@10 against a 67-case gold set
+   with three independent answer keys, a held-out chunk-first set, and a clinical
+   FAQ set - with paired bootstrap intervals, so a change is kept only when it
+   clears the noise floor.
 
 Never store API keys in this repository. Set `HF_TOKEN` in the shell environment.
 

@@ -38,7 +38,7 @@ from collections import Counter
 from pathlib import Path
 
 
-from newbieduo.paths import ROOT
+from nephrolex.paths import ROOT
 DOCLING_DIR = ROOT / "data" / "docling"
 DEFAULT_OUT = ROOT / "data" / "chunks_v2"
 REPORTS_DIR = ROOT / "reports"
@@ -199,6 +199,55 @@ def normalize_text(text: str) -> str:
 # 3.6.2 reading "...A2 and A3) with diabetes (1B)" when the guideline actually says
 # "...A2) without diabetes (2C)". Wrong population, wrong grade, fully citable.
 # A hole in the corpus is recoverable; a confidently wrong recommendation is not.
+# Which chunks *define* a category, as opposed to reporting something stratified by one.
+#
+# "eGFR 38, which band?" is answered with certainty by the row stating 30-44 for the
+# same quantity. Retrieval cannot reach it by similarity - 38 appears nowhere in
+# "30 - 44" - and the numeric band signal cannot single it out either, because KDIGO
+# Tables 23, 24 and 29 report laboratory values *by* GFR category and state the very
+# same ranges. To the retriever those rows look identical to Table 2's, and all of them
+# score a perfect 1.0 on band containment.
+#
+# The guidelines already draw the distinction, in the caption. "Table 2| GFR categories
+# in CKD" enumerates the categories; "Table 24| Variation of laboratory values ... by
+# age group, sex, and eGFR" is stratified by them and announces a different subject.
+# This reads that declaration instead of guessing from the row contents, so it stays a
+# property of the corpus rather than a rule fitted to the questions asked of it.
+DEFINES_CATEGORY = re.compile(
+    r"\b(?:GFR|albuminuria|proteinuria|ACR)\s+categor(?:y|ies)\b"
+    r"|\bcategories\s+(?:in|of)\s+(?:CKD|chronic kidney disease)\b"
+    r"|\bnomenclature\b"
+    r"|\bclassification\s+of\s+CKD\b",
+    re.I,
+)
+
+# "by <x> category" is the stratification marker; the others announce another subject.
+# "rating guideline recommendations" is the grading nomenclature (1A, 2B), not a
+# disease category.
+STRATIFIED_BY_CATEGORY = re.compile(
+    r"\bby\b[^.]{0,40}\bcategor|\bvariation of\b|\brisk of\b|\bimpact of\b"
+    r"|\bassociations?\b|\boutcomes\b|\brating guideline\b|\bindications\b",
+    re.I,
+)
+
+# Docling loses some table captions, leaving the literal "Table" as the leaf. The
+# section directly above names the table in every case that matters here.
+GENERIC_LEAF = {"table", "figure", ""}
+
+
+def defines_categories(section_path: list[str] | None) -> bool:
+    """Does this chunk sit in a table or section that enumerates disease categories?"""
+    parts = [part for part in (section_path or []) if part and part.strip()]
+    if not parts:
+        return False
+    caption = parts[-1]
+    if caption.strip().lower() in GENERIC_LEAF and len(parts) > 1:
+        caption = parts[-2]
+    return bool(DEFINES_CATEGORY.search(caption)) and not bool(
+        STRATIFIED_BY_CATEGORY.search(caption)
+    )
+
+
 EVIDENCE_GRADE_RE = re.compile(r"\((?:1|2)[ABCD]\)")
 
 JOURNAL_FOOTER_RE = re.compile(
@@ -1290,6 +1339,11 @@ def to_retrieval_record(chunk: dict) -> dict:
             "page_end": chunk["page_end"],
             "provenance": chunk["provenance"],
             "section_path": chunk["section_path"],
+            # Read from the guideline's own table caption. The answer layer uses it to
+            # resolve "eGFR 38, which category?" by lookup over the chunks that define
+            # the categories, rather than hoping similarity ranking surfaces one - see
+            # _band_answer in nephrolex/generation/answer.py.
+            "defines_categories": defines_categories(chunk["section_path"]),
             "topics": chunk["topics"],
             "exact_terms": chunk["exact_terms"],
             "citation": chunk["citation"],

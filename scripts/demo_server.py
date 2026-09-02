@@ -1,4 +1,4 @@
-"""NewbieDuo demo server: ask a CKD question, see the evidence on the page it came from.
+"""Nephrolex demo server: ask a CKD question, see the evidence on the page it came from.
 
 Deliberately built on the standard library. A live demo should not depend on a web
 framework installed hours beforehand alongside a CUDA torch build, and every failure
@@ -38,8 +38,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from newbieduo.generation import answer as answer_module  # noqa: E402
-from newbieduo.retrieval import retrieve as retrieve_module  # noqa: E402
+from nephrolex.generation import answer as answer_module  # noqa: E402
+from nephrolex.retrieval import retrieve as retrieve_module  # noqa: E402
 
 
 RAW_DIR = ROOT / "data" / "raw"
@@ -104,7 +104,7 @@ def warm_cds() -> None:
     triggers fire depends on the patient - the five questions themselves never change,
     so the whole cache can be built before the first patient is ever seen.
     """
-    from newbieduo.service import cds_hooks
+    from nephrolex.service import cds_hooks
 
     started = time.time()
     try:
@@ -269,7 +269,7 @@ class Handler(BaseHTTPRequestHandler):
         if parsed.path == "/cds-services":
             # CDS Hooks discovery. A record system fetches this to learn what the
             # service offers and what patient data to send with the hook.
-            from newbieduo.service.cds_hooks import discovery
+            from nephrolex.service.cds_hooks import discovery
 
             self._json(200, discovery())
             return
@@ -326,7 +326,7 @@ class Handler(BaseHTTPRequestHandler):
         deployed decision support is ignored because it fires too often, so this service
         stays silent rather than showing a box a clinician will learn to dismiss.
         """
-        from newbieduo.service import cds_hooks
+        from nephrolex.service import cds_hooks
 
         if service_id != cds_hooks.SERVICE_ID:
             self._json(404, {"error": f"unknown CDS service {service_id!r}"})
@@ -405,7 +405,7 @@ class Handler(BaseHTTPRequestHandler):
 def main() -> None:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-    parser = argparse.ArgumentParser(description="NewbieDuo demo server.")
+    parser = argparse.ArgumentParser(description="Nephrolex demo server.")
     parser.add_argument("--port", type=int, default=8000)
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--top-k", type=int, default=10)
@@ -441,14 +441,14 @@ def main() -> None:
     CONFIG.rerank_depth = args.rerank_depth
     CONFIG.generate = args.generate
     if args.generate:
-        from newbieduo.generation.generate import set_timeout
+        from nephrolex.generation.generate import set_timeout
 
         set_timeout(args.generate_timeout)
     CONFIG.reranker_model = None if args.no_rerank else args.reranker_model
     if args.fast and not args.no_rerank:
         CONFIG.reranker_model = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 
-    print("NewbieDuo demo")
+    print("Nephrolex demo")
     print(f"  dense    : {CONFIG.dense_model or 'off (lexical only)'}")
     print(f"  reranker : {CONFIG.reranker_model or 'off'}")
     print("  warming models...")

@@ -21,7 +21,7 @@ except ImportError:
     pymupdf = None
 
 
-from newbieduo.paths import ROOT
+from nephrolex.paths import ROOT
 RAW_DIR = ROOT / "data" / "raw"
 PARSED_DIR = ROOT / "data" / "parsed"
 DOCLING_DIR = ROOT / "data" / "docling"
@@ -337,7 +337,7 @@ def main() -> None:
         parsed.append(parse_pdf(pdf_path, meta))
 
     summary = {
-        "project": "NewbieDuo",
+        "project": "Nephrolex",
         "stage": "full_accuracy_pdf_parsing",
         "docling": docling_status,
         "parsed_documents": parsed,

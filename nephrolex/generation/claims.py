@@ -28,7 +28,7 @@ from dataclasses import dataclass, asdict
 from pathlib import Path
 
 
-from newbieduo.paths import ROOT
+from nephrolex.paths import ROOT
 # Quantities worth comparing across guidelines, with the units they are stated in.
 QUANTITIES = {
     "systolic_blood_pressure": {
@@ -330,7 +330,7 @@ def main() -> None:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     import argparse
 
-    from newbieduo.retrieval.retrieve import retrieve
+    from nephrolex.retrieval.retrieve import retrieve
 
     parser = argparse.ArgumentParser(description="Extract and compare guideline claims.")
     parser.add_argument("query")

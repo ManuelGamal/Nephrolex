@@ -86,7 +86,7 @@ def main() -> None:
         raise SystemExit("no gold_eval_*.json reports found")
 
     lines: list[str] = []
-    lines.append("# NewbieDuo retrieval ablation")
+    lines.append("# Nephrolex retrieval ablation")
     lines.append("")
     # The stage table's own rows were measured against whatever gold set existed at the
     # time; quoting the oldest run's size as "the gold set" described a 50-question set

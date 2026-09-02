@@ -28,7 +28,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from newbieduo.paths import CHUNKS, CORPUS, DATA, INDEXES, RAW_PDFS  # noqa: E402
+from nephrolex.paths import CHUNKS, CORPUS, DATA, INDEXES, RAW_PDFS  # noqa: E402
 
 # The encoder this system actually ships. Named here rather than defaulted in
 # each script, so a corpus cannot be built against one model and served by

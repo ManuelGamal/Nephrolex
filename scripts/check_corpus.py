@@ -29,7 +29,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from newbieduo.paths import CORPUS, INDEXES, RAW_PDFS  # noqa: E402
+from nephrolex.paths import CORPUS, INDEXES, RAW_PDFS  # noqa: E402
 
 TERMINATED = re.compile(r"[.:;?!)\]]\s*$|\[\d{4}\]\s*$")
 RECOMMENDATION_LABEL = re.compile(r"^(Recommendation|Practice Point)\s+(\d+(?:\.\d+)+)$")

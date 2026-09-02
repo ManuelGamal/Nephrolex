@@ -246,7 +246,7 @@ def main() -> None:
     parser.add_argument("--verbose", action="store_true")
     args = parser.parse_args()
 
-    from newbieduo.generation.generate import generate, verify
+    from nephrolex.generation.generate import generate, verify
 
     evidence = load_fixtures()
     print(f"evidence fixtures ({len(evidence)}), pulled from the live corpus:")
@@ -303,7 +303,7 @@ def main() -> None:
     # The verifier is only useful if a failed verification actually suppresses the
     # text. Stub the provider so the whole generate() path runs with no API key.
     print("\nend-to-end suppression (stubbed model, no API call)")
-    from newbieduo.generation import generate as G
+    from nephrolex.generation import generate as G
 
     for label, fake_output, expect_status in [
         ("model returns good answer", CASES[0][1], "verified"),

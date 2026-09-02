@@ -1,9 +1,9 @@
 {
-  "project": "NewbieDuo",
+  "project": "Nephrolex",
   "stage": "full_accuracy_pdf_parsing",
   "docling": {
     "status": "skipped_existing",
-    "output_dir": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\docling",
+    "output_dir": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\Nephrolex\\data\\docling",
     "file_count": 4
   },
   "parsed_documents": [
@@ -14,7 +14,7 @@
       "source_url": "https://kdigo.org/guidelines/ckd-evaluation-and-management/",
       "version_year": 2024,
       "pdf_filename": "KDIGO-2024-CKD-Guideline.pdf",
-      "pdf_path": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\raw\\KDIGO-2024-CKD-Guideline.pdf",
+      "pdf_path": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\Nephrolex\\data\\raw\\KDIGO-2024-CKD-Guideline.pdf",
       "sha256": "0b77a9e32ca6c7bbccbddf902be4427bf8bc0d2dd7e3ffbc18042f602f371b27",
       "page_count": 199,
       "table_count": 46,
@@ -1915,9 +1915,9 @@
         }
       ],
       "outputs": {
-        "pages_jsonl": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\parsed\\kdigo_2024_ckd_pages.jsonl",
-        "tables_jsonl": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\parsed\\kdigo_2024_ckd_tables.jsonl",
-        "metadata_json": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\parsed\\kdigo_2024_ckd_metadata.json"
+        "pages_jsonl": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\Nephrolex\\data\\parsed\\kdigo_2024_ckd_pages.jsonl",
+        "tables_jsonl": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\Nephrolex\\data\\parsed\\kdigo_2024_ckd_tables.jsonl",
+        "metadata_json": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\Nephrolex\\data\\parsed\\kdigo_2024_ckd_metadata.json"
       }
     },
     {
@@ -1927,7 +1927,7 @@
       "source_url": "https://www.nice.org.uk/guidance/ng203",
       "version_year": 2021,
       "pdf_filename": "chronic-kidney-disease-assessment-and-management-pdf-66143713055173.pdf",
-      "pdf_path": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\raw\\chronic-kidney-disease-assessment-and-management-pdf-66143713055173.pdf",
+      "pdf_path": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\Nephrolex\\data\\raw\\chronic-kidney-disease-assessment-and-management-pdf-66143713055173.pdf",
       "sha256": "86736192863d86d6c8f16a911b97590ac3e5731e21d88f8ef28f5ecc8d04645b",
       "page_count": 78,
       "table_count": 4,
@@ -2909,12 +2909,12 @@
         }
       ],
       "outputs": {
-        "pages_jsonl": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\parsed\\nice_ng203_ckd_pages.jsonl",
-        "tables_jsonl": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\parsed\\nice_ng203_ckd_tables.jsonl",
-        "metadata_json": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\data\\parsed\\nice_ng203_ckd_metadata.json"
+        "pages_jsonl": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\Nephrolex\\data\\parsed\\nice_ng203_ckd_pages.jsonl",
+        "tables_jsonl": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\Nephrolex\\data\\parsed\\nice_ng203_ckd_tables.jsonl",
+        "metadata_json": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\Nephrolex\\data\\parsed\\nice_ng203_ckd_metadata.json"
       }
     }
   ],
   "missing_documents": [],
-  "python": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\NewbieDuo\\.venv\\Scripts\\python.exe"
+  "python": "C:\\Users\\manue\\Documents\\Codex\\2026-08-16\\we\\Nephrolex\\.venv\\Scripts\\python.exe"
 }

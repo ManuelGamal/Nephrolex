@@ -419,8 +419,8 @@ def main() -> None:
     parser.add_argument("--show-prompt", action="store_true")
     args = parser.parse_args()
 
-    from newbieduo.retrieval import retrieve as retrieve_module
-    from newbieduo.generation.answer import build_answer
+    from nephrolex.retrieval import retrieve as retrieve_module
+    from nephrolex.generation.answer import build_answer
 
     retrieve_module.set_dense_path(args.dense_file)
     grounded = build_answer(args.query, args.top_k, args.dense_model, args.reranker_model)

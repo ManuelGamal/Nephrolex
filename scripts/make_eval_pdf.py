@@ -185,7 +185,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--sources", nargs="*", default=[str(p) for p in DEFAULT_SOURCES])
     parser.add_argument("--out", default=str(DEFAULT_OUT))
-    parser.add_argument("--title", default="NewbieDuo — CKD Guideline RAG")
+    parser.add_argument("--title", default="Nephrolex — CKD Guideline RAG")
     args = parser.parse_args()
 
     import pymupdf

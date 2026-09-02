@@ -11,7 +11,7 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
-from newbieduo.paths import ROOT, CORPUS as SHIPPED_CORPUS
+from nephrolex.paths import ROOT, CORPUS as SHIPPED_CORPUS
 CHUNKS_DIR = ROOT / "data" / "chunks"
 INDEX_DIR = ROOT / "data" / "indexes"
 REPORTS_DIR = ROOT / "reports"
@@ -104,9 +104,9 @@ def build_dense(records: list[dict], model_name: str, batch_size: int, mode: str
     if "HF_TOKEN" in env:
         os.environ.setdefault("HUGGING_FACE_HUB_TOKEN", env["HF_TOKEN"])
 
-    from newbieduo.retrieval.embedding_models import get as get_model
+    from nephrolex.retrieval.embedding_models import get as get_model
 
-    from newbieduo.retrieval.medcpt import LOGICAL_NAME, MedCPTEncoder, is_medcpt
+    from nephrolex.retrieval.medcpt import LOGICAL_NAME, MedCPTEncoder, is_medcpt
 
     spec = get_model(model_name)
     if is_medcpt(model_name):
@@ -237,7 +237,7 @@ def main() -> None:
     )
 
     report = {
-        "project": "NewbieDuo",
+        "project": "Nephrolex",
         "stage": "full_accuracy_indexing",
         "record_count": len(records),
         "index_text_mode": args.index_text,

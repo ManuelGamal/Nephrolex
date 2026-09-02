@@ -31,7 +31,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from newbieduo.service import cds_hooks  # noqa: E402
+from nephrolex.service import cds_hooks  # noqa: E402
 
 DENSE_MODEL = "abhinand/MedEmbed-large-v0.1"
 RERANKER = "BAAI/bge-reranker-v2-m3"
@@ -85,7 +85,7 @@ def main() -> None:
     parser.add_argument("--verbose", action="store_true")
     args = parser.parse_args()
 
-    from newbieduo.generation.answer import build_answer
+    from nephrolex.generation.answer import build_answer
 
     def answerer(question: str) -> dict:
         return build_answer(question, 10, DENSE_MODEL, RERANKER, generate=False)

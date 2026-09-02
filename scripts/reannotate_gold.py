@@ -50,7 +50,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from newbieduo.paths import CORPUS, GOLD_SET, REPORTS  # noqa: E402
+from nephrolex.paths import CORPUS, GOLD_SET, REPORTS  # noqa: E402
 
 
 @dataclass(frozen=True)

@@ -1,4 +1,4 @@
-"""CLI entry point. Implementation lives in newbieduo.retrieval.retrieve.
+"""CLI entry point. Implementation lives in nephrolex.retrieval.retrieve.
 
 Kept so the commands in README.md and ARCHITECTURE.md keep working after the move to
 the four-layer package; this file deliberately contains no logic.
@@ -9,7 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from newbieduo.retrieval.retrieve import main  # noqa: E402
+from nephrolex.retrieval.retrieve import main  # noqa: E402
 
 if __name__ == "__main__":
     main()

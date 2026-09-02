@@ -1,4 +1,4 @@
-# NewbieDuo — architecture
+# Nephrolex — architecture
 
 CKD guideline question answering over **KDIGO 2024** and **NICE NG203**, with every
 claim traceable to a page and a bounding box in the source PDF.
@@ -53,7 +53,7 @@ guidelines do not contain). Splitting it is the whole reason the system records
 0 unsafe answers *and* 0 false declines rather than trading one against the other.
 
 ```
-newbieduo/
+nephrolex/
   paths.py                  every filesystem location, resolved once
   ingestion/                parse_guidelines · chunk_docling · build_indexes
   retrieval/                retrieve · colbert · embedding_models
@@ -71,7 +71,7 @@ Two details in there are load-bearing rather than tidy-minded:
 **`paths.py` exists because the constant was duplicated eight times.** Each core
 module resolved the repository root as `Path(__file__).resolve().parents[1]`, which is
 correct only while every one of them sits at exactly that depth. Moving them into
-layer directories would have repointed all eight at `newbieduo/` — and the corpus,
+layer directories would have repointed all eight at `nephrolex/` — and the corpus,
 indexes and gold set would have vanished with no import error to explain it.
 
 **The scoring layer is a registry, not an expression.** `retrieve.SIGNALS` declares

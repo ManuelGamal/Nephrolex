@@ -1,0 +1,30 @@
+# Line endings are normalised to LF in the repository and checked out native, so a
+# Windows and a Linux clone agree on file contents. Without this the container build
+# and the host disagree about shell scripts, and diffs fill with whole-file rewrites.
+* text=auto
+
+# Binary files must never be line-ending converted. Git guessed the speaker-script PDF
+# was text and would have rewritten LF to CRLF inside it on checkout, corrupting it.
+*.pdf   -text
+*.png   -text
+*.jpg   -text
+*.jpeg  -text
+*.gif   -text
+*.ico   -text
+*.woff  -text
+*.woff2 -text
+*.npy   -text
+*.pkl   -text
+*.zip   -text
+
+# Shell scripts and the Dockerfile must keep LF even on a Windows checkout, or the
+# image fails to build with a confusing "no such file or directory" on the shebang.
+*.sh        text eol=lf
+Dockerfile  text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+
+# Generated reports are data, not reviewable source: keep them out of diff noise while
+# still versioning them.
+reports/*.json  -diff
+data/**         -diff

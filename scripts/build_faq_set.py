@@ -57,7 +57,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from newbieduo.paths import CORPUS  # noqa: E402
+from nephrolex.paths import CORPUS  # noqa: E402
 
 OUT = ROOT / "eval" / "faq_clinical.jsonl"
 

@@ -1,4 +1,4 @@
-# NewbieDuo -- CKD guideline evidence service.
+# Nephrolex -- CKD guideline evidence service.
 #
 # Two stages on purpose. The builder installs the toolchain needed to compile
 # wheels; the runtime carries only the interpreter, the installed packages and
@@ -33,7 +33,7 @@ RUN python -m venv /opt/venv \
 # ───────────────────────────────────────────────────────────── runtime
 FROM python:3.10-slim-bookworm AS runtime
 
-LABEL org.opencontainers.image.title="NewbieDuo" \
+LABEL org.opencontainers.image.title="Nephrolex" \
       org.opencontainers.image.description="Guideline-grounded CKD decision support with CDS Hooks" \
       org.opencontainers.image.licenses="Apache-2.0"
 
@@ -43,8 +43,8 @@ ENV PYTHONUNBUFFERED=1 \
     # Keep every model download inside one mountable directory, so an air-gapped
     # site can populate it once and run offline thereafter.
     HF_HOME=/data/.cache/huggingface \
-    NEWBIEDUO_HOST=0.0.0.0 \
-    NEWBIEDUO_PORT=8000
+    NEPHROLEX_HOST=0.0.0.0 \
+    NEPHROLEX_PORT=8000
 
 # libgomp is required by torch; curl is used by the healthcheck below.
 RUN apt-get update \
@@ -54,17 +54,17 @@ RUN apt-get update \
 COPY --from=builder /opt/venv /opt/venv
 
 WORKDIR /app
-COPY newbieduo/ ./newbieduo/
+COPY nephrolex/ ./nephrolex/
 COPY scripts/ ./scripts/
 COPY eval/ ./eval/
 COPY README.md LICENSE NOTICE ./
 
 # Run unprivileged. /data is the only writable path the service needs, and it is
 # where the operator's licensed corpus and the model cache are mounted.
-RUN useradd --system --uid 10001 --home /app newbieduo \
+RUN useradd --system --uid 10001 --home /app nephrolex \
  && mkdir -p /data \
- && chown -R newbieduo:newbieduo /app /data
-USER newbieduo
+ && chown -R nephrolex:nephrolex /app /data
+USER nephrolex
 
 VOLUME ["/data"]
 EXPOSE 8000
@@ -73,7 +73,7 @@ EXPOSE 8000
 # the models are loaded and the five trigger answers are cached, so the health
 # check asks for that state rather than for a TCP connection.
 HEALTHCHECK --interval=15s --timeout=5s --start-period=180s --retries=20 \
-  CMD curl -fsS "http://127.0.0.1:${NEWBIEDUO_PORT}/api/health" \
+  CMD curl -fsS "http://127.0.0.1:${NEPHROLEX_PORT}/api/health" \
       | grep -q '"cds_state": *"ready"' || exit 1
 
 ENTRYPOINT ["python", "scripts/demo_server.py"]

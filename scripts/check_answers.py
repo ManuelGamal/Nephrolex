@@ -45,7 +45,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from newbieduo.paths import CORPUS, GOLD_SET, REPORTS  # noqa: E402
+from nephrolex.paths import CORPUS, GOLD_SET, REPORTS  # noqa: E402
 
 # The value classes a CKD answer turns on. Bare integers are excluded for the same
 # reason the answer verifier excludes them: "stage 3" and "3 months" are prose.
@@ -88,8 +88,8 @@ def main() -> None:
     parser.add_argument("--verbose", action="store_true")
     args = parser.parse_args()
 
-    from newbieduo.generation.answer import build_answer
-    from newbieduo.retrieval import retrieve as retrieve_module
+    from nephrolex.generation.answer import build_answer
+    from nephrolex.retrieval import retrieve as retrieve_module
 
     retrieve_module.set_dense_path(args.dense_file)
 

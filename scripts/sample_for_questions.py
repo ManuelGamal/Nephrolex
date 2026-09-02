@@ -39,7 +39,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from newbieduo.paths import CORPUS, GOLD_SET  # noqa: E402
+from nephrolex.paths import CORPUS, GOLD_SET  # noqa: E402
 
 # Proportional to the corpus, but figure_body and figure_caption are floored so the
 # hard cases are represented rather than rounded away.

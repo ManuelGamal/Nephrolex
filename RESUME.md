@@ -1,4 +1,4 @@
-# NewbieDuo — where things stand
+# Nephrolex — where things stand
 
 Everything below is on disk. Nothing needs to be left running.
 

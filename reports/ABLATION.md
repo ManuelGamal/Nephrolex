@@ -1,4 +1,4 @@
-# NewbieDuo retrieval ablation
+# Nephrolex retrieval ablation
 
 Gold set today: 67 answerable questions with pinned chunk-level relevance, plus scope and adversarial cases scored separately. The historical rows below were measured against a 50-question set. `dev` is tuned on; `test` is held out.
 
@@ -407,7 +407,7 @@ The held-out set showed retrieval swinging from nDCG 0.90 to 0.38 on identical c
 depending only on whether the question used guideline vocabulary. MedCPT is the
 literature's most direct answer to that: an asymmetric pair of encoders trained
 contrastively on 255 million PubMed click logs, so the query side has seen how people
-actually type. Wired in `newbieduo/retrieval/medcpt.py` - two checkpoints, [CLS]
+actually type. Wired in `nephrolex/retrieval/medcpt.py` - two checkpoints, [CLS]
 pooling, 64/512 token limits, articles fed as [title, body] pairs. Loading it through
 SentenceTransformer would have mean-pooled a [CLS] model and measured the harness.
 

@@ -26,12 +26,12 @@ import re
 import sys
 from pathlib import Path
 
-from newbieduo.generation.claims import analyse
-from newbieduo.retrieval.retrieve import numeric_range_signal, retrieve
-from newbieduo.safety.scope import classify, in_domain, other_specialty, refusal_text
+from nephrolex.generation.claims import analyse
+from nephrolex.retrieval.retrieve import numeric_range_signal, retrieve
+from nephrolex.safety.scope import classify, in_domain, other_specialty, refusal_text
 
 
-from newbieduo.paths import ROOT
+from nephrolex.paths import ROOT
 # Fused scores are min-max normalised within the candidate pool, so the top result
 # always sits near 1.0 regardless of whether anything relevant exists. That makes a
 # single global threshold useless for abstention: measured on the gold set, raw BM25
@@ -73,7 +73,7 @@ _CORPUS_VOCABULARY: set[str] | None = None
 def _corpus_vocabulary() -> set[str]:
     global _CORPUS_VOCABULARY
     if _CORPUS_VOCABULARY is None:
-        from newbieduo.retrieval.retrieve import content_terms, load_indexes
+        from nephrolex.retrieval.retrieve import content_terms, load_indexes
 
         _CORPUS_VOCABULARY = set()
         for record in load_indexes().records:
@@ -91,7 +91,7 @@ def _unknown_concepts(query: str, min_length: int = 5) -> list[str]:
     separates them. Vocabulary does: "appendicitis" occurs in zero chunks, whereas
     every content word of the answerable paraphrases occurs somewhere.
     """
-    from newbieduo.retrieval.retrieve import content_terms
+    from nephrolex.retrieval.retrieve import content_terms
 
     vocabulary = _corpus_vocabulary()
     return [
@@ -109,10 +109,108 @@ def _has_askable_content(query: str) -> bool:
     content still yields a top-ranked chunk and an answer built around it - which
     is exactly the wrong behaviour in front of someone who mistyped.
     """
-    from newbieduo.retrieval.retrieve import content_terms
+    from nephrolex.retrieval.retrieve import content_terms
 
     terms = content_terms(query)
     return bool(terms) and any(not term.isdigit() for term in terms)
+
+
+# A value-to-band question is a lookup, not a similarity problem.
+#
+# "eGFR 38, which category?" is answered with certainty by the row stating 30-44 for
+# the same quantity. Retrieval cannot be relied on to surface it: ranked by resemblance
+# to the query, that row came 10th for "filtration rate ... 38" and 112th for the same
+# question worded "eGFR ... 38" - naming the quantity explicitly makes it *worse*,
+# because eGFR appears all over the corpus while "filtration rate" is comparatively
+# rare. The top 8 went to the model either way, and it declined correctly on evidence
+# that never contained the answer.
+#
+# Two scoring fixes were measured and rejected (see W_BAND and DOC2QUERY_QUERY_MODE in
+# retrieve.py). Both failed for one reason: the numeric band signal is not selective.
+# KDIGO Tables 23, 24 and 29 report laboratory values *by* GFR category and state the
+# same ranges, so they score a perfect 1.0 too, and anything promoting the answer row
+# promotes them with it.
+#
+# What is selective is `defines_categories`, read at ingestion from the guideline's own
+# table caption - "Table 2| GFR categories in CKD" enumerates them, "Table 24|
+# Variation of laboratory values ... by age group, sex, and eGFR" is stratified by
+# them. 41 chunks carry it, so "which band contains this value" is answered by scanning
+# those directly rather than hoping ranking surfaces one, and the answer does not
+# depend on how the clinician happened to word the question.
+#
+# Ranking is untouched: this only widens what the model is allowed to read, so every
+# retrieval metric is unchanged by construction.
+_CATEGORY_CHUNKS: list[dict] | None = None
+
+
+def _category_chunks() -> list[dict]:
+    """The corpus chunks that enumerate disease categories, loaded once."""
+    global _CATEGORY_CHUNKS
+    if _CATEGORY_CHUNKS is None:
+        from nephrolex.retrieval.retrieve import load_indexes
+
+        _CATEGORY_CHUNKS = [
+            record
+            for record in load_indexes().records
+            if record["metadata"].get("defines_categories") and _is_quotable(record)
+        ]
+    return _CATEGORY_CHUNKS
+
+
+def _closed_band_width(query: str, raw: str) -> float:
+    """Width of the narrowest closed range in `raw` that contains a value in `query`.
+
+    Several category-defining chunks tie at a perfect band score, because the signal
+    also credits open-ended bounds - Table 3's albuminuria rows and the definition
+    passage both bound 38 from one side. Only one chunk closes the range around it,
+    and the narrowest closed range is the most specific statement of the band.
+    """
+    from nephrolex.retrieval.retrieve import RANGE_RE, spelled_numbers
+
+    values = [float(v) for v in re.findall(r"\b(\d+(?:\.\d+)?)\b", query)]
+    values += spelled_numbers(query)
+    widths = [
+        float(high) - float(low)
+        for low, high in RANGE_RE.findall(raw)
+        if any(float(low) <= value <= float(high) for value in values)
+    ]
+    return min(widths) if widths else float("inf")
+
+
+def _band_answer(query: str) -> dict | None:
+    """The category-defining chunk whose stated band contains the query's value."""
+    from nephrolex.retrieval.retrieve import numeric_range_signal, query_quantity
+
+    if not query_quantity(query):
+        return None
+    scored = [
+        (record, numeric_range_signal(query, record["raw_text"]))
+        for record in _category_chunks()
+    ]
+    scored = [(record, score) for record, score in scored if score > 0.0]
+    if not scored:
+        return None
+    best_score = max(score for _, score in scored)
+    finalists = [record for record, score in scored if score == best_score]
+    # Stable: ties that close no range keep corpus order rather than being reshuffled.
+    return min(finalists, key=lambda record: _closed_band_width(query, record["raw_text"]))
+
+
+def _reserve_band_slot(query: str, quotable: list[dict], score: float) -> list[dict]:
+    """Guarantee the band-defining row a place in the window the model reads.
+
+    Marked `resolved_from` like a resolved reference, so the panel lists it as pulled
+    in rather than retrieved - it was not ranked into the answer, and showing it as
+    though it had been would misrepresent where it came from.
+    """
+    answer = _band_answer(query)
+    if answer is None or any(r["id"] == answer["id"] for r in quotable[:SHOWN_EVIDENCE]):
+        return quotable
+    entry = dict(answer)
+    entry["score"] = score
+    entry["resolved_from"] = (answer["metadata"].get("section_path") or ["category table"])[-1]
+    kept = [r for r in quotable if r["id"] != answer["id"]]
+    return kept[: SHOWN_EVIDENCE - 1] + [entry] + kept[SHOWN_EVIDENCE - 1 :]
 
 
 def _is_quotable(result: dict) -> bool:
@@ -261,7 +359,7 @@ def _neighbour_context(result: dict, budget: int = NEIGHBOUR_CONTEXT_CHARS) -> s
     surroundings for comprehension only. build_prompt marks it unquotable, and
     verify() never reads it: a number that appears only here is still rejected.
     """
-    from newbieduo.retrieval.retrieve import load_indexes
+    from nephrolex.retrieval.retrieve import load_indexes
 
     records = load_indexes().records
     global _RECORD_POSITION
@@ -300,7 +398,7 @@ def _signal_weights() -> dict[str, float]:
     """
     import inspect
 
-    from newbieduo.retrieval.retrieve import SIGNALS, retrieve as retrieve_fn
+    from nephrolex.retrieval.retrieve import SIGNALS, retrieve as retrieve_fn
 
     defaults = inspect.signature(retrieve_fn).parameters
     weights: dict[str, float] = {}
@@ -326,7 +424,7 @@ def _resolve_references(quoted: list[dict], limit: int = 2) -> list[dict]:
     if not quoted:
         return quoted
 
-    from newbieduo.retrieval.retrieve import load_indexes
+    from nephrolex.retrieval.retrieve import load_indexes
 
     wanted: list[str] = []
     for result in quoted:
@@ -479,6 +577,7 @@ def build_answer(
 
     top_score = results[0]["score"]
     quotable = _resolve_references(_distinct([r for r in results if _is_quotable(r)]))
+    quotable = _reserve_band_slot(query, quotable, top_score)
     domain = in_domain(query)
 
     off_specialty = other_specialty(query)
@@ -544,7 +643,7 @@ def build_answer(
     # only ever contain guideline text that was actually retrieved.
     generated = None
     if generate:
-        from newbieduo.generation.generate import generate as generate_answer
+        from nephrolex.generation.generate import generate as generate_answer
 
         generated = generate_answer(
             query,

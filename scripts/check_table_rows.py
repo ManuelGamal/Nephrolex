@@ -42,8 +42,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from newbieduo.paths import GOLD_SET, REPORTS  # noqa: E402
-from newbieduo.retrieval import retrieve as R  # noqa: E402
+from nephrolex.paths import GOLD_SET, REPORTS  # noqa: E402
+from nephrolex.retrieval import retrieve as R  # noqa: E402
 
 DENSE_MODEL = "abhinand/MedEmbed-large-v0.1"
 RERANKER = "BAAI/bge-reranker-v2-m3"

@@ -31,10 +31,10 @@ import math
 import sys
 from pathlib import Path
 
-from newbieduo.retrieval.retrieve import retrieve
+from nephrolex.retrieval.retrieve import retrieve
 
 
-from newbieduo.paths import ROOT
+from nephrolex.paths import ROOT
 GOLD_PATH = ROOT / "eval" / "ckd_gold_eval.jsonl"
 REPORTS_DIR = ROOT / "reports"
 
@@ -93,7 +93,7 @@ def _fingerprints() -> dict[str, str]:
     """
     global _FINGERPRINTS
     if _FINGERPRINTS is None:
-        from newbieduo.paths import CORPUS
+        from nephrolex.paths import CORPUS
 
         _FINGERPRINTS = {}
         with CORPUS.open("r", encoding="utf-8") as f:
@@ -219,6 +219,8 @@ def main() -> None:
                         help="Lexical weight on generated clinician-voice questions.")
     parser.add_argument("--w-dense", type=float, default=None)
     parser.add_argument("--w-meta", type=float, default=None)
+    parser.add_argument("--w-band", type=float, default=None,
+                        help="Additive weight on the numeric band signal.")
     parser.add_argument("--w-rerank", type=float, default=None)
     parser.add_argument("--rerank-depth", type=int, default=None)
     parser.add_argument(
@@ -229,7 +231,7 @@ def main() -> None:
     args = parser.parse_args()
 
     if args.dense_file:
-        from newbieduo.retrieval.retrieve import set_dense_path
+        from nephrolex.retrieval.retrieve import set_dense_path
 
         set_dense_path(args.dense_file)
 
@@ -246,6 +248,7 @@ def main() -> None:
             ("hyde_mode", args.hyde_mode), ("w_hyde", args.w_hyde),
             ("w_tfidf", args.w_tfidf), ("w_doc2query", args.w_doc2query),
             ("w_dense", args.w_dense), ("w_meta", args.w_meta),
+            ("w_band", args.w_band),
             ("w_rerank", args.w_rerank), ("rerank_depth", args.rerank_depth),
         )
         if value is not None
@@ -268,7 +271,7 @@ def main() -> None:
         for case in cases
     ]
 
-    from newbieduo.retrieval.retrieve import load_indexes
+    from nephrolex.retrieval.retrieve import load_indexes
 
     dense_matrix = load_indexes().dense
     loaded_dense = None if dense_matrix is None else dense_matrix.shape

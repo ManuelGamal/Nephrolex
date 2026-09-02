@@ -61,7 +61,7 @@ from pathlib import Path
 import numpy as np
 
 
-from newbieduo.paths import ROOT
+from nephrolex.paths import ROOT
 
 CORPUS = ROOT / "data" / "chunks_v2" / "retrieval_corpus.jsonl"
 OUT_DIR = ROOT / "data" / "indexes" / "colbert"
@@ -192,7 +192,7 @@ def main() -> None:
         return
 
     # ------------------------------------------------------------ evaluation
-    from newbieduo.evaluation.evaluate_gold import aggregate, evaluate_case
+    from nephrolex.evaluation.evaluate_gold import aggregate, evaluate_case
 
     gold = [g for g in read_jsonl(ROOT / "eval" / "ckd_gold_eval.jsonl") if not g["should_abstain"]]
     rows = []

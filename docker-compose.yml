@@ -7,12 +7,12 @@
 # default; publish it on the network interface a record system can reach only
 # when you are ready for one to call it.
 
-name: newbieduo
+name: nephrolex
 
 x-common: &common
   build:
     context: .
-  image: newbieduo:local
+  image: nephrolex:local
   volumes:
     # The operator's own licensed guideline PDFs. Read-only: the pipeline reads
     # them and writes everything it derives into the corpus volume instead.
@@ -26,7 +26,7 @@ x-common: &common
     # the guideline verbatim -- the extractive answer is the product.
     - GEMINI_API_KEY=${GEMINI_API_KEY:-}
     - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
-    - NEWBIEDUO_DATA=/data
+    - NEPHROLEX_DATA=/data
 
 services:
   # ── one-shot: turn the PDFs in data/raw into a searchable corpus ──────────

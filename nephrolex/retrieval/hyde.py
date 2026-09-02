@@ -47,7 +47,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from newbieduo.paths import DATA, GOLD_SET  # noqa: E402
+from nephrolex.paths import DATA, GOLD_SET  # noqa: E402
 
 CACHE = DATA / "hyde_cache.jsonl"
 
@@ -97,7 +97,7 @@ def _append(query: str, hypothetical: str) -> None:
 
 def _generate(query: str) -> str:
     """Call the model for one hypothetical. Raises, so callers can report why."""
-    from newbieduo.generation.generate import DEFAULT_MODEL, available, call_anthropic, call_gemini
+    from nephrolex.generation.generate import DEFAULT_MODEL, available, call_anthropic, call_gemini
 
     provider = available()
     if not provider:
@@ -137,7 +137,7 @@ def build(limit: int = 0, verbose: bool = False, rpm: float = 10.0) -> None:
     limited after 9, and reported "failed 66" with no reason attached - the errors
     went through the silent handler that belongs in the retrieval path, not here.
     """
-    from newbieduo.generation.generate import available
+    from nephrolex.generation.generate import available
 
     if not available():
         raise SystemExit(

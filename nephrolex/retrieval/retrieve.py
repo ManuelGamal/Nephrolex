@@ -93,7 +93,7 @@ from pathlib import Path
 import numpy as np
 
 
-from newbieduo.paths import ROOT
+from nephrolex.paths import ROOT
 INDEX_DIR = ROOT / "data" / "indexes"
 
 # Fusion weights, declared as shares of the score and required to sum to 1.
@@ -110,6 +110,56 @@ W_TFIDF = 0.21
 W_DENSE = 0.29
 W_META = 0.21
 W_DOC2QUERY = 0.29
+
+# Additive weight on the numeric band signal.
+#
+# NUMERIC_BAND_PRIOR below applies the same signal multiplicatively, which scales
+# whatever relevance the lexical and dense signals already assigned. That is exactly
+# backwards for the case the signal exists to serve: "eGFR 38, which category?" shares
+# no vocabulary with the row that answers it, because the token 38 never appears in
+# "30 - 44". Low relevance times a bounded multiplier stays low, so the answer row sat
+# at rank 15 while the top 8 went to the model. An additive term pays the chunk in
+# absolute score instead, which is what a quantity-anchored band containment deserves.
+#
+# Measured and rejected. Swept on the 67-case gold set against a w_band=0 control that
+# reproduced 0.7250 exactly, dense and reranker both confirmed loaded:
+#
+#     w_band   nDCG@10   staging   total_miss   paired bootstrap vs 0.00
+#     0.00     0.7250    0.5722    4            control
+#     0.10     0.7119    0.5670    4            -0.0131  [-0.0306, +0.0010]  noise
+#     0.20     0.6875    0.5559    6            -0.0375  [-0.0708, -0.0074]  worse
+#     0.30     0.6611    0.5312    8            -0.0638  [-0.1073, -0.0254]  worse
+#
+# It fails on the slice it was written for: staging falls too. The multiplicative prior
+# is a conjunction - relevant AND band-matching - while an additive term is a
+# disjunction, so every lab-variation table stating GFR bands (Tables 23, 24, 29) gets
+# promoted alongside the one row that answers the question. For a signal this
+# unselective, conjunction is the correct form.
+#
+# Kept at 0.0, which is bit-identical to the multiplicative-only path, so the knob
+# remains available for a future sweep without changing today's behaviour.
+W_BAND = 0.0
+
+# Which query text the doc2query index is scored against.
+#   "raw"      - the shipped behaviour; loses the register gap it exists to close
+#   "expanded" - as tfidf and metadata already do
+#   "max"      - per-chunk max, so expansion can only add signal where raw found none
+# Resolved at call time so a sweep can flip it without rebinding the default.
+#
+# Measured on the 67-case gold set, control reproducing 0.7250 exactly:
+#
+#     mode       nDCG@10   staging   paired bootstrap vs raw
+#     raw        0.7250    0.5722    control
+#     expanded   0.7215    0.5786    -0.0035  [-0.0224, +0.0115]  inside noise
+#
+# Inside the noise floor overall, but it moved 15 of 67 cases and took
+# gfr_initial_assessment from 0.9502 to 0.4841 - the added "category
+# classification range" terms promote table rows over the practice points that
+# answer a definitional question. "max" recovered only part of that (0.6697) and
+# fixed no additional case. An aggregate inside the noise floor is not a licence
+# to ship a half-point regression, so this stays on "raw"; the staging failure it
+# was chasing is fixed in the evidence window instead, where it belongs.
+DOC2QUERY_QUERY_MODE = "raw"
 
 assert abs(W_TFIDF + W_DENSE + W_META + W_DOC2QUERY - 1.0) < 1e-9, (
     "fusion weights must sum to 1"
@@ -379,7 +429,7 @@ _RERANKERS: dict[str, object] = {}
 
 def get_dense_model(name: str):
     if name not in _DENSE_MODELS:
-        from newbieduo.retrieval.medcpt import MedCPTEncoder, is_medcpt
+        from nephrolex.retrieval.medcpt import MedCPTEncoder, is_medcpt
 
         if is_medcpt(name):
             # Queries go through MedCPT's query encoder, which is a different set of
@@ -512,7 +562,7 @@ def colbert_scores(query: str) -> np.ndarray | None:
     """
     global _COLBERT
     if _COLBERT is None:
-        from newbieduo.retrieval import colbert as _cb
+        from nephrolex.retrieval import colbert as _cb
 
         if not (_cb.OUT_DIR / "tokens.npy").exists():
             _COLBERT = {"ok": False}
@@ -899,6 +949,8 @@ def retrieve(
     # from 5 to 3 and recall@20 rises. It is the only technique tried here that cleared
     # its confidence interval; Contextual Retrieval, ColBERT, HyDE and MedCPT did not.
     w_doc2query: float = W_DOC2QUERY,
+    w_band: float = W_BAND,
+    doc2query_mode: str | None = None,
     # Whether the cross-encoder is shown those questions as well as the chunk.
     #
     # On. The reranker is half the final score and, reading raw text alone, it is blind
@@ -1022,7 +1074,7 @@ def retrieve(
         # Both are normalised cosine similarities against the same embedding matrix,
         # so a max between them is a comparison of like with like.
         if hyde_mode != "off":
-            from newbieduo.retrieval.hyde import hypothetical
+            from nephrolex.retrieval.hyde import hypothetical
 
             guess = hypothetical(query, allow_generate=hyde_generate)
             if guess:
@@ -1045,7 +1097,20 @@ def retrieve(
     # Scored on the original query only. The synonym expansion exists to bridge the
     # same vocabulary gap these questions were generated to bridge, and applying both
     # doubles the bridge and drifts the match.
-    doc2query_raw = doc2query_scores(query) if w_doc2query > 0 else None
+    # Which query text this signal sees; see DOC2QUERY_QUERY_MODE for the measurement
+    # behind the default. Scoring it on the expanded query is the intuitive choice, and
+    # it does rescue the staging case, but it moved 15 of 67 gold cases and cost
+    # gfr_initial_assessment half its score, so the default stays on the raw query.
+    mode = DOC2QUERY_QUERY_MODE if doc2query_mode is None else doc2query_mode
+    if w_doc2query <= 0:
+        doc2query_raw = None
+    elif mode == "raw":
+        doc2query_raw = doc2query_scores(query)
+    elif mode == "expanded":
+        doc2query_raw = doc2query_scores(expanded)
+    else:
+        a, b = doc2query_scores(query), doc2query_scores(expanded)
+        doc2query_raw = a if b is None else (b if a is None else np.maximum(a, b))
 
     # --- shared candidate pool --------------------------------------------
     # Every retriever nominates candidates regardless of its scoring weight, which is
@@ -1077,7 +1142,8 @@ def retrieve(
     active_dense = w_dense if dense_norm else 0.0
     active_colbert = w_colbert if colbert_norm else 0.0
     active_doc2query = w_doc2query if doc2query_norm else 0.0
-    total_weight = w_tfidf + active_dense + w_meta + active_colbert + active_doc2query
+    total_weight = (w_tfidf + active_dense + w_meta + active_colbert
+                    + active_doc2query + w_band)
 
     # Reciprocal Rank Fusion, for comparison against the convex combination used by
     # default. RRF is the more common choice in the literature; whether it is better
@@ -1102,6 +1168,7 @@ def retrieve(
         "meta": (w_meta, meta_raw),
         "colbert": (active_colbert, colbert_norm),
         "doc2query": (active_doc2query, doc2query_norm),
+        "band": (w_band, band_match),
     }
 
     def multiplicative(idx: int) -> dict[str, float]:

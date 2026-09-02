@@ -31,8 +31,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from newbieduo.evaluation.evaluate_gold import aggregate, evaluate_case  # noqa: E402
-from newbieduo.retrieval import retrieve as R  # noqa: E402
+from nephrolex.evaluation.evaluate_gold import aggregate, evaluate_case  # noqa: E402
+from nephrolex.retrieval import retrieve as R  # noqa: E402
 
 GOLD = ROOT / "eval" / "faq_clinical.jsonl"
 DENSE_MODEL = "abhinand/MedEmbed-large-v0.1"

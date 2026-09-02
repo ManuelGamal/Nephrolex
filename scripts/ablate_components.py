@@ -34,8 +34,8 @@ from pathlib import Path
 # Tools live outside the package; make the repository root importable.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from newbieduo.retrieval import retrieve as R
-from newbieduo.evaluation.evaluate_gold import aggregate, evaluate_case
+from nephrolex.retrieval import retrieve as R
+from nephrolex.evaluation.evaluate_gold import aggregate, evaluate_case
 
 
 ROOT = Path(__file__).resolve().parents[1]

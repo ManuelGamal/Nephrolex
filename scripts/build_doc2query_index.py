@@ -36,7 +36,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from newbieduo.paths import CORPUS, DATA  # noqa: E402
+from nephrolex.paths import CORPUS, DATA  # noqa: E402
 
 CACHE = DATA / "doc2query.jsonl"
 OUT = ROOT / "data" / "indexes" / "doc2query_tfidf.pkl"

@@ -52,7 +52,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from newbieduo.paths import CORPUS, DATA  # noqa: E402
+from nephrolex.paths import CORPUS, DATA  # noqa: E402
 
 CACHE = DATA / "doc2query.jsonl"
 
@@ -110,7 +110,7 @@ def append(rows: list[tuple[str, list[str]]]) -> None:
 
 
 def generate(batch: list[dict], k: int, chars: int) -> dict[str, list[str]]:
-    from newbieduo.generation.generate import (DEFAULT_MODEL, available,
+    from nephrolex.generation.generate import (DEFAULT_MODEL, available,
                                                call_anthropic, call_gemini)
 
     provider = available()
@@ -157,7 +157,7 @@ def main() -> None:
                              "at a smaller batch size.")
     args = parser.parse_args()
 
-    from newbieduo.generation.generate import available
+    from nephrolex.generation.generate import available
 
     if not available():
         raise SystemExit(

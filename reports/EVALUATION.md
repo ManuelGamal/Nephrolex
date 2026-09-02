@@ -1,4 +1,4 @@
-# NewbieDuo — evaluation report
+# Nephrolex — evaluation report
 
 Configuration under test: dense `abhinand/MedEmbed-large-v0.1`, reranker `BAAI/bge-reranker-v2-m3` at depth 30, top-k 20.
 

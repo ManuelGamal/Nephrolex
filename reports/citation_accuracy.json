@@ -1,11 +1,11 @@
 {
-  "checked": 1479,
-  "corpus_size": 1479,
+  "checked": 1485,
+  "corpus_size": 1485,
   "citation_accuracy": 0.9912,
   "overlap_threshold": 0.6,
-  "median_overlap": 0.9697,
+  "median_overlap": 0.9694,
   "by_status": {
-    "resolves": 1466,
+    "resolves": 1472,
     "mismatch": 12,
     "no_bbox": 1
   },
@@ -15,10 +15,10 @@
     "practice_point": 1.0,
     "recommendation_atom": 0.9955,
     "figure_body": 1.0,
-    "table_row": 0.9601
+    "table_row": 0.961
   },
   "table_numbering": {
-    "checked": 320,
+    "checked": 327,
     "not_found_on_page": 0,
     "examples": []
   },

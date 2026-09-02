@@ -34,7 +34,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from newbieduo.paths import GOLD_SET, REPORTS  # noqa: E402
+from nephrolex.paths import GOLD_SET, REPORTS  # noqa: E402
 
 # For a case that must abstain, any refusal counts. Which refusal fires is a
 # presentation detail: "What does NICE NG203 say about immunosuppression after kidney
@@ -126,8 +126,8 @@ def main() -> None:
     parser.add_argument("--out", default=str(REPORTS / "end_to_end_audit.json"))
     args = parser.parse_args()
 
-    from newbieduo.generation.answer import build_answer
-    from newbieduo.retrieval import retrieve as retrieve_module
+    from nephrolex.generation.answer import build_answer
+    from nephrolex.retrieval import retrieve as retrieve_module
 
     retrieve_module.set_dense_path(args.dense_file)
 

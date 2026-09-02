@@ -20,7 +20,7 @@ from reportlab.platypus import (BaseDocTemplate, Frame, PageTemplate, Paragraph,
                                 Spacer, KeepTogether)
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "reports" / "NewbieDuo_speaker_script.pdf"
+OUT = ROOT / "reports" / "Nephrolex_speaker_script.pdf"
 
 BODY = ParagraphStyle("body", fontName="Helvetica", fontSize=10.5, leading=14.5,
                       spaceAfter=6)
@@ -39,7 +39,7 @@ SUB = ParagraphStyle("sub", fontName="Helvetica", fontSize=10, leading=14, space
 # (slide label, time, title, [blocks]) - a block is ("say"|"cue", text)
 SCRIPT = [
     ("SLIDE 01", "0:00 - 0:20", "Guideline evidence, delivered where the decision is made.", [
-        ("say", "This is NewbieDuo - clinical decision support for chronic kidney disease, over KDIGO 2024 and NICE NG203."),
+        ("say", "This is Nephrolex - clinical decision support for chronic kidney disease, over KDIGO 2024 and NICE NG203."),
         ("say", "Three things make it different from a chatbot with a PDF. It answers <b>only</b> from the guidelines. It cites every number to a page and a bounding box. And when the evidence will not support an answer, it <b>refuses</b>."),
         ("say", "Those four numbers on screen are what I will spend the next nine minutes defending."),
         ("cue", "[Do not read the metrics aloud. Let them sit there while you talk.]"),
@@ -191,11 +191,11 @@ def main() -> None:
     doc = BaseDocTemplate(str(OUT), pagesize=A4,
                           leftMargin=20 * mm, rightMargin=20 * mm,
                           topMargin=18 * mm, bottomMargin=20 * mm,
-                          title="NewbieDuo - speaker script", author="NewbieDuo")
+                          title="Nephrolex - speaker script", author="Nephrolex")
     frame = Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height, id="f")
     doc.addPageTemplates([PageTemplate(id="p", frames=[frame], onPage=footer)])
 
-    flow = [Paragraph("NewbieDuo - speaker script", H1),
+    flow = [Paragraph("Nephrolex - speaker script", H1),
             Paragraph("19 slides, about nine minutes. Times are cumulative. Bracketed lines "
                       "are stage directions, not words to say.", SUB)]
 

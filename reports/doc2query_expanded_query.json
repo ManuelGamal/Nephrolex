@@ -1,0 +1,48 @@
+{
+  "False": {
+    "overall": {
+      "cases": 67,
+      "ndcg_at_10": 0.725,
+      "recall_at_10": 0.8088,
+      "recall_at_20": 0.8387,
+      "mrr_at_10": 0.7228,
+      "p_at_5": 0.2507,
+      "total_miss": 4
+    },
+    "staging": {
+      "cases": 9,
+      "ndcg_at_10": 0.5722,
+      "recall_at_10": 0.5185,
+      "recall_at_20": 0.6481,
+      "mrr_at_10": 0.7148,
+      "p_at_5": 0.3111,
+      "total_miss": 1
+    }
+  },
+  "True": {
+    "overall": {
+      "cases": 67,
+      "ndcg_at_10": 0.7215,
+      "recall_at_10": 0.8113,
+      "recall_at_20": 0.8375,
+      "mrr_at_10": 0.7174,
+      "p_at_5": 0.2507,
+      "total_miss": 4
+    },
+    "staging": {
+      "cases": 9,
+      "ndcg_at_10": 0.5786,
+      "recall_at_10": 0.5741,
+      "recall_at_20": 0.6481,
+      "mrr_at_10": 0.6806,
+      "p_at_5": 0.3111,
+      "total_miss": 1
+    }
+  },
+  "delta": {
+    "point": -0.0034611940298507485,
+    "ci_low": -0.022376119402985086,
+    "ci_high": 0.011508955223880596,
+    "n_changed": 15
+  }
+}

@@ -77,7 +77,7 @@ def main() -> None:
     L: list[str] = []
     add = L.append
 
-    add("# NewbieDuo — evaluation report")
+    add("# Nephrolex — evaluation report")
     add("")
     add(f"Configuration under test: dense `{config.get('dense_model') or 'off'}`, "
         f"reranker `{config.get('reranker_model') or 'off'}` at depth {config.get('rerank_depth')}, "
