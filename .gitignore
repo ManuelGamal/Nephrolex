@@ -10,11 +10,14 @@
 # An operator supplies their own licensed copies in data/raw/ and builds the
 # corpus locally -- see README.md, "Build the corpus".
 #
-# The exception, stated so this file does not overclaim: reports/ carries a few
-# small page crops of KDIGO and NICE -- in presentation.html and
-# citation_highlight_demo.png -- shown to illustrate that a citation resolves to
-# a bounding box on the page. They are excerpts for illustration, not a usable
-# copy of either guideline, and nothing in the retrieval path reads them.
+# reports/ previously carried a few small page crops of KDIGO and NICE, in
+# presentation.html and citation_highlight_demo.png, shown to illustrate that a
+# citation resolves to a bounding box on the page. Both have been removed, and
+# the history rewritten so they are not recoverable from an earlier commit.
+# No guideline excerpt remains anywhere in this repository.
+#
+# If that illustration is wanted again, redraw it against a synthetic or
+# public-domain page: what it demonstrates is the mechanism, not the text.
 # ─────────────────────────────────────────────────────────────────────────────
 data/raw/
 data/parsed/

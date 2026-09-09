@@ -24,9 +24,8 @@ __pycache__/
 scratch/
 *.log
 
-# Presentation material. Useful in the repository, not inside a clinical
-# container -- and reports/presentation.html embeds cropped guideline page
-# images, which have no business in a distributable image.
+# Presentation and evaluation material. Useful in the repository, not inside a
+# clinical container.
 reports/
 
 .DS_Store

@@ -26,12 +26,11 @@ exclude the source PDFs and everything derived closely from them -- parsed
 pages, chunk files, the record store, generated question expansions, and any
 index built over them -- because those are the guideline text in another shape.
 
-The one exception, stated so it is not discovered: `reports/presentation.html`
-embeds four small cropped images of guideline pages, used to illustrate how
-citations resolve to a bounding box. They are excluded from the container image
-by `.dockerignore`. If this repository is made public, review whether those
-excerpts are acceptable under the applicable licence, or replace them with
-redacted equivalents.
+There is no exception. `reports/presentation.html` and
+`reports/citation_highlight_demo.png` formerly embedded small cropped images of
+guideline pages, used to illustrate how citations resolve to a bounding box.
+Both have been removed and the history rewritten, so no guideline excerpt
+remains in this repository or in any earlier commit of it.
 
 
 MODEL WEIGHTS
