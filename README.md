@@ -1,6 +1,22 @@
-# Nephrolex CKD Evidence RAG
+# Nephrolex: Clinical Guideline RAG for Chronic Kidney Disease
 
-Full-accuracy CKD evidence retrieval pipeline for the hackathon.
+Evidence retrieval over KDIGO 2024 and NICE NG203, served inside the EHR through
+HL7 CDS Hooks. Every answer quotes the guideline text it rests on, with page-level
+and bounding-box citations; questions outside adult CKD are refused.
+
+| Result | Value |
+|---|---|
+| nDCG@10, 67-question clinician-style gold set | **0.71** (95% CI 0.63–0.78) |
+| nDCG@10, held-out set never tuned on | **0.70** |
+| nDCG@10, clinician-phrased FAQ set | **0.70** |
+| A gold chunk in the top 10 | **93%** of questions |
+| Top-1 result is a gold chunk | **63%** of questions |
+
+Measured with three answer keys and paired bootstrap intervals. A design change
+was kept only when its interval cleared the noise floor, and every stage of the
+retrieval stack is ablated in [`reports/ABLATION.md`](reports/ABLATION.md).
+
+Runs in one container inside your own network; nothing reaches a cloud at runtime.
 
 **Start here:** [`ARCHITECTURE.md`](ARCHITECTURE.md) — the four layers, and the
 measurement behind each design decision. [`reports/EVALUATION.md`](reports/EVALUATION.md)
